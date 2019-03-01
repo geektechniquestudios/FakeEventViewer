@@ -14,19 +14,34 @@
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
+                    <MenuItem mnemonicParsing="false" text="Options" />
+                        <MenuItem mnemonicParsing="false" text="Close" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
+                <Menu mnemonicParsing="false" text="Action">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
+                    <MenuItem mnemonicParsing="false" text="Open Saved Log" />
+                        <MenuItem mnemonicParsing="false" text="Create Custom Views" />
+                        <MenuItem mnemonicParsing="false" text="Import Custom View" />
+                        <MenuItem mnemonicParsing="false" text="Connect to Another Computer" />
+                        <MenuItem mnemonicParsing="false" text="Refresh" />
+                        <MenuItem mnemonicParsing="false" text="Help" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Help">
+                <Menu mnemonicParsing="false" text="View">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
+                    <MenuItem mnemonicParsing="false" text="Show Analytic and Debug Logs" />
+                        <MenuItem mnemonicParsing="false" text="Customize" />
                   </items>
                 </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Help Topics" />
+                        <MenuItem mnemonicParsing="false" text="TechCenter Web Site" />
+                        <MenuItem mnemonicParsing="false" text="About Microsoft Management Console" />
+                        <MenuItem mnemonicParsing="false" text="About Event Viewer" />
+                     </items>
+                  </Menu>
               </menus>
             </MenuBar>
          </children>
@@ -35,9 +50,38 @@
    <center>
       <SplitPane dividerPositions="0.5, 0.5" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <items>
-            <TreeView prefHeight="200.0" prefWidth="200.0" />
+            <TreeView fx:id="leftTreeView" prefHeight="200.0" prefWidth="200.0" />
             <VBox>
                <children>
+                  <AnchorPane styleClass="localLabelBox" stylesheets="@application.css">
+                     <children>
+                        <Label maxWidth="1.7976931348623157E308" styleClass="localLabel" stylesheets="@application.css" text="Event Viwer (Local)" textFill="WHITE">
+                           <padding>
+                              <Insets left="5.0" top="2.0" />
+                           </padding></Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </AnchorPane>
+                  <AnchorPane fx:id="OverviewLabelBox" layoutX="10.0" layoutY="10.0" styleClass="overviewLabelBox" stylesheets="@application.css">
+                     <children>
+                        <Label fx:id="OverviewLabel" maxWidth="1.7976931348623157E308" styleClass="overviewLabel" stylesheets="@application.css" text="Overview and Summary" textFill="WHITE">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="17.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="1.0" />
+                     </VBox.margin>
+                  </AnchorPane>
                   <Accordion>
                     <panes>
                       <TitledPane animated="false" text="Overview">
@@ -52,7 +96,7 @@
                   </Accordion>
                </children>
             </VBox>
-            <TreeView prefHeight="200.0" prefWidth="200.0" />
+            <TreeView fx:id="rightTreeView" prefHeight="200.0" prefWidth="200.0" />
          </items>
       </SplitPane>
    </center>
