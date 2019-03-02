@@ -1,10 +1,19 @@
 package itemPopulation;
 
 import java.util.ArrayList;
+
+import javafx.scene.Node;
 import javafx.scene.control.TreeItem;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
  
 public class leftTreeHelper 
 {
+	private final Node rootIcon2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon2.png")));
+	private final Node rootIcon3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon3.png")));
+	private final Node rootIcon4 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon4.png")));
+	private final Node rootIcon5 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon5.png")));
+	
     public leftTreeHelper()
     {
     }
@@ -14,16 +23,16 @@ public class leftTreeHelper
     {
         ArrayList<TreeItem> options = new ArrayList<TreeItem>();
          
-        TreeItem custView = new TreeItem("Custom Views");
+        TreeItem custView = new TreeItem("Custom Views", rootIcon2);
         custView.getChildren().addAll(getCustViews());
          
-        TreeItem winLogs = new TreeItem("Windows Logs");
+        TreeItem winLogs = new TreeItem("Windows Logs", rootIcon3);
         winLogs.getChildren().addAll(getWinLogs());
  
-        TreeItem apps = new TreeItem("Applications and Service Logs");
+        TreeItem apps = new TreeItem("Applications and Service Logs", rootIcon4);
         apps.getChildren().addAll(getApps());
          
-        TreeItem subs = new TreeItem("Subscriptions");
+        TreeItem subs = new TreeItem("Subscriptions", rootIcon5);
          
         options.add(custView);
         options.add(winLogs);

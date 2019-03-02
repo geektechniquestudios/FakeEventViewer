@@ -8,13 +8,16 @@ import javafx.scene.layout.BorderPane;
 import javafx.fxml.FXMLLoader;
 
 
-public class Main extends Application {
+public class Main extends Application 
+{
 	@Override
-	public void start(Stage primaryStage) {
-		try {
+	public void start(Stage primaryStage) 
+	{
+		try 
+		{
 			primaryStage.setTitle("Event Viewer");
 			primaryStage.getIcons().add(new Image("/imageAssets/icon.png"));
-
+			primaryStage.setMaximized(true);
 			
 			
 			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("EventViewer.fxml"));
@@ -22,12 +25,15 @@ public class Main extends Application {
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
-		} catch(Exception e) {
+		} 
+		catch(Exception e) 
+		{
 			e.printStackTrace();
 		}
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		launch(args);
 	}
 }

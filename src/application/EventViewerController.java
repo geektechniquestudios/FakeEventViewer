@@ -27,7 +27,8 @@ public class EventViewerController implements Initializable
 	@FXML private AnchorPane overviewLabelBox;
 	@FXML private Label overviewLabel;
 	@FXML private Label lastRefreshedLabel;
-	
+    private final Node rootIcon =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon1.png")));
+
 	private ImageView listIcon; 
 	
 	@Override
@@ -40,7 +41,7 @@ public class EventViewerController implements Initializable
 	
 	private void populateLeftTree()
 	{
-		TreeItem<String> rootItem = new TreeItem<String> ("Event Viewer (Local)");
+		TreeItem<String> rootItem = new TreeItem<String> ("Event Viewer (Local)", rootIcon);
         rootItem.setExpanded(true);          
         
         leftTreeHelper someLeftTree = new leftTreeHelper();
