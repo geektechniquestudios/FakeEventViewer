@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="809.0" prefWidth="1122.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EventViewerController">
+<BorderPane prefHeight="856.0" prefWidth="1171.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EventViewerController">
    <top>
       <VBox>
          <children>
@@ -48,9 +48,9 @@
       </VBox>
    </top>
    <center>
-      <SplitPane dividerPositions="0.5, 0.5" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <SplitPane dividerPositions="0.15568862275449102, 0.8331907613344739" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <items>
-            <TreeView fx:id="leftTreeView" prefHeight="200.0" prefWidth="200.0" />
+            <TreeView fx:id="leftTreeView" maxWidth="400.0" minWidth="100.0" prefWidth="320.0" />
             <VBox>
                <children>
                   <AnchorPane styleClass="localLabelBox" stylesheets="@application.css">
@@ -58,15 +58,16 @@
                         <Label maxWidth="1.7976931348623157E308" styleClass="localLabel" stylesheets="@application.css" text="Event Viwer (Local)" textFill="WHITE">
                            <padding>
                               <Insets left="5.0" top="2.0" />
-                           </padding></Label>
+                           </padding>
+                        </Label>
                      </children>
                      <padding>
                         <Insets bottom="5.0" />
                      </padding>
                   </AnchorPane>
-                  <AnchorPane fx:id="OverviewLabelBox" layoutX="10.0" layoutY="10.0" styleClass="overviewLabelBox" stylesheets="@application.css">
+                  <HBox prefHeight="30.0" prefWidth="786.0" styleClass="overviewLabelBox" stylesheets="@application.css">
                      <children>
-                        <Label fx:id="OverviewLabel" maxWidth="1.7976931348623157E308" styleClass="overviewLabel" stylesheets="@application.css" text="Overview and Summary" textFill="WHITE">
+                        <Label fx:id="overviewLabel" maxWidth="1.7976931348623157E308" styleClass="overviewLabel" stylesheets="@application.css" text="Overview and Summary" textFill="WHITE" translateY="2.0">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -74,14 +75,23 @@
                               <Insets left="17.0" />
                            </padding>
                         </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="lastRefreshedLabel" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" styleClass="overviewLabelRight" stylesheets="@application.css" text="Last refreshed: " textFill="WHITE" translateY="3.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="17.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets right="5.0" top="10.0" />
+                           </HBox.margin>
+                        </Label>
                      </children>
-                     <padding>
-                        <Insets bottom="5.0" />
-                     </padding>
                      <VBox.margin>
                         <Insets top="1.0" />
                      </VBox.margin>
-                  </AnchorPane>
+                  </HBox>
                   <Accordion>
                     <panes>
                       <TitledPane animated="false" text="Overview">
@@ -96,7 +106,7 @@
                   </Accordion>
                </children>
             </VBox>
-            <TreeView fx:id="rightTreeView" prefHeight="200.0" prefWidth="200.0" />
+            <TreeView fx:id="rightTreeView" maxWidth="400.0" minWidth="100.0" prefHeight="200.0" prefWidth="200.0" />
          </items>
       </SplitPane>
    </center>

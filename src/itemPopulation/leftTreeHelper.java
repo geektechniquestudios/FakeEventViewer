@@ -9,100 +9,83 @@ public class leftTreeHelper
     {
     }
      
-    // This method creates an ArrayList of TreeItems (Products)
+    // This method creates an ArrayList of TreeItems 
     public ArrayList<TreeItem> getProducts()
     {
-        ArrayList<TreeItem> products = new ArrayList<TreeItem>();
+        ArrayList<TreeItem> options = new ArrayList<TreeItem>();
          
-        TreeItem cars = new TreeItem("Cars");
-        cars.getChildren().addAll(getCars());
+        TreeItem custView = new TreeItem("Custom Views");
+        custView.getChildren().addAll(getCustViews());
          
-        TreeItem buses = new TreeItem("Buses");
-        buses.getChildren().addAll(getBuses());
+        TreeItem winLogs = new TreeItem("Windows Logs");
+        winLogs.getChildren().addAll(getWinLogs());
  
-        TreeItem trucks = new TreeItem("Trucks");
-        trucks.getChildren().addAll(getTrucks());
+        TreeItem apps = new TreeItem("Applications and Service Logs");
+        apps.getChildren().addAll(getApps());
          
-        TreeItem motorbikes = new TreeItem("Motorcycles");
-        motorbikes.getChildren().addAll(getMotorcycles());
+        TreeItem subs = new TreeItem("Subscriptions");
          
-        products.add(cars);
-        products.add(buses);
-        products.add(trucks);
-        products.add(motorbikes);
+        options.add(custView);
+        options.add(winLogs);
+        options.add(apps);
+        options.add(subs);
          
-        return products;
+        return options;
     }
  
-    // This method creates an ArrayList of TreeItems (Cars)
-    private ArrayList<TreeItem> getCars()
+    // This method creates an ArrayList of TreeItems 
+    private ArrayList<TreeItem> getCustViews()
     {
-        ArrayList<TreeItem> cars = new ArrayList<TreeItem>();
+        ArrayList<TreeItem> custView = new ArrayList<TreeItem>();
+        TreeItem adminEvents = new TreeItem("Administrative Events");
          
-        TreeItem ferrari = new TreeItem("Ferrari");
-        TreeItem porsche = new TreeItem("Porsche");
-        TreeItem ford = new TreeItem("Ford");
-        TreeItem mercedes = new TreeItem("Mercedes");
-         
-        cars.add(ferrari);
-        cars.add(porsche);
-        cars.add(ford);
-        cars.add(mercedes);
-         
-        return cars;        
+        custView.add(adminEvents);      
+        return custView;        
     }
  
-    // This method creates an ArrayList of TreeItems (Buses)
-    private ArrayList<TreeItem> getBuses()
+    // This method creates an ArrayList of TreeItems 
+    private ArrayList<TreeItem> getWinLogs()
     {
-        ArrayList<TreeItem> buses = new ArrayList<TreeItem>();
+        ArrayList<TreeItem> winLogs = new ArrayList<TreeItem>();
          
-        TreeItem gm = new TreeItem("GM");
-        TreeItem vw = new TreeItem("VW");
-        TreeItem man = new TreeItem("MAN");
-        TreeItem volvo = new TreeItem("Volvo");
+        TreeItem app = new TreeItem("Application");
+        TreeItem sec = new TreeItem("Security");
+        TreeItem setup = new TreeItem("Setup");
+        TreeItem system = new TreeItem("System");
+        TreeItem forwardedEvents = new TreeItem("Forwarded Events");
          
-        buses.add(gm);
-        buses.add(man);
-        buses.add(volvo);
-        buses.add(vw);
+        winLogs.add(app);
+        winLogs.add(sec);
+        winLogs.add(setup);
+        winLogs.add(system);
+        winLogs.add(forwardedEvents);
          
-        return buses;       
+        return winLogs;       
     }
      
-    // This method creates an ArrayList of TreeItems (Trucks)
-    private ArrayList<TreeItem> getTrucks()
+    // This method creates an ArrayList of TreeItems 
+    private ArrayList<TreeItem> getApps()
     {
-        ArrayList<TreeItem> trucks = new ArrayList<TreeItem>();
+        ArrayList<TreeItem> apps = new ArrayList<TreeItem>();
          
-        TreeItem scania = new TreeItem("Scania");
-        TreeItem mercedes = new TreeItem("Mercedes");
-        TreeItem gm = new TreeItem("GM");
-        TreeItem ford = new TreeItem("Ford");
+        TreeItem aesm = new TreeItem("AESMService");
+        TreeItem hardware = new TreeItem("Hardware Events");
+        TreeItem audio = new TreeItem("IntelAudioServiceLog");
+        TreeItem ie = new TreeItem("Internet Explorer");
+        TreeItem keyManage = new TreeItem("KeyManagement Service");
+        TreeItem office = new TreeItem("Microsoft Office Alerts");
+        TreeItem pre = new TreeItem("PreEmptive");
+        TreeItem powersh = new TreeItem("Windows Powershell");
+        
+        apps.add(aesm);
+        apps.add(hardware);
+        apps.add(audio);
+        apps.add(ie);
+        apps.add(keyManage);
+        apps.add(office);
+        apps.add(pre);
+        apps.add(powersh);
          
-        trucks.add(mercedes);
-        trucks.add(scania);
-        trucks.add(gm);
-        trucks.add(ford);
-         
-        return trucks;
-    }
- 
-    // This method creates an ArrayList of TreeItems (Motorbikes)
-    private ArrayList<TreeItem> getMotorcycles()
-    {
-        ArrayList<TreeItem> motorcycles = new ArrayList<TreeItem>();
-         
-        TreeItem harley = new TreeItem("Harley");
-        TreeItem suzuki = new TreeItem("Suzuki");
-        TreeItem ktm = new TreeItem("KTM");
-        TreeItem honda = new TreeItem("Honda");
-         
-        motorcycles.add(harley);
-        motorcycles.add(honda);
-        motorcycles.add(ktm);
-        motorcycles.add(suzuki);
-         
-        return motorcycles;
-    }
+        return apps;
+    }   
 }

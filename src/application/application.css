@@ -1,23 +1,22 @@
-/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 .overviewLabel
 {
-	-fx-background-color: rgb(154,154,154);
+	-fx-background-color: rgb(150,150,150);
 	-fx-font-size: 1.5em;
 }
 
 .overviewLabelBox
 {
-	-fx-background-color: rgb(154,154,154);
+	-fx-background-color: rgb(150,150,150);
 }
 
 .localLabel
 {
 	-fx-font-size: 1em;
 	-fx-font-weight: bold;
-	-fx-background-color: rgb(95,95,95)
+	-fx-background-color: rgb(100,100,100);
 }
 
 .localLabelBox
 {
-	-fx-background-color: rgb(95,95,95);
+	-fx-background-color: rgb(100,100,100);
 }
