@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="809.0" prefWidth="1122.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EventViewerController">
+<BorderPane prefHeight="856.0" prefWidth="1171.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EventViewerController">
    <top>
       <VBox>
          <children>
@@ -14,30 +14,84 @@
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
+                    <MenuItem mnemonicParsing="false" text="Options" />
+                        <MenuItem mnemonicParsing="false" text="Close" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
+                <Menu mnemonicParsing="false" text="Action">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
+                    <MenuItem mnemonicParsing="false" text="Open Saved Log" />
+                        <MenuItem mnemonicParsing="false" text="Create Custom Views" />
+                        <MenuItem mnemonicParsing="false" text="Import Custom View" />
+                        <MenuItem mnemonicParsing="false" text="Connect to Another Computer" />
+                        <MenuItem mnemonicParsing="false" text="Refresh" />
+                        <MenuItem mnemonicParsing="false" text="Help" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Help">
+                <Menu mnemonicParsing="false" text="View">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
+                    <MenuItem mnemonicParsing="false" text="Show Analytic and Debug Logs" />
+                        <MenuItem mnemonicParsing="false" text="Customize" />
                   </items>
                 </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Help Topics" />
+                        <MenuItem mnemonicParsing="false" text="TechCenter Web Site" />
+                        <MenuItem mnemonicParsing="false" text="About Microsoft Management Console" />
+                        <MenuItem mnemonicParsing="false" text="About Event Viewer" />
+                     </items>
+                  </Menu>
               </menus>
             </MenuBar>
          </children>
       </VBox>
    </top>
    <center>
-      <SplitPane dividerPositions="0.5, 0.5" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <SplitPane dividerPositions="0.15568862275449102, 0.8331907613344739" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <items>
-            <TreeView prefHeight="200.0" prefWidth="200.0" />
+            <TreeView fx:id="leftTreeView" maxWidth="400.0" minWidth="100.0" prefWidth="320.0" />
             <VBox>
                <children>
+                  <AnchorPane styleClass="localLabelBox" stylesheets="@application.css">
+                     <children>
+                        <Label maxWidth="1.7976931348623157E308" styleClass="localLabel" stylesheets="@application.css" text="Event Viwer (Local)" textFill="WHITE">
+                           <padding>
+                              <Insets left="5.0" top="2.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </AnchorPane>
+                  <HBox prefHeight="30.0" prefWidth="786.0" styleClass="overviewLabelBox" stylesheets="@application.css">
+                     <children>
+                        <Label fx:id="overviewLabel" maxWidth="1.7976931348623157E308" styleClass="overviewLabel" stylesheets="@application.css" text="Overview and Summary" textFill="WHITE" translateY="2.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="17.0" />
+                           </padding>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="lastRefreshedLabel" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" styleClass="overviewLabelRight" stylesheets="@application.css" text="Last refreshed: " textFill="WHITE" translateY="3.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="17.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets right="5.0" top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="1.0" />
+                     </VBox.margin>
+                  </HBox>
                   <Accordion>
                     <panes>
                       <TitledPane animated="false" text="Overview">
@@ -52,7 +106,7 @@
                   </Accordion>
                </children>
             </VBox>
-            <TreeView prefHeight="200.0" prefWidth="200.0" />
+            <TreeView fx:id="rightTreeView" maxWidth="400.0" minWidth="100.0" prefHeight="200.0" prefWidth="200.0" />
          </items>
       </SplitPane>
    </center>
