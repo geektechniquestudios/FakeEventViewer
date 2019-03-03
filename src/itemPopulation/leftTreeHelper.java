@@ -15,22 +15,22 @@ public class leftTreeHelper
 	private Node rootIcon5 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon5.png")));
 	private Node adminEventsIcon =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon2a.png")));
 	
-	private Node iconFolder =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder.png")));
+	private Node iconFolder  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder.png")));
 	private Node iconFolder2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder.png")));
 	private Node iconFolder3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder.png")));
 
-	private Node iconPlain =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconPlain.png")));
+	private Node iconPlain  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconPlain.png")));
 	private Node iconPlain2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconPlain.png")));
 	
-	private Node iconWarn =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn4 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn5 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn6 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn7 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn8 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn9 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconWarn   =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconWarn2  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconWarn3  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconWarn4  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconWarn5  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconWarn6  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconWarn7  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconWarn8  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconWarn9  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
 	private Node iconWarn10 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
 
 	
@@ -40,7 +40,7 @@ public class leftTreeHelper
     }
      
     // This method creates an ArrayList of TreeItems 
-    public ArrayList<TreeItem> getProducts()
+    public ArrayList<TreeItem> leftTreeFill()
     {
         ArrayList<TreeItem> options = new ArrayList<TreeItem>();
          
@@ -68,7 +68,6 @@ public class leftTreeHelper
     {
         ArrayList<TreeItem> custView = new ArrayList<TreeItem>();
         TreeItem adminEvents = new TreeItem("Administrative Events", adminEventsIcon);
-         
         custView.add(adminEvents);      
         return custView;        
     }

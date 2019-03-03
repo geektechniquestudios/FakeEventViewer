@@ -36,7 +36,6 @@ public class EventViewerController implements Initializable
 	{
 		populateLeftTree();
 		getDateTime();
-		iconsToLeftTree();
 	}
 	
 	private void populateLeftTree()
@@ -44,21 +43,15 @@ public class EventViewerController implements Initializable
 		TreeItem<String> rootItem = new TreeItem<String> ("Event Viewer (Local)", rootIcon);
         rootItem.setExpanded(true);          
         
+        
+        
         leftTreeHelper someLeftTree = new leftTreeHelper();
-        ArrayList<TreeItem> treePopulator = someLeftTree.getProducts();
+        ArrayList<TreeItem> treePopulator = someLeftTree.leftTreeFill();
         
         for(TreeItem x : treePopulator)
         {
         	rootItem.getChildren().add(x);
         }
-        
-//        Image someImage = new Image(getClass().getResourceAsStream("/imageAssets/icon.png"));
-        
-//        listIcon.setImage(someImage);
-        
- //       rootItem.setGraphic(someImage);
-        
-        
         leftTreeView.setRoot(rootItem);
 	}
 	
@@ -72,14 +65,9 @@ public class EventViewerController implements Initializable
 			{
 				dateCharArr[x] = ' ';
 			}
-			
 		}
 		String y = new String(dateCharArr);
 		lastRefreshedLabel.setText(lastRefreshedLabel.getText() + y);
 	}
 	
-	private void iconsToLeftTree()
-	{
-		
-	}
 }
