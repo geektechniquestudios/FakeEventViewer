@@ -45,6 +45,66 @@
                   </Menu>
               </menus>
             </MenuBar>
+            <HBox>
+               <children>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imageAssets/topIcon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="1.0" top="1.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imageAssets/topIcon2.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="1.0" top="1.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView layoutX="102.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imageAssets/divider.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="1.0" top="1.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imageAssets/topIcon3.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="1.0" top="1.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView layoutX="79.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imageAssets/divider.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="1.0" top="1.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView layoutX="33.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imageAssets/topIcon4.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="1.0" top="1.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView layoutX="79.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imageAssets/topIcon5.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="1.0" top="1.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
          </children>
       </VBox>
    </top>
