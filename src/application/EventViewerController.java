@@ -3,7 +3,9 @@ package application;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Accordion;
 import javafx.scene.control.Label;
+import javafx.scene.control.TitledPane;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.Image;
@@ -27,6 +29,15 @@ public class EventViewerController implements Initializable
 	@FXML private AnchorPane overviewLabelBox;
 	@FXML private Label overviewLabel;
 	@FXML private Label lastRefreshedLabel;
+	@FXML private Accordion accordion1;
+	@FXML private TitledPane titled1;
+	@FXML private Accordion accordion2;
+	@FXML private TitledPane titled2;
+	@FXML private Accordion accordion3;
+	@FXML private TitledPane titled3;
+	@FXML private Accordion accordion4;
+	@FXML private TitledPane titled4;
+	
     private final Node rootIcon =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon1.png")));
 
 	private ImageView listIcon; 
@@ -36,6 +47,7 @@ public class EventViewerController implements Initializable
 	{
 		populateLeftTree();
 		getDateTime();
+		expandAccordions();
 	}
 	
 	private void populateLeftTree()
@@ -67,7 +79,15 @@ public class EventViewerController implements Initializable
 			}
 		}
 		String y = new String(dateCharArr);
-		lastRefreshedLabel.setText(lastRefreshedLabel.getText() + y);
+		lastRefreshedLabel.setText("Last refreshed: " + y);
+	}
+	
+	public void expandAccordions()
+	{
+		accordion1.setExpandedPane(titled1);
+		accordion2.setExpandedPane(titled2);
+		accordion3.setExpandedPane(titled3);
+		accordion4.setExpandedPane(titled4);
 	}
 	
 }
