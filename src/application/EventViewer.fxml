@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="856.0" prefWidth="1171.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EventViewerController">
+<BorderPane prefHeight="910.0" prefWidth="1309.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EventViewerController">
    <top>
       <VBox>
          <children>
@@ -48,7 +49,7 @@
       </VBox>
    </top>
    <center>
-      <SplitPane dividerPositions="0.15568862275449102, 0.8331907613344739" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <SplitPane dividerPositions="0.16067329762815608, 0.809487375669472" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <items>
             <TreeView fx:id="leftTreeView" maxWidth="400.0" minWidth="100.0" prefWidth="320.0" />
             <VBox>
@@ -92,11 +93,23 @@
                         <Insets top="1.0" />
                      </VBox.margin>
                   </HBox>
-                  <Accordion>
+                  <Accordion fx:id="accordion1">
                     <panes>
-                      <TitledPane animated="false" text="Overview">
+                      <TitledPane fx:id="titled1" animated="false" text="Overview">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="500.0" />
+                              <HBox prefWidth="800.0">
+                                 <children>
+                                    <ImageView fitHeight="37.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+                                       <image>
+                                          <Image url="@../imageAssets/iconSmall.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label prefHeight="35.0" prefWidth="1300.0" text="To  view events that have occurred on your computer, select the appropriate source, log, or custom view node in the console tree. The Administrative Events custom view contains all the administrative events, regardless of source. An aggregate  view of all the logs is shown below." wrapText="true" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
                         </content>
                       </TitledPane>
                     </panes>
@@ -104,9 +117,45 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                   </Accordion>
+                  <Accordion fx:id="accordion2" layoutX="10.0" layoutY="65.0">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <panes>
+                        <TitledPane fx:id="titled2" animated="false" text="Summary of Administrative Events">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="500.0" />
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+                  <Accordion fx:id="accordion3" layoutX="10.0" layoutY="251.0">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <panes>
+                        <TitledPane fx:id="titled3" animated="false" text="Recently Viewed Nodes">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="500.0" />
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+                  <Accordion fx:id="accordion4" layoutX="10.0" layoutY="286.0">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <panes>
+                        <TitledPane fx:id="titled4" animated="false" text="LogSummary">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="500.0" />
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
                </children>
             </VBox>
-            <TreeView fx:id="rightTreeView" maxWidth="400.0" minWidth="100.0" prefHeight="200.0" prefWidth="200.0" />
+            <TreeView fx:id="rightTreeView" maxWidth="400.0" minWidth="100.0" prefWidth="320.0" />
          </items>
       </SplitPane>
    </center>

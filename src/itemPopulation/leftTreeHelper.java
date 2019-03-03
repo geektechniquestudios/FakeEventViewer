@@ -68,6 +68,7 @@ public class leftTreeHelper
     {
         ArrayList<TreeItem> custView = new ArrayList<TreeItem>();
         TreeItem adminEvents = new TreeItem("Administrative Events", adminEventsIcon);
+        
         custView.add(adminEvents);      
         return custView;        
     }
