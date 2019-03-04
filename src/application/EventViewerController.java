@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
+import javafx.scene.control.Tooltip;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.Image;
@@ -37,6 +38,13 @@ public class EventViewerController implements Initializable
 	@FXML private TitledPane titled3;
 	@FXML private Accordion accordion4;
 	@FXML private TitledPane titled4;
+	@FXML private ImageView topIcon;
+	@FXML private ImageView topIcon2;
+	@FXML private ImageView topIcon3;
+	@FXML private ImageView topIcon4;
+	@FXML private ImageView topIcon5;
+
+	
 	
     private final Node rootIcon =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon1.png")));
 
@@ -48,6 +56,7 @@ public class EventViewerController implements Initializable
 		populateLeftTree();
 		getDateTime();
 		expandAccordions();
+		setToolTips();
 	}
 	
 	private void populateLeftTree()
@@ -82,7 +91,7 @@ public class EventViewerController implements Initializable
 		lastRefreshedLabel.setText("Last refreshed: " + y);
 	}
 	
-	public void expandAccordions()
+	private void expandAccordions()
 	{
 		accordion1.setExpandedPane(titled1);
 		accordion2.setExpandedPane(titled2);
@@ -90,4 +99,22 @@ public class EventViewerController implements Initializable
 		accordion4.setExpandedPane(titled4);
 	}
 	
+	private void setToolTips()
+	{
+		Tooltip topIcontip = new Tooltip("Back");
+		Tooltip.install(topIcon, topIcontip);
+		
+		Tooltip topIcontip2 = new Tooltip("Forward");
+		Tooltip.install(topIcon2, topIcontip2);
+		
+		Tooltip topIcontip3 = new Tooltip("Show// Hide Console Tree");
+		Tooltip.install(topIcon3, topIcontip3);
+		
+		Tooltip topIcontip4 = new Tooltip("Help");
+		Tooltip.install(topIcon4, topIcontip4);
+		
+		Tooltip topIcontip5 = new Tooltip("Show// Hide Action Pane");
+		Tooltip.install(topIcon5, topIcontip5);
+		
+	}
 }
