@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -130,7 +131,7 @@
                         <Insets bottom="5.0" />
                      </padding>
                   </AnchorPane>
-                  <HBox prefHeight="31.0" prefWidth="786.0" styleClass="overviewLabelBox" stylesheets="@application.css">
+                  <HBox maxHeight="31.0" minHeight="31.0" minWidth="31.0" prefHeight="31.0" prefWidth="813.0" styleClass="overviewLabelBox" stylesheets="@application.css">
                      <children>
                         <Label fx:id="overviewLabel" maxWidth="1.7976931348623157E308" styleClass="overviewLabel" stylesheets="@application.css" text="Overview and Summary" textFill="WHITE" translateY="2.0">
                            <opaqueInsets>
@@ -157,21 +158,21 @@
                         <Insets top="1.0" />
                      </VBox.margin>
                   </HBox>
-                  <Accordion fx:id="accordion1">
+                  <Accordion fx:id="accordion1" maxHeight="140.0">
                     <panes>
                       <TitledPane fx:id="titled1" animated="false" text="Overview">
                         <content>
-                              <HBox prefWidth="800.0">
+                              <HBox minHeight="55.0" prefHeight="55.0" prefWidth="821.0">
                                  <children>
-                                    <ImageView fitHeight="37.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+                                    <ImageView fitHeight="37.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true" translateY="-11.0" HBox.hgrow="NEVER">
                                        <image>
                                           <Image url="@../imageAssets/iconSmall.png" />
                                        </image>
                                        <HBox.margin>
-                                          <Insets right="5.0" />
+                                          <Insets right="5.0" top="12.0" />
                                        </HBox.margin>
                                     </ImageView>
-                                    <Label prefHeight="35.0" prefWidth="1300.0" text="To  view events that have occurred on your computer, select the appropriate source, log, or custom view node in the console tree. The Administrative Events custom view contains all the administrative events, regardless of source. An aggregate  view of all the logs is shown below." wrapText="true" HBox.hgrow="ALWAYS" />
+                                    <Label text="To  view events that have occurred on your computer, select the appropriate source, log, or custom view node in the console tree. The Administrative Events custom view contains all the administrative events, regardless of source. An aggregate  view of all the logs is shown below." wrapText="true" HBox.hgrow="ALWAYS" />
                                  </children>
                               </HBox>
                         </content>
@@ -188,7 +189,20 @@
                      <panes>
                         <TitledPane fx:id="titled2" animated="false" text="Summary of Administrative Events">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="500.0" />
+                              <AnchorPane>
+                                 <children>
+                                    <TableView layoutX="18.0" layoutY="25.0" prefHeight="140.0" prefWidth="881.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="eventType" prefWidth="100.0" text="Event Type" />
+                                        <TableColumn prefWidth="87.0" text="Event ID" />
+                                          <TableColumn prefWidth="103.0" text="Source" />
+                                          <TableColumn prefWidth="96.0" text="Log" />
+                                          <TableColumn prefWidth="124.0" text="Last hour" />
+                                          <TableColumn prefWidth="124.0" text="24 hours" />
+                                          <TableColumn prefWidth="146.79999999999995" text="7 days" />
+                                      </columns>
+                                    </TableView>
+                                 </children></AnchorPane>
                            </content>
                         </TitledPane>
                      </panes>
@@ -200,19 +214,40 @@
                      <panes>
                         <TitledPane fx:id="titled3" animated="false" text="Recently Viewed Nodes">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="500.0" />
+                              <AnchorPane>
+                                 <children>
+                                    <TableView layoutX="185.0" layoutY="-25.0" prefHeight="150.0" prefWidth="801.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn prefWidth="127.99999392032623" text="Name" />
+                                        <TableColumn prefWidth="81.0" text="Description" />
+                                          <TableColumn prefWidth="139.0" text="Modified" />
+                                          <TableColumn prefWidth="156.0" text="Description" />
+                                      </columns>
+                                    </TableView>
+                                 </children></AnchorPane>
                            </content>
                         </TitledPane>
                      </panes>
                   </Accordion>
-                  <Accordion fx:id="accordion4" layoutX="10.0" layoutY="286.0">
+                  <Accordion fx:id="accordion4" layoutX="10.0" layoutY="286.0" VBox.vgrow="SOMETIMES">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                      <panes>
                         <TitledPane fx:id="titled4" animated="false" text="Log Summary">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="500.0" />
+                              <AnchorPane>
+                                 <children>
+                                    <TableView layoutX="267.0" layoutY="-25.0" prefHeight="150.0" prefWidth="941.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn prefWidth="143.99999392032623" text="Log Name" />
+                                        <TableColumn prefWidth="101.0" text="Size (Current/Maximum)" />
+                                          <TableColumn prefWidth="155.0" text="Modified" />
+                                          <TableColumn prefWidth="90.0" text="Enabeled" />
+                                          <TableColumn prefWidth="172.00003051757812" text="Retention Policy" />
+                                      </columns>
+                                    </TableView>
+                                 </children></AnchorPane>
                            </content>
                         </TitledPane>
                      </panes>
