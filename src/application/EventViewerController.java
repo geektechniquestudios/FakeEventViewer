@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TitledPane;
 import javafx.scene.control.Tooltip;
 import javafx.scene.control.TreeItem;
@@ -46,7 +47,21 @@ public class EventViewerController implements Initializable
 	@FXML private ImageView topIcon5;
 	@FXML private Accordion rightAccordion;
 	@FXML private TitledPane rightTitled;
-
+	@FXML private TableColumn eventType;
+//	@FXML private
+//	@FXML private
+//	@FXML private
+//	@FXML private
+//	@FXML private
+//	@FXML private
+//	@FXML private
+//	@FXML private
+//	@FXML private
+//	@FXML private
+//	@FXML private
+//	@FXML private
+//	@FXML private
+	
 	
 	
     private final Node rootIcon =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon1.png")));
@@ -60,6 +75,7 @@ public class EventViewerController implements Initializable
 		getDateTime();
 		expandAccordions();
 		setToolTips();
+		fillTables();
 //		Pane connectivityArrow = (Pane) rightTitled.lookup(".arrow");
 //	    connectivityArrow.translateXProperty().bind(
 //	      rightTitled.widthProperty().subtract(connectivityArrow.widthProperty().multiply(2))
@@ -99,6 +115,7 @@ public class EventViewerController implements Initializable
 			}
 		}
 		String y = new String(dateCharArr);
+		y = y.substring(0, 19);
 		lastRefreshedLabel.setText("Last refreshed: " + y);
 	}
 	
@@ -108,7 +125,6 @@ public class EventViewerController implements Initializable
 		accordion2.setExpandedPane(titled2);
 		accordion3.setExpandedPane(titled3);
 		accordion4.setExpandedPane(titled4);
-		
 		rightAccordion.setExpandedPane(rightTitled);
 	}
 	
@@ -128,6 +144,12 @@ public class EventViewerController implements Initializable
 		
 		Tooltip topIcontip5 = new Tooltip("Show// Hide Action Pane");
 		Tooltip.install(topIcon5, topIcontip5);
+		
+	}
+	
+	private void fillTables()
+	{
+//		eventType
 		
 	}
 }
