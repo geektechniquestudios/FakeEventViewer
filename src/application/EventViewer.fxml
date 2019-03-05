@@ -109,9 +109,13 @@
       </VBox>
    </top>
    <center>
-      <SplitPane dividerPositions="0.16067329762815608, 0.809487375669472" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <SplitPane dividerPositions="0.15837796480489671, 0.7842387146136189" BorderPane.alignment="CENTER">
          <items>
-            <TreeView fx:id="leftTreeView" maxWidth="400.0" minWidth="100.0" prefWidth="320.0" />
+            <AnchorPane maxWidth="400.0" minWidth="100.0" prefWidth="320.0" style="-fx-background-color: white;">
+               <children>
+                  <TreeView fx:id="leftTreeView" layoutX="1.0" layoutY="1.0" maxWidth="400.0" minWidth="100.0" prefHeight="861.0" prefWidth="232.0" style="-fx-border-color: white;" translateX="-20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-28.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
             <VBox>
                <children>
                   <AnchorPane styleClass="localLabelBox" stylesheets="@application.css">
@@ -126,7 +130,7 @@
                         <Insets bottom="5.0" />
                      </padding>
                   </AnchorPane>
-                  <HBox prefHeight="30.0" prefWidth="786.0" styleClass="overviewLabelBox" stylesheets="@application.css">
+                  <HBox prefHeight="31.0" prefWidth="786.0" styleClass="overviewLabelBox" stylesheets="@application.css">
                      <children>
                         <Label fx:id="overviewLabel" maxWidth="1.7976931348623157E308" styleClass="overviewLabel" stylesheets="@application.css" text="Overview and Summary" textFill="WHITE" translateY="2.0">
                            <opaqueInsets>
@@ -206,7 +210,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                      <panes>
-                        <TitledPane fx:id="titled4" animated="false" text="LogSummary">
+                        <TitledPane fx:id="titled4" animated="false" text="Log Summary">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="500.0" />
                            </content>
@@ -215,7 +219,35 @@
                   </Accordion>
                </children>
             </VBox>
-            <TreeView fx:id="rightTreeView" maxWidth="400.0" minWidth="100.0" prefWidth="320.0" />
+            <VBox maxWidth="277.0" minWidth="100.0" prefWidth="277.0" style="-fx-background-color: white;">
+               <children>
+                  <HBox prefHeight="23.0" prefWidth="277.0" style="-fx-background-color: #e6e8ed;">
+                     <children>
+                        <Label style="-fx-font-weight: bold;" text="Actions">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Accordion fx:id="rightAccordion" prefHeight="2000.0" prefWidth="299.0" style="-fx-body-color: #acc1e2; -fx-border-style: none;">
+                    <panes>
+                      <TitledPane fx:id="rightTitled" animated="false" style="-fx-animated: true; -fx-border-style: none;" text="Event Viewer (Local)">
+                        <content>
+                          <AnchorPane style="-fx-background-color: white; -fx-border-color: white; -fx-border-style: none;">
+                                 <children>
+                                    <ImageView pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imageAssets/rightMenu2.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children></AnchorPane>
+                        </content>
+                      </TitledPane>
+                    </panes>
+                  </Accordion>
+               </children>
+            </VBox>
          </items>
       </SplitPane>
    </center>

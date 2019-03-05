@@ -17,7 +17,7 @@ public class Main extends Application
 		{
 			primaryStage.setTitle("Event Viewer");
 			primaryStage.getIcons().add(new Image("/imageAssets/icon.png"));
-			//primaryStage.setMaximized(true); // does it start full screen normally?
+			//primaryStage.setMaximized(true); // does EV start full screen normally?
 			
 			
 			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("EventViewer.fxml"));

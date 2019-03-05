@@ -12,6 +12,7 @@ import javafx.scene.control.TreeView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import itemPopulation.*;
 
 import java.net.URL;
@@ -43,6 +44,8 @@ public class EventViewerController implements Initializable
 	@FXML private ImageView topIcon3;
 	@FXML private ImageView topIcon4;
 	@FXML private ImageView topIcon5;
+	@FXML private Accordion rightAccordion;
+	@FXML private TitledPane rightTitled;
 
 	
 	
@@ -57,13 +60,21 @@ public class EventViewerController implements Initializable
 		getDateTime();
 		expandAccordions();
 		setToolTips();
+//		Pane connectivityArrow = (Pane) rightTitled.lookup(".arrow");
+//	    connectivityArrow.translateXProperty().bind(
+//	      rightTitled.widthProperty().subtract(connectivityArrow.widthProperty().multiply(2))
+//	    );
+//	    Pane connectivityTitle = (Pane) rightTitled.lookup(".header");
+//	    connectivityTitle.translateXProperty().bind(
+//	      connectivityArrow.widthProperty().negate()
+//	    );
+//		
 	}
 	
 	private void populateLeftTree()
 	{
 		TreeItem<String> rootItem = new TreeItem<String> ("Event Viewer (Local)", rootIcon);
         rootItem.setExpanded(true);          
-        
         
         
         leftTreeHelper someLeftTree = new leftTreeHelper();
@@ -97,6 +108,8 @@ public class EventViewerController implements Initializable
 		accordion2.setExpandedPane(titled2);
 		accordion3.setExpandedPane(titled3);
 		accordion4.setExpandedPane(titled4);
+		
+		rightAccordion.setExpandedPane(rightTitled);
 	}
 	
 	private void setToolTips()
