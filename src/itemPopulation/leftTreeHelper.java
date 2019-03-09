@@ -32,8 +32,6 @@ public class leftTreeHelper
 	private Node iconWarn8  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
 	private Node iconWarn9  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
 	private Node iconWarn10 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-
-	
 	
     public leftTreeHelper()
     {
