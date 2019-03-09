@@ -17,17 +17,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import itemPopulation.*;
-
 import java.net.URL;
 import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.ResourceBundle;
-
-import javax.swing.ImageIcon;
 import itemPopulation.leftTreeHelper;
 
 public class EventViewerController implements Initializable 
@@ -80,10 +75,7 @@ public class EventViewerController implements Initializable
 	@FXML private TableColumn<ThirdTableItems, String> enabled;
 	@FXML private TableColumn<ThirdTableItems, String> retentionPolicy;
 
-	
-	
-	
-    private final Node rootIcon =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon1.png")));
+    private final Node rootIcon =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon1.png")));//icon for the root base9 
 	private ImageView listIcon; 
 	
 	@Override
@@ -231,7 +223,12 @@ public class EventViewerController implements Initializable
 		itemsToReturn.add(new SecondTableItems("Applications and Services Logs/PreEmptive", "N/A", "4/7/2019 11:03:29 PM","3/7/2019 1:03:32 AM"));
 		itemsToReturn.add(new SecondTableItems("Applications and Serivecs Logs/Microsoft Office Alerts", "N/A", "4/7/2019 7:23:54 PM","4/12/2019 3:32:32 AM"));
 		itemsToReturn.add(new SecondTableItems("Applications and Services Logs/Key Management Service", "N/A", "5/7/2019 6:03:12 PM", "3/8/2019 5:13:21 PM"));
-		
+		itemsToReturn.add(new SecondTableItems("Applications and Services Logs/Internet Explorer", "N/A", "5/7/2019 6:03:12 PM", "3/9/2019 7:43:34 PM"));
+		itemsToReturn.add(new SecondTableItems("Applications and Services Logs/IntelAudioServiceLog","N/A","2/5/2019 2:11:11 AM","9/3/2019 2:22:01 PM"));
+		itemsToReturn.add(new SecondTableItems("Applications and Services Logs/Hardware Events","N/A","2/6/2019 3:15:25 AM","9/3/2019 2:22:01 PM"));
+		itemsToReturn.add(new SecondTableItems("Windows Logs/Forwarded Events","N/A"," "," "));
+		itemsToReturn.add(new SecondTableItems("Windows Logs/System","N/A","2/15/2019 3:17:25 PM","9/18/2019 6:22:01 PM"));
+
 		return itemsToReturn;
 	}
 	
@@ -240,7 +237,49 @@ public class EventViewerController implements Initializable
 		ObservableList<ThirdTableItems> itemsToReturn = FXCollections.observableArrayList();
 		itemsToReturn.add(new ThirdTableItems("Application", "407 MB/20 MB", "3/7/2019 11:03:22 PM", "Enabled"));
 		itemsToReturn.add(new ThirdTableItems("Hardware Events", "68 KB/20MB", "2/18/2019 11:32:25 PM", "Enabled"));
-		
+		itemsToReturn.add(new ThirdTableItems("IntelAudioServiceLog", "68KB/20MB", "2/24/2019 11:33:23 AM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Internet Explorer", "68KB/100MB", "2/30/2019 11:45:22 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Key Management Service", "68KB/20MB", "2/29/2019 11:42:12 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Microsoft Office Alerts", "68KB/100MB", "2/22/2019 11:45:58 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("PreEmptive","68KB/100MB", "2/22/2019 5:05:32 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Security", "68KB/100MB", "2/12/2019 1:02:33 AM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("System", "68KB/100MB", "4/20/2019 8:05:32 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Windows PowerShell", "68KB/100KB", "1/12/2019 10:30:52 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("AMSI/Operational", "1.07KB/100KB", "2/24/2019 9:45:58 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Forwarded Events", "0 Bytes/20MB", "2/22/2019 11:45:58 PM", "Disabled"));
+		itemsToReturn.add(new ThirdTableItems("Microsoft-Windows-Client-Licensing/Admin","1.00MB/1.00MB", "2/22/2019 1:05:24 AM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Microsoft-Windows-AAD/Operational", "1.00MB/1.00MB", "2/22/2019 11:45:58 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Microsoft-Windows-All-User-Install-Agent/Admin", "68KB/1.00MB", "2/12/2019 8:42:18 AM", "Disabled"));
+		itemsToReturn.add(new ThirdTableItems("AllJoynEvents/Operational", "68KB/1.00MB", "2/24/2019 9:24:51 PM", "Disabled"));
+		itemsToReturn.add(new ThirdTableItems("Microsoft-Windows-AppHost/Admin", "68KB/1.00MB", "3/21/2019 5:52:22 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Microsoft-Windows-Application", "420/81Az3-lt", "2/22/2019 11:45:58 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("System", "68KB/100MB", "4/20/2019 8:05:32 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Windows PowerShell", "68KB/100KB", "1/12/2019 10:30:52 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("AMSI/Operational", "1.07KB/100KB", "2/24/2019 9:45:58 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Forwarded Events", "0 Bytes/20MB", "2/22/2019 11:45:58 PM", "Disabled"));
+		itemsToReturn.add(new ThirdTableItems("Microsoft-Windows-Client-Licensing/Admin","1.00MB/1.00MB", "2/22/2019 1:05:24 AM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Microsoft-Windows-AAD/Operational", "1.00MB/1.00MB", "2/22/2019 11:45:58 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Microsoft-Windows-All-User-Install-Agent/Admin", "68KB/1.00MB", "2/12/2019 8:42:18 AM", "Disabled"));
+		itemsToReturn.add(new ThirdTableItems("AllJoynEvents/Operational", "68KB/1.00MB", "2/24/2019 9:24:51 PM", "Disabled"));
+		itemsToReturn.add(new ThirdTableItems("Microsoft-Windows-AppHost/Admin", "68KB/1.00MB", "3/21/2019 5:52:22 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("System", "68KB/100MB", "4/20/2019 8:05:32 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Windows PowerShell", "68KB/100KB", "1/12/2019 10:30:52 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("AMSI/Operational", "1.07KB/100KB", "2/24/2019 9:45:58 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Forwarded Events", "0 Bytes/20MB", "2/22/2019 11:45:58 PM", "Disabled"));
+		itemsToReturn.add(new ThirdTableItems("Microsoft-Windows-Client-Licensing/Admin","1.00MB/1.00MB", "2/22/2019 1:05:24 AM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Microsoft-Windows-AAD/Operational", "1.00MB/1.00MB", "2/22/2019 11:45:58 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Microsoft-Windows-All-User-Install-Agent/Admin", "68KB/1.00MB", "2/12/2019 8:42:18 AM", "Disabled"));
+		itemsToReturn.add(new ThirdTableItems("AllJoynEvents/Operational", "68KB/1.00MB", "2/24/2019 9:24:51 PM", "Disabled"));
+		itemsToReturn.add(new ThirdTableItems("Microsoft-Windows-AppHost/Admin", "68KB/1.00MB", "3/21/2019 5:52:22 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("System", "68KB/100MB", "4/20/2019 8:05:32 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Windows PowerShell", "68KB/100KB", "1/12/2019 10:30:52 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("AMSI/Operational", "1.07KB/100KB", "2/24/2019 9:45:58 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Forwarded Events", "0 Bytes/20MB", "2/22/2019 11:45:58 PM", "Disabled"));
+		itemsToReturn.add(new ThirdTableItems("Microsoft-Windows-Client-Licensing/Admin","1.00MB/1.00MB", "2/22/2019 1:05:24 AM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Microsoft-Windows-AAD/Operational", "1.00MB/1.00MB", "2/22/2019 11:45:58 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Microsoft-Windows-All-User-Install-Agent/Admin", "68KB/1.00MB", "2/12/2019 8:42:18 AM", "Disabled"));
+		itemsToReturn.add(new ThirdTableItems("AllJoynEvents/Operational", "68KB/1.00MB", "2/24/2019 9:24:51 PM", "Disabled"));
+		itemsToReturn.add(new ThirdTableItems("Microsoft-Windows-AppHost/Admin", "68KB/1.00MB", "3/21/2019 5:52:22 PM", "Enabled"));
 		
 		return itemsToReturn;
 	}
