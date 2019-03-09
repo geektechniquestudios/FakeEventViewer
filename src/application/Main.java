@@ -19,7 +19,6 @@ public class Main extends Application
 			primaryStage.getIcons().add(new Image("/imageAssets/icon.png"));
 			//primaryStage.setMaximized(true); // does EV start full screen normally?
 			
-			
 			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("EventViewer.fxml"));
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());

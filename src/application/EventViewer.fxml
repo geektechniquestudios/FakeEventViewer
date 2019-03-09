@@ -286,4 +286,7 @@
          </items>
       </SplitPane>
    </center>
+   <bottom>
+      <HBox prefHeight="20.0" BorderPane.alignment="CENTER" />
+   </bottom>
 </BorderPane>

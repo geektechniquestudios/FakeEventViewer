@@ -9,7 +9,6 @@
     -fx-font-size: 0.85em;
 }
 
-
 .overviewLabel
 {
 	-fx-background-color: rgb(150,150,150);
@@ -37,7 +36,7 @@
 .accordion .title > .arrow-button .arrow
 {
   /*-fx-translate-x: 220; */
-  
+
 }
 
  
