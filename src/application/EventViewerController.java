@@ -192,6 +192,10 @@ public class EventViewerController implements Initializable
 		$24Hours.setCellValueFactory(new PropertyValueFactory<FirstTableItems, String>("$24Hours"));
 		$7Days.setCellValueFactory(new PropertyValueFactory<FirstTableItems, String>("$7Days"));
 		
+		lastHour.setStyle( "-fx-alignment: CENTER-RIGHT;");
+		$24Hours.setStyle( "-fx-alignment: CENTER-RIGHT;");
+		$7Days.setStyle( "-fx-alignment: CENTER-RIGHT;");
+		
 		firstTable.setItems(getFirstTableItems());
 		//firstTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);//all columns autosize, might remove
 		
@@ -321,7 +325,7 @@ public class EventViewerController implements Initializable
         Platform.runLater(() -> accordion2.getPanes().forEach(TitledPaneUtils::putArrowOnRight));
         Platform.runLater(() -> accordion3.getPanes().forEach(TitledPaneUtils::putArrowOnRight));
         Platform.runLater(() -> accordion4.getPanes().forEach(TitledPaneUtils::putArrowOnRight));
-        Platform.runLater(() -> rightAccordion.getPanes().forEach(TitledPaneUtils::putArrowOnRight));
+        Platform.runLater(() -> rightAccordion.getPanes().forEach(TitledPaneUtils::putArrowOnRightLess));
         
 //        ScrollBar someScrollBar = (ScrollBar) firstTable.lookup(".scroll-bar:vertical");
 //        someScrollBar.setDisable(true);

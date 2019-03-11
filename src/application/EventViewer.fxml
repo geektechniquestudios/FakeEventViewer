@@ -191,18 +191,19 @@
                            <content>
                               <AnchorPane>
                                  <children>
-                                    <TableView id="firstTable" fx:id="firstTable" layoutX="18.0" layoutY="25.0" prefHeight="140.0" prefWidth="881.0" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <TableView id="firstTable" fx:id="firstTable" layoutX="18.0" layoutY="25.0" prefHeight="144.0" prefWidth="881.0" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <columns>
-                                        <TableColumn fx:id="eventType" prefWidth="100.0" text="Event Type" />
-                                        <TableColumn fx:id="eventID" prefWidth="87.0" text="Event ID" />
-                                          <TableColumn fx:id="source" prefWidth="103.0" text="Source" />
-                                          <TableColumn fx:id="log" prefWidth="96.0" text="Log" />
-                                          <TableColumn fx:id="lastHour" prefWidth="124.0" text="Last hour" />
-                                          <TableColumn fx:id="$24Hours" prefWidth="124.0" text="24 hours" />
-                                          <TableColumn fx:id="$7Days" prefWidth="146.79999999999995" text="7 days" />
+                                        <TableColumn fx:id="eventType" prefWidth="115.99997103214264" text="Event Type" />
+                                        <TableColumn fx:id="eventID" prefWidth="89.99999237060547" text="Event ID" />
+                                          <TableColumn fx:id="source" prefWidth="132.0" text="Source" />
+                                          <TableColumn fx:id="log" prefWidth="156.0" text="Log" />
+                                          <TableColumn fx:id="lastHour" prefWidth="81.00003051757812" text="Last hour" />
+                                          <TableColumn fx:id="$24Hours" prefWidth="83.0" text="24 hours" />
+                                          <TableColumn fx:id="$7Days" text="7 days" />
                                       </columns>
                                     </TableView>
-                                 </children></AnchorPane>
+                                 </children>
+                              </AnchorPane>
                            </content>
                         </TitledPane>
                      </panes>
@@ -218,10 +219,10 @@
                                  <children>
                                     <TableView fx:id="secondTable" layoutX="185.0" layoutY="-25.0" prefHeight="150.0" prefWidth="801.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <columns>
-                                        <TableColumn fx:id="name" prefWidth="127.99999392032623" text="Name" />
-                                        <TableColumn fx:id="description" prefWidth="81.0" text="Description" />
-                                          <TableColumn fx:id="modified" prefWidth="139.0" text="Modified" />
-                                          <TableColumn fx:id="created" prefWidth="156.0" text="Created" />
+                                        <TableColumn fx:id="name" prefWidth="192.9999634027481" text="Name" />
+                                        <TableColumn fx:id="description" prefWidth="107.0" text="Description" />
+                                          <TableColumn fx:id="modified" prefWidth="150.0" text="Modified" />
+                                          <TableColumn fx:id="created" prefWidth="185.00003051757812" text="Created" />
                                       </columns>
                                     </TableView>
                                  </children></AnchorPane>
@@ -241,10 +242,10 @@
                                     <TableView fx:id="thirdTable" layoutX="267.0" layoutY="-25.0" prefHeight="150.0" prefWidth="941.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <columns>
                                         <TableColumn fx:id="logName" prefWidth="143.99999392032623" text="Log Name" />
-                                        <TableColumn fx:id="size" prefWidth="101.0" text="Size (Current/Maximum)" />
-                                          <TableColumn fx:id="modified2" prefWidth="155.0" text="Modified" />
-                                          <TableColumn fx:id="enabled" prefWidth="90.0" text="Enabeled" />
-                                          <TableColumn fx:id="retentionPolicy" prefWidth="172.00003051757812" text="Retention Policy" />
+                                        <TableColumn fx:id="size" prefWidth="93.0" text="Size (Current/Maximum)" />
+                                          <TableColumn fx:id="modified2" prefWidth="163.0" text="Modified" />
+                                          <TableColumn fx:id="enabled" prefWidth="101.0" text="Enabeled" />
+                                          <TableColumn fx:id="retentionPolicy" prefWidth="191.00003051757812" text="Retention Policy" />
                                       </columns>
                                     </TableView>
                                  </children>
@@ -268,7 +269,7 @@
                   </HBox>
                   <Accordion fx:id="rightAccordion" maxWidth="277.0" prefHeight="2000.0" prefWidth="277.0" style="-fx-body-color: #acc1e2; -fx-border-style: none;">
                     <panes>
-                      <TitledPane fx:id="rightTitled" animated="false" style="-fx-animated: true; -fx-border-style: none;" text="Event Viewer (Local)">
+                      <TitledPane fx:id="rightTitled" animated="false" maxWidth="277.0" prefWidth="277.0" style="-fx-animated: true; -fx-border-style: none;" text="Event Viewer (Local)">
                         <content>
                           <AnchorPane prefWidth="277.0" style="-fx-background-color: white; -fx-border-color: white; -fx-border-style: none;">
                                  <children>
@@ -277,7 +278,8 @@
                                           <Image url="@../imageAssets/rightMenu2.png" />
                                        </image>
                                     </ImageView>
-                                 </children></AnchorPane>
+                                 </children>
+                              </AnchorPane>
                         </content>
                       </TitledPane>
                     </panes>
