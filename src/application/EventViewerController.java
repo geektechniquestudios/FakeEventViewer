@@ -1,12 +1,19 @@
 package application;
 
+import javafx.application.Platform;
+import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Accordion;
+import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollBar;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TitledPane;
@@ -16,8 +23,12 @@ import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
 import itemPopulation.*;
 import java.net.URL;
 import java.time.LocalDateTime;
@@ -48,6 +59,14 @@ public class EventViewerController implements Initializable
 	@FXML private Accordion rightAccordion;
 	@FXML private TitledPane rightTitled;
 	
+	@FXML private Label switchingArrow1;
+	@FXML private Label switchingArrow2;
+	@FXML private Label switchingArrow3;
+	@FXML private Label switchingArrow4;
+	@FXML private Label switchingArrowRight;
+	
+	@FXML private HBox titleHBox1;
+
 	//first table
 	@FXML private TableView<FirstTableItems> firstTable;
 	
@@ -91,8 +110,18 @@ public class EventViewerController implements Initializable
 		expandAccordions();
 		setToolTips();
 		fillTables();	
+		rightAlignArrows();
+		disableScroll();
 	}
 	
+//	public void disableScroll()
+//	{
+//		ScrollBar vScrollBar = (ScrollBar) firstTable.lookup(".scroll-bar:vertical");
+//		ScrollBar hScrollBar = (ScrollBar) firstTable.lookup(".scroll-bar:horizontal");
+//		hScrollBar.setVisible(false);
+//		vScrollBar.setVisible(false);
+//	}
+//	
 	private void populateLeftTree()
 	{
 		TreeItem<String> rootItem = new TreeItem<String> ("Event Viewer (Local)", rootIcon);
@@ -164,7 +193,7 @@ public class EventViewerController implements Initializable
 		$7Days.setCellValueFactory(new PropertyValueFactory<FirstTableItems, String>("$7Days"));
 		
 		firstTable.setItems(getFirstTableItems());
-		firstTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);//all columns autosize, might remove
+		//firstTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);//all columns autosize, might remove
 		
 		//second table
 		name.setCellValueFactory(new PropertyValueFactory<SecondTableItems, String>("name"));
@@ -284,4 +313,57 @@ public class EventViewerController implements Initializable
 		
 		return itemsToReturn;
 	}
+	
+	private void rightAlignArrows()
+	{
+		//must run after init. Explanation complex
+        Platform.runLater(() -> accordion1.getPanes().forEach(TitledPaneUtils::putArrowOnRight));
+        Platform.runLater(() -> accordion2.getPanes().forEach(TitledPaneUtils::putArrowOnRight));
+        Platform.runLater(() -> accordion3.getPanes().forEach(TitledPaneUtils::putArrowOnRight));
+        Platform.runLater(() -> accordion4.getPanes().forEach(TitledPaneUtils::putArrowOnRight));
+        Platform.runLater(() -> rightAccordion.getPanes().forEach(TitledPaneUtils::putArrowOnRight));
+        
+//        ScrollBar someScrollBar = (ScrollBar) firstTable.lookup(".scroll-bar:vertical");
+//        someScrollBar.setDisable(true);
+     
+        //below are many failed attempts at moving the arrows tangled together. Keeping because the scrap code might be useful at some point.
+        
+//		accordion2.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
+//		Label collapsableArrow = new Label();
+//		switchingArrow1.textProperty().bind(
+//		    Bindings.when(titled1.expandedProperty())
+//		    	.then("\u25B4").otherwise("\u25BE"));
+		
+		// HBox.setHgrow(titleHBox1, Priority.ALWAYS);
+		
+		
+		 // Create HBox to hold our Title and Label
+//	    HBox arrowAndRegion = new HBox();
+//	    HBox regionToGrow = new HBox();
+//	    
+//	   // collapsableArrow.minWidthProperty().bind(titled1.widthProperty());
+//		    
+//	    regionToGrow.setMaxWidth(Double.MAX_VALUE);
+//	    HBox.setHgrow(regionToGrow, Priority.ALWAYS);
+//	    HBox.setHgrow(arrowAndRegion, Priority.ALWAYS);
+//	    
+//	    arrowAndRegion.getChildren().addAll
+//	    (
+//	              regionToGrow,
+//	              collapsableArrow
+//	    );
+//	    
+//		titled1.setGraphic(arrowAndRegion);
+		//titled1.setMaxWidth(Double.MAX_VALUE);
+		//titled1.setContentDisplay(ContentDisplay.RIGHT);
+		 
+		
+	}
+	
+	private void disableScroll()
+	{
+		firstTable.addEventFilter(ScrollEvent.ANY, Event::consume);
+	}
+	
+	
 }
