@@ -191,7 +191,7 @@
                            <content>
                               <AnchorPane>
                                  <children>
-                                    <TableView fx:id="firstTable" layoutX="18.0" layoutY="25.0" prefHeight="140.0" prefWidth="881.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <TableView id="firstTable" fx:id="firstTable" layoutX="18.0" layoutY="25.0" prefHeight="140.0" prefWidth="881.0" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <columns>
                                         <TableColumn fx:id="eventType" prefWidth="100.0" text="Event Type" />
                                         <TableColumn fx:id="eventID" prefWidth="87.0" text="Event ID" />
@@ -247,7 +247,8 @@
                                           <TableColumn fx:id="retentionPolicy" prefWidth="172.00003051757812" text="Retention Policy" />
                                       </columns>
                                     </TableView>
-                                 </children></AnchorPane>
+                                 </children>
+                              </AnchorPane>
                            </content>
                         </TitledPane>
                      </panes>
@@ -265,11 +266,11 @@
                         </Label>
                      </children>
                   </HBox>
-                  <Accordion fx:id="rightAccordion" prefHeight="2000.0" prefWidth="299.0" style="-fx-body-color: #acc1e2; -fx-border-style: none;">
+                  <Accordion fx:id="rightAccordion" maxWidth="277.0" prefHeight="2000.0" prefWidth="277.0" style="-fx-body-color: #acc1e2; -fx-border-style: none;">
                     <panes>
                       <TitledPane fx:id="rightTitled" animated="false" style="-fx-animated: true; -fx-border-style: none;" text="Event Viewer (Local)">
                         <content>
-                          <AnchorPane style="-fx-background-color: white; -fx-border-color: white; -fx-border-style: none;">
+                          <AnchorPane prefWidth="277.0" style="-fx-background-color: white; -fx-border-color: white; -fx-border-style: none;">
                                  <children>
                                     <ImageView pickOnBounds="true" preserveRatio="true">
                                        <image>
