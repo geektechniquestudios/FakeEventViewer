@@ -35,9 +35,7 @@
  
 .accordion .title > .arrow-button .arrow
 {
-  /*-fx-translate-x: 220; */
   -fx-focus-color: transparent;
-
 }
 
 /* 
@@ -58,3 +56,49 @@
     -fx-pref-height: 0;
     -fx-max-height: 0;
 }
+
+/* 
+.table-view .scroll-bar * 
+{
+    -fx-min-width: 20;
+    -fx-pref-width: 20;
+    -fx-max-width: 20;
+
+    -fx-min-height: 20;
+    -fx-pref-height: 20;
+    -fx-max-height: 20;
+    
+}
+* 
+*/
+
+.scroll-bar {
+    -fx-font-size: 20px;
+}
+
+.table-row-cell
+{
+	-fx-background-color: white;
+	
+}
+
+.table-row-cell:selected 
+{
+    -fx-background-color: #0078d7;
+}
+
+/* 
+.table-view .table-column {
+  -fx-alignment: CENTER-RIGHT;
+}
+
+.scroll-bar .decrement-arrow {
+    -fx-padding: 10;
+ }
+.scroll-bar .increment-arrow {
+    -fx-padding: 10;
+}
+* 
+*/
+
+
