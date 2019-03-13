@@ -91,10 +91,9 @@
 
 .table-row-cell
 {
-	-fx-background-color: white;
-	-fx-border-color: white;
-	-fx-table-cell-border-color: white;
-
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+	-fx-table-cell-border-color: transparent;
 }
 
 .table-row-cell:selected
