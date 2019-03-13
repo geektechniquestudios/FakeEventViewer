@@ -272,12 +272,12 @@ public class EventViewerController implements Initializable
 	private ObservableList<ThirdTableItems> getThirdTableItems()
 	{
 		ObservableList<ThirdTableItems> itemsToReturn = FXCollections.observableArrayList();
-		itemsToReturn.add(new ThirdTableItems("Application", "407 MB/20 MB", "3/7/2019 11:03:22 PM", "Enabled"));
-		itemsToReturn.add(new ThirdTableItems("Hardware Events", "68 KB/20MB", "2/18/2019 11:32:25 PM", "Enabled"));
-		itemsToReturn.add(new ThirdTableItems("IntelAudioServiceLog", "68KB/20MB", "2/24/2019 11:33:23 AM", "Enabled"));
-		itemsToReturn.add(new ThirdTableItems("Internet Explorer", "68KB/100MB", "2/30/2019 11:45:22 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Application", "407 MB/20 MB", "3/7/2019 4:03:22 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Hardware Events", "68 KB/20MB", "2/18/2019 7:32:25 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("IntelAudioServiceLog", "68KB/20MB", "2/24/2019 2:33:23 AM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Internet Explorer", "68KB/100MB", "2/30/2019 9:45:22 PM", "Enabled"));
 		itemsToReturn.add(new ThirdTableItems("Key Management Service", "68KB/20MB", "2/29/2019 11:42:12 PM", "Enabled"));
-		itemsToReturn.add(new ThirdTableItems("Microsoft Office Alerts", "68KB/100MB", "2/22/2019 11:45:58 PM", "Enabled"));
+		itemsToReturn.add(new ThirdTableItems("Microsoft Office Alerts", "68KB/100MB", "2/22/2019 10:45:58 PM", "Enabled"));
 		itemsToReturn.add(new ThirdTableItems("PreEmptive","68KB/100MB", "2/22/2019 5:05:32 PM", "Enabled"));
 		itemsToReturn.add(new ThirdTableItems("Security", "68KB/100MB", "2/12/2019 1:02:33 AM", "Enabled"));
 		itemsToReturn.add(new ThirdTableItems("System", "68KB/100MB", "4/20/2019 8:05:32 PM", "Enabled"));
@@ -376,10 +376,12 @@ public class EventViewerController implements Initializable
 			//AnchorPane secondTablePane = (AnchorPane) secondTable.lookup(".");
 			
 	        someScrollBar.setTranslateY(-12);
-	        someScrollBar.setScaleY(1.2);
+	        someScrollBar.setScaleY(1.2); 
 //	        someScrollBar.setMinHeight();
+//	        someScrollBar.setPrefHeight();
 //	        someScrollBar.setMaxHeight();
 	       
+	        
 	        ScrollBar anotherScrollBar = (ScrollBar) thirdTable.lookup(".scroll-bar:vertical");
 	        anotherScrollBar.setTranslateY(-12);
 	        anotherScrollBar.setScaleY(1.11);

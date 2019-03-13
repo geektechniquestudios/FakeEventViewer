@@ -161,10 +161,9 @@
 
 .table-view .column-header .label
 {
-		-fx-alignment: baseline-left;
-		-fx-background-radius: 0.0;
+	-fx-alignment: baseline-left;
+	-fx-font-weight: normal;
 }
-
  
 .table-view .column-header
 {
