@@ -193,13 +193,13 @@
                                  <children>
                                     <TableView id="firstTable" fx:id="firstTable" layoutX="18.0" layoutY="25.0" prefHeight="144.0" prefWidth="881.0" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <columns>
-                                        <TableColumn fx:id="eventType" prefWidth="115.99997103214264" text="Event Type" />
-                                        <TableColumn fx:id="eventID" prefWidth="89.99999237060547" text="Event ID" />
-                                          <TableColumn fx:id="source" prefWidth="132.0" text="Source" />
-                                          <TableColumn fx:id="log" prefWidth="156.0" text="Log" />
-                                          <TableColumn fx:id="lastHour" prefWidth="81.00003051757812" text="Last hour" />
-                                          <TableColumn id="a24Hours" fx:id="$24Hours" prefWidth="83.0" text="24 hours" />
-                                          <TableColumn id="a7Days" fx:id="$7Days" text="7 days" />
+                                        <TableColumn fx:id="eventType" editable="false" prefWidth="115.99997103214264" sortable="false" text="Event Type" />
+                                        <TableColumn fx:id="eventID" editable="false" prefWidth="89.99999237060547" sortable="false" text="Event ID" />
+                                          <TableColumn fx:id="source" editable="false" prefWidth="132.0" sortable="false" text="Source" />
+                                          <TableColumn fx:id="log" editable="false" prefWidth="156.0" sortable="false" text="Log" />
+                                          <TableColumn fx:id="lastHour" editable="false" prefWidth="81.00003051757812" sortable="false" text="Last hour" />
+                                          <TableColumn id="a24Hours" fx:id="$24Hours" editable="false" prefWidth="83.0" sortable="false" text="24 hours" />
+                                          <TableColumn id="a7Days" fx:id="$7Days" editable="false" sortable="false" text="7 days" />
                                       </columns>
                                     </TableView>
                                  </children>

@@ -159,6 +159,32 @@
 	-fx-background-color: white;
 }
 
+.table-view .column-header .label
+{
+		-fx-alignment: baseline-left;
+		-fx-background-radius: 0.0;
+}
+
+ 
+.table-view .column-header
+{
+	-fx-background-color: transparent;
+	-fx-border-color: rgb(229,229,229);
+	-fx-border-width: 0 0.5 0 0.5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
