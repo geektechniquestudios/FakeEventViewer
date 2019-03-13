@@ -91,13 +91,21 @@
 
 .table-row-cell
 {
-	-fx-background-color: white;
-
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+	-fx-table-cell-border-color: transparent;
 }
 
-.table-row-cell:selected 
+.table-row-cell:selected
 {
     -fx-background-color: #0078d7;
+}
+
+
+.table-row-cell:selected .text
+{
+       -fx-fill: white ;
+
 }
 
 #lastHour .label
@@ -106,7 +114,11 @@
 }
 
 #a24Hours .label
-/*doesn't work */
+{
+	-fx-alignment: baseline-right;
+}
+
+#a7Days .label
 {
 	-fx-alignment: baseline-right;
 }
@@ -125,13 +137,20 @@
 */
 
 
+.table-view
+{
+	  -fx-focus-color: transparent;
+	  
+}
+
 .table-view .column-header-background .label
 {
     -fx-background-color: white;
   
 }
 
-.table-view .column-header-background{
+.table-view .column-header-background
+{
     -fx-background-color: white;
 }
 
@@ -139,4 +158,9 @@
 {
 	-fx-background-color: white;
 }
+
+
+
+
+
 

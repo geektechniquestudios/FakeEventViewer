@@ -111,7 +111,7 @@ public class EventViewerController implements Initializable
 		setToolTips();
 		fillTables();	
 		rightAlignArrows();
-		disableScroll();
+		stretchScrollBars();
 	}
 	
 //	public void disableScroll()
@@ -197,6 +197,9 @@ public class EventViewerController implements Initializable
 		$7Days.setStyle( "-fx-alignment: CENTER-RIGHT;");
 		
 		firstTable.setItems(getFirstTableItems());
+		
+		firstTable.addEventFilter(ScrollEvent.ANY, Event::consume);//disable scrolling in the first table
+
 		//firstTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);//all columns autosize, might remove
 		
 		//second table
@@ -322,21 +325,12 @@ public class EventViewerController implements Initializable
 	{
 		//must run after init. Explanation complex
         Platform.runLater(() -> 
-        {
-        	
-        accordion1.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
-        accordion2.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
-        accordion3.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
-        accordion4.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
-        rightAccordion.getPanes().forEach(TitledPaneUtils::putArrowOnRightLess);
-        
-        ScrollBar someScrollBar = (ScrollBar) secondTable.lookup(".scroll-bar:vertical");
-        someScrollBar.setTranslateY(-12);
-        someScrollBar.setScaleY(1.2);
-       
-        ScrollBar anotherScrollBar = (ScrollBar) thirdTable.lookup(".scroll-bar:vertical");
-        anotherScrollBar.setTranslateY(-12);
-        anotherScrollBar.setScaleY(1.11);
+        { 	
+	        accordion1.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
+	        accordion2.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
+	        accordion3.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
+	        accordion4.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
+	        rightAccordion.getPanes().forEach(TitledPaneUtils::putArrowOnRightLess);
         }
         );
         
@@ -370,14 +364,25 @@ public class EventViewerController implements Initializable
 //		titled1.setGraphic(arrowAndRegion);
 		//titled1.setMaxWidth(Double.MAX_VALUE);
 		//titled1.setContentDisplay(ContentDisplay.RIGHT);
-		 
-		
+
 	}
-	
-	private void disableScroll()
+
+	private void stretchScrollBars()
 	{
-		firstTable.addEventFilter(ScrollEvent.ANY, Event::consume);
+		Platform.runLater(() ->
+		{
+			ScrollBar someScrollBar = (ScrollBar) secondTable.lookup(".scroll-bar:vertical");
+			
+			//AnchorPane secondTablePane = (AnchorPane) secondTable.lookup(".");
+			
+	        someScrollBar.setTranslateY(-12);
+	        someScrollBar.setScaleY(1.2);
+//	        someScrollBar.setMinHeight();
+//	        someScrollBar.setMaxHeight();
+	       
+	        ScrollBar anotherScrollBar = (ScrollBar) thirdTable.lookup(".scroll-bar:vertical");
+	        anotherScrollBar.setTranslateY(-12);
+	        anotherScrollBar.setScaleY(1.11);
+		});   
 	}
-	
-	
 }

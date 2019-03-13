@@ -131,7 +131,7 @@
                         <Insets bottom="5.0" />
                      </padding>
                   </AnchorPane>
-                  <HBox maxHeight="31.0" minHeight="31.0" minWidth="31.0" prefHeight="31.0" prefWidth="813.0" styleClass="overviewLabelBox" stylesheets="@application.css">
+                  <HBox maxHeight="31.0" minHeight="31.0" minWidth="100.0" prefHeight="31.0" prefWidth="813.0" styleClass="overviewLabelBox" stylesheets="@application.css">
                      <children>
                         <Label fx:id="overviewLabel" maxWidth="1.7976931348623157E308" styleClass="overviewLabel" stylesheets="@application.css" text="Overview and Summary" textFill="WHITE" translateY="2.0">
                            <opaqueInsets>
@@ -198,8 +198,8 @@
                                           <TableColumn fx:id="source" prefWidth="132.0" text="Source" />
                                           <TableColumn fx:id="log" prefWidth="156.0" text="Log" />
                                           <TableColumn fx:id="lastHour" prefWidth="81.00003051757812" text="Last hour" />
-                                          <TableColumn fx:id="$24Hours" prefWidth="83.0" text="24 hours" />
-                                          <TableColumn fx:id="$7Days" text="7 days" />
+                                          <TableColumn id="a24Hours" fx:id="$24Hours" prefWidth="83.0" text="24 hours" />
+                                          <TableColumn id="a7Days" fx:id="$7Days" text="7 days" />
                                       </columns>
                                     </TableView>
                                  </children>
@@ -222,7 +222,7 @@
                                         <TableColumn fx:id="name" prefWidth="192.9999634027481" text="Name" />
                                         <TableColumn fx:id="description" prefWidth="107.0" text="Description" />
                                           <TableColumn fx:id="modified" prefWidth="150.0" text="Modified" />
-                                          <TableColumn id="a24Hours" fx:id="created" prefWidth="185.00003051757812" text="Created" />
+                                          <TableColumn fx:id="created" prefWidth="185.00003051757812" text="Created" />
                                       </columns>
                                     </TableView>
                                  </children></AnchorPane>
