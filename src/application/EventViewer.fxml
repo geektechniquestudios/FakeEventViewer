@@ -222,7 +222,7 @@
                                         <TableColumn fx:id="name" prefWidth="192.9999634027481" text="Name" />
                                         <TableColumn fx:id="description" prefWidth="107.0" text="Description" />
                                           <TableColumn fx:id="modified" prefWidth="150.0" text="Modified" />
-                                          <TableColumn fx:id="created" prefWidth="185.00003051757812" text="Created" />
+                                          <TableColumn id="a24Hours" fx:id="created" prefWidth="185.00003051757812" text="Created" />
                                       </columns>
                                     </TableView>
                                  </children></AnchorPane>

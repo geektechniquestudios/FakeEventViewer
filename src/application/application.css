@@ -72,19 +72,43 @@
 * 
 */
 
-.scroll-bar {
-    -fx-font-size: 20px;
+.scroll-bar 
+{
+    -fx-font-size: 15px;
+    -fx-background-color: #f0f0f0;
+}
+
+.scroll-bar .thumb
+{
+	-fx-background-color: #cdcdcd;
+	-fx-background-radius:0.0;
+}
+
+.scroll-bar .thumb:hover
+{
+	-fx-background-color: #939393;
 }
 
 .table-row-cell
 {
 	-fx-background-color: white;
-	
+
 }
 
 .table-row-cell:selected 
 {
     -fx-background-color: #0078d7;
+}
+
+#lastHour .label
+{
+	-fx-alignment:baseline-right;
+}
+
+#a24Hours .label
+/*doesn't work */
+{
+	-fx-alignment: baseline-right;
 }
 
 /* 
@@ -98,7 +122,21 @@
 .scroll-bar .increment-arrow {
     -fx-padding: 10;
 }
-* 
 */
 
+
+.table-view .column-header-background .label
+{
+    -fx-background-color: white;
+  
+}
+
+.table-view .column-header-background{
+    -fx-background-color: white;
+}
+
+.table-view .filler
+{
+	-fx-background-color: white;
+}
 
