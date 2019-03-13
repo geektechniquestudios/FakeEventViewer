@@ -253,7 +253,7 @@ public class EventViewerController implements Initializable
 	{
 		ObservableList<SecondTableItems> itemsToReturn = FXCollections.observableArrayList();
 		itemsToReturn.add(new SecondTableItems("Custom Views/Administrative Events","Critical, Error, and Warning events from all administrative logs", "N/A", "N/A"));
-		itemsToReturn.add(new SecondTableItems("Applications and Services Logs/Windows PowerShell", "N/A","3/7/2019 11:03:22 PM","2/21/2019 8:29:22"));
+		itemsToReturn.add(new SecondTableItems("Applications and Services Logs/Windows PowerShell", "N/A","3/7/2019 11:03:22 PM","2/21/2019 8:29:22 PM"));
 		itemsToReturn.add(new SecondTableItems("Applications and Services Logs/PreEmptive", "N/A", "4/7/2019 11:03:29 PM","3/7/2019 1:03:32 AM"));
 		itemsToReturn.add(new SecondTableItems("Applications and Serivecs Logs/Microsoft Office Alerts", "N/A", "4/7/2019 7:23:54 PM","4/12/2019 3:32:32 AM"));
 		itemsToReturn.add(new SecondTableItems("Applications and Services Logs/Key Management Service", "N/A", "5/7/2019 6:03:12 PM", "3/8/2019 5:13:21 PM"));
@@ -321,15 +321,25 @@ public class EventViewerController implements Initializable
 	private void rightAlignArrows()
 	{
 		//must run after init. Explanation complex
-        Platform.runLater(() -> accordion1.getPanes().forEach(TitledPaneUtils::putArrowOnRight));
-        Platform.runLater(() -> accordion2.getPanes().forEach(TitledPaneUtils::putArrowOnRight));
-        Platform.runLater(() -> accordion3.getPanes().forEach(TitledPaneUtils::putArrowOnRight));
-        Platform.runLater(() -> accordion4.getPanes().forEach(TitledPaneUtils::putArrowOnRight));
-        Platform.runLater(() -> rightAccordion.getPanes().forEach(TitledPaneUtils::putArrowOnRightLess));
+        Platform.runLater(() -> 
+        {
+        	
+        accordion1.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
+        accordion2.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
+        accordion3.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
+        accordion4.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
+        rightAccordion.getPanes().forEach(TitledPaneUtils::putArrowOnRightLess);
         
-//        ScrollBar someScrollBar = (ScrollBar) firstTable.lookup(".scroll-bar:vertical");
-//        someScrollBar.setDisable(true);
-     
+        ScrollBar someScrollBar = (ScrollBar) secondTable.lookup(".scroll-bar:vertical");
+        someScrollBar.setTranslateY(-12);
+        someScrollBar.setScaleY(1.2);
+       
+        ScrollBar anotherScrollBar = (ScrollBar) thirdTable.lookup(".scroll-bar:vertical");
+        anotherScrollBar.setTranslateY(-12);
+        anotherScrollBar.setScaleY(1.11);
+        }
+        );
+        
         //below are many failed attempts at moving the arrows tangled together. Keeping because the scrap code might be useful at some point.
         
 //		accordion2.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
