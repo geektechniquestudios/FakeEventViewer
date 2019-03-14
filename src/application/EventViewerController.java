@@ -29,6 +29,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
+import javafx.scene.transform.Rotate;
 import itemPopulation.*;
 import java.net.URL;
 import java.time.LocalDateTime;
@@ -112,6 +113,7 @@ public class EventViewerController implements Initializable
 		fillTables();	
 		rightAlignArrows();
 		stretchScrollBars();
+		pointAllArrowsUp();
 	}
 	
 //	public void disableScroll()
@@ -387,4 +389,34 @@ public class EventViewerController implements Initializable
 	        anotherScrollBar.setScaleY(1.11);
 		});   
 	}
+	
+	public void pointAllArrowsUp()
+	{
+		Platform.runLater(() ->
+		{
+			pointArrowUp(titled1);
+			pointArrowUp(titled2);
+			pointArrowUp(titled3);
+			pointArrowUp(titled4);
+			pointArrowUp(rightTitled);
+		});
+	}
+	
+	private void pointArrowUp(TitledPane pane)
+	{
+		Region arrow = (Region) pane.lookup(".arrow");
+
+	    Rotate rotate = new Rotate();
+	    rotate.pivotXProperty().bind(arrow.widthProperty().divide(2.0));
+	    rotate.pivotYProperty().bind(arrow.heightProperty().divide(2.0));
+	    rotate.angleProperty().bind(
+	            Bindings.when(pane.expandedProperty())
+	                    .then(-180.0)
+	                    .otherwise(90.0)
+	    );
+
+	    arrow.getTransforms().add(rotate);
+	    pane.setAnimated(false);
+	}
+	
 }
