@@ -36,15 +36,29 @@
 .accordion .title > .arrow-button .arrow
 {
   -fx-focus-color: transparent;
+  -fx-scale-x: 0.6;
+  -fx-scale-y: 0.6; 
 }
+
+
+.titled-pane:collapsed > .title > .arrow-button 
+{ 
+	
+	/*can not rotate  */
+	
+}
+
+
+
+.accordion > .titled-pane > .title > .arrow-button { -fx-rotate: 0; }
 
 /* 
 .accordion .title > .arrow-button
 {
     visibility: hidden;
+	-fx-rotate: -45;   
 }
 */
-
 
 #firstTable .scroll-bar * 
 {
@@ -56,6 +70,40 @@
     -fx-pref-height: 0;
     -fx-max-height: 0;
 }
+
+.titled-pane > .title 
+{
+	-fx-background-color: linear-gradient(to bottom, #f0f0f0, #aaaaaa);
+	-fx-border-color: black;
+	/*-fx-background-color:  #acc1e2;*/
+}
+
+
+ 
+#rightTitled > .title
+{
+	
+	-fx-animated: true;
+	-fx-border-style: none;
+	-fx-border-width: 0;
+	-fx-background-color:  #afc8e2;
+}
+
+#rightTitled > .title > .arrow-button > .arrow
+{
+	-fx-focus-color: transparent;
+	-fx-scale-x: 1.2;
+	-fx-scale-y: 1; 
+}
+
+
+/* 
+#rightAccordion .titled-pane
+{
+	 -fx-body-color: #acc1e2;
+	 -fx-background-color:  #blue;
+}
+*/
 
 /* 
 .table-view .scroll-bar * 
@@ -78,11 +126,13 @@
     -fx-background-color: #f0f0f0;
 }
 
+
 .scroll-bar .thumb
 {
 	-fx-background-color: #cdcdcd;
 	-fx-background-radius:0.0;
 }
+
 
 .scroll-bar .thumb:hover
 {
@@ -93,6 +143,8 @@
 {
 	-fx-background-color: transparent;
 	-fx-border-color: transparent;
+	
+	/*The below is very important, even though it errors */
 	-fx-table-cell-border-color: transparent;
 }
 
@@ -140,6 +192,8 @@
 .table-view
 {
 	  -fx-focus-color: transparent;
+ 	  -fx-border-color: black;
+	  -fx-border-width: .2; 
 	  
 }
 
