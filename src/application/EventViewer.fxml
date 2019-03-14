@@ -267,9 +267,9 @@
                         </Label>
                      </children>
                   </HBox>
-                  <Accordion fx:id="rightAccordion" maxWidth="277.0" prefHeight="2000.0" prefWidth="277.0" style="-fx-body-color: #acc1e2; -fx-border-style: none;">
+                  <Accordion id="rightAccordion" fx:id="rightAccordion" maxWidth="277.0" prefHeight="2000.0" prefWidth="277.0" style="-fx-body-color: #acc1e2; -fx-border-style: none;" stylesheets="@application.css">
                     <panes>
-                      <TitledPane fx:id="rightTitled" animated="false" maxWidth="277.0" prefWidth="277.0" style="-fx-animated: true; -fx-border-style: none;" text="Event Viewer (Local)">
+                      <TitledPane id="rightTitled" fx:id="rightTitled" animated="false" maxWidth="277.0" prefWidth="277.0" style="-fx-animated: true; -fx-border-style: none;" stylesheets="@application.css" text="Event Viewer (Local)">
                         <content>
                           <AnchorPane prefWidth="277.0" style="-fx-background-color: white; -fx-border-color: white; -fx-border-style: none;">
                                  <children>
