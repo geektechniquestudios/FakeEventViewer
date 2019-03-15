@@ -131,9 +131,9 @@
                         <Insets bottom="5.0" />
                      </padding>
                   </AnchorPane>
-                  <HBox maxHeight="31.0" minHeight="31.0" minWidth="100.0" prefHeight="31.0" prefWidth="813.0" styleClass="overviewLabelBox" stylesheets="@application.css">
+                  <HBox minHeight="31.0" minWidth="100.0" prefHeight="31.0" prefWidth="813.0" styleClass="overviewLabelBox" stylesheets="@application.css">
                      <children>
-                        <Label fx:id="overviewLabel" maxWidth="1.7976931348623157E308" styleClass="overviewLabel" stylesheets="@application.css" text="Overview and Summary" textFill="WHITE" translateY="2.0">
+                        <Label fx:id="overviewLabel" styleClass="overviewLabel" stylesheets="@application.css" text="Overview and Summary" textFill="WHITE" translateY="2.0">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>

@@ -33,7 +33,7 @@
 }
 
  
-.accordion .title > .arrow-button .arrow
+.accordion .title > .arrow-button > .arrow
 {
   -fx-focus-color: transparent;
   -fx-scale-x: 0.6;
@@ -41,13 +41,14 @@
   -fx-background-color: black;
 }
 
-
+/* 
 .titled-pane:collapsed > .title > .arrow-button 
 { 
 	
-	/*can not rotate  */
+	can not rotate  
 	
 }
+*/
 
 
 
@@ -195,7 +196,7 @@
 {
 	  -fx-focus-color: transparent;
  	  -fx-border-color: black;
-	  -fx-border-width: .2; 
+	  -fx-border-width: .25; 
 	  
 }
 
@@ -228,14 +229,35 @@
 	-fx-border-width: 0 0.5 0 0.5;
 }
 
-
+/*  
 .tree-disclosure-node
 {
 	visibility: hidden;
 }
 
+.tree-view
+{
+	-fx-translate-x: 20;
+}
+*/
+
+.tree-cell > .tree-disclosure-node > .arrow
+{
+    -fx-shape: "M 0 0 L 10 5 L 0 10 L 0 8 L 8 5 L 0 2 Z";
+    -fx-background-color: #a6a6a6;
+}
 
 
+.tree-cell > .tree-disclosure-node > .arrow:hover
+{
+    -fx-background-color: #5cd5f9;
+}
+
+.tree-cell:selected
+{
+	-fx-background-color: transparent;
+	-fx-text-fill: pink;
+}
 
 
 
