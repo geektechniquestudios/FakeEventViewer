@@ -36,7 +36,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.ResourceBundle;
-import itemPopulation.leftTreeHelper;
+import itemPopulation.LeftTreeHelper;
 
 public class EventViewerController implements Initializable 
 {
@@ -129,7 +129,7 @@ public class EventViewerController implements Initializable
 		TreeItem<String> rootItem = new TreeItem<String> ("Event Viewer (Local)", rootIcon);
         rootItem.setExpanded(true);          
         
-        leftTreeHelper someLeftTree = new leftTreeHelper();
+        LeftTreeHelper someLeftTree = new LeftTreeHelper();
         ArrayList<TreeItem> treePopulator = someLeftTree.leftTreeFill();
         
         for(TreeItem x : treePopulator)
@@ -369,7 +369,7 @@ public class EventViewerController implements Initializable
 
 	}
 
-	private void stretchScrollBars()
+	private void stretchScrollBars()//garbage 
 	{
 		Platform.runLater(() ->
 		{
@@ -394,28 +394,35 @@ public class EventViewerController implements Initializable
 	{
 		Platform.runLater(() ->
 		{
-			pointArrowUp(titled1);
-			pointArrowUp(titled2);
-			pointArrowUp(titled3);
-			pointArrowUp(titled4);
-			pointArrowUp(rightTitled);
+			pointArrowUp(titled1, true);
+			pointArrowUp(titled2, true);
+			pointArrowUp(titled3, true);
+			pointArrowUp(titled4, true);
+			pointArrowUp(rightTitled, false);
 		});
 	}
 	
-	private void pointArrowUp(TitledPane pane)
+	private void pointArrowUp(TitledPane pane, boolean someBool)
 	{
 		Region arrow = (Region) pane.lookup(".arrow");
 
 	    Rotate rotate = new Rotate();
 	    rotate.pivotXProperty().bind(arrow.widthProperty().divide(2.0));
 	    rotate.pivotYProperty().bind(arrow.heightProperty().divide(2.0));
-	    rotate.angleProperty().bind(
-	            Bindings.when(pane.expandedProperty())
-	                    .then(-180.0)
-	                    .otherwise(90.0)
+	    rotate.angleProperty().bind
+	    (
+	    	Bindings.when(pane.expandedProperty())
+	            .then(-180.0)
+	            .otherwise(90.0)
 	    );
 
 	    arrow.getTransforms().add(rotate);
+	    
+	    if(someBool)
+	    {
+	    	arrow.setTranslateY(-2);
+	    }
+	    
 	    pane.setAnimated(false);
 	}
 	
