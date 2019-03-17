@@ -402,7 +402,7 @@ public class EventViewerController implements Initializable
 		});
 	}
 	
-	private void pointArrowUp(TitledPane pane, boolean someBool)
+	private void pointArrowUp(TitledPane pane, boolean moveArrowUp)
 	{
 		Region arrow = (Region) pane.lookup(".arrow");
 
@@ -418,9 +418,9 @@ public class EventViewerController implements Initializable
 
 	    arrow.getTransforms().add(rotate);
 	    
-	    if(someBool)
+	    if(moveArrowUp)
 	    {
-	    	arrow.setTranslateY(-2);
+	    	arrow.setTranslateY(-1);
 	    }
 	    
 	    pane.setAnimated(false);
