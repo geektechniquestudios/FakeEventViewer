@@ -9,10 +9,11 @@ import javafx.scene.image.ImageView;
  
 public class LeftTreeHelper
 {
-	private Node rootIcon2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon2.png")));
-	private Node rootIcon3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon3.png")));
-	private Node rootIcon4 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon4.png")));
-	private Node rootIcon5 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon5.png")));
+	//test
+//	private Node rootIcon2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon2.png")));
+//	private Node rootIcon3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon3.png")));
+//	private Node rootIcon4 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon4.png")));
+//	private Node rootIcon5 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon5.png")));
 	private Node adminEventsIcon =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon2a.png")));
 	
 	private Node iconFolder  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder.png")));
@@ -33,8 +34,10 @@ public class LeftTreeHelper
 	private Node iconWarn9  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
 	private Node iconWarn10 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
 	
-	//1Fprivate Node selected1 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/selected1.png")));
-
+	private Node rootIcon2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected1.png")));
+	private Node rootIcon3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected2.png")));
+	private Node rootIcon4 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected3.png")));
+	private Node rootIcon5 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected4.png")));
 	
     public LeftTreeHelper()
     {
