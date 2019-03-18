@@ -23,8 +23,10 @@ import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
@@ -37,6 +39,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.ResourceBundle;
 import itemPopulation.LeftTreeHelper;
+
 
 public class EventViewerController implements Initializable 
 {
@@ -96,8 +99,47 @@ public class EventViewerController implements Initializable
 	@FXML private TableColumn<ThirdTableItems, String> enabled;
 	@FXML private TableColumn<ThirdTableItems, String> retentionPolicy;
 
-    private final Node rootIcon =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon1.png")));//icon for the Left Tree Root
 	
+    private Node selected1 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/selected1.png")));
+    private Node notSelected1 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected1.png")));//icon for the Left Tree Root
+
+    
+    private final Node rootIcon =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon1.png")));//icon for the Left Tree Root
+	private Node rootIcon2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon2.png")));
+	private Node rootIcon3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon3.png")));
+	private Node rootIcon4 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon4.png")));
+	private Node rootIcon5 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon5.png")));
+	private Node adminEventsIcon =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon2a.png")));
+	
+	private Node iconFolder  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder.png")));
+	private Node iconFolder2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder.png")));
+	private Node iconFolder3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder.png")));
+
+	private Node iconPlain  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconPlain.png")));
+	private Node iconPlain2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconPlain.png")));
+	
+	private Node iconWarn   =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconWarn2  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconWarn3  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconWarn4  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconWarn5  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconWarn6  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconWarn7  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconWarn8  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconWarn9  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconWarn10 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+    
+    private BorderPane root;
+    
+    TreeItem<String> rootItem;
+    
+    ArrayList<TreeItem> treePopulator;
+    
+    public void setRoot(BorderPane rootPane)
+    {
+    	root = rootPane;
+    }
+    
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) 
 	{
@@ -114,7 +156,10 @@ public class EventViewerController implements Initializable
 		rightAlignArrows();
 		stretchScrollBars();
 		pointAllArrowsUp();
+		defocusNodes();
 	}
+	
+
 	
 //	public void disableScroll()
 //	{
@@ -126,16 +171,17 @@ public class EventViewerController implements Initializable
 //	
 	private void populateLeftTree()
 	{
-		TreeItem<String> rootItem = new TreeItem<String> ("Event Viewer (Local)", rootIcon);
+		rootItem = new TreeItem<String> ("Event Viewer (Local)", notSelected1);
         rootItem.setExpanded(true);          
         
         LeftTreeHelper someLeftTree = new LeftTreeHelper();
-        ArrayList<TreeItem> treePopulator = someLeftTree.leftTreeFill();
+        treePopulator = someLeftTree.leftTreeFill();
         
         for(TreeItem x : treePopulator)
         {
         	rootItem.getChildren().add(x);
         }
+        
         
         leftTreeView.setRoot(rootItem);
 	}
@@ -390,7 +436,7 @@ public class EventViewerController implements Initializable
 		});   
 	}
 	
-	public void pointAllArrowsUp()
+	private void pointAllArrowsUp()
 	{
 		Platform.runLater(() ->
 		{
@@ -426,4 +472,56 @@ public class EventViewerController implements Initializable
 	    pane.setAnimated(false);
 	}
 	
+	private void defocusNodes()
+	{
+		
+		Platform.runLater(() ->
+		{
+			titled1.requestFocus();//could use basically any node
+		});
+	}
+	
+	/////////////////////////
+	//FXML methods below/////
+	/////////////////////////
+	
+	public void treeItemClicked(MouseEvent somethingClicked)
+	{
+		//set all graphics back to normal each time a new cell is clicked
+		rootItem.setGraphic(notSelected1);
+		
+		
+		TreeItem<String> someItem = leftTreeView.getSelectionModel().getSelectedItem();
+		switch (someItem.getValue())
+		{
+			case "Event Viewer (Local)":
+				System.out.println("This works");
+				rootItem.setGraphic(selected1);
+				//rootItem.getChildren().get(0).setGraphic(selected1);
+				break;
+			case "Custom Views":
+				System.out.println("cust views works");
+				break;
+			case "Windows Logs":
+				System.out.println("logs works");
+				break;
+			case "Applications and Service Logs":
+				System.out.println("service works");
+				break;
+			case "Subscriptions":
+				System.out.println("subs works");
+				break;
+			default:
+				break;
+		}
+		
+		
+		//rootItem.getChildren().get(3).setGraphic(value);
+		System.out.println(someItem.getValue());
+		
+
+		
+	}
+	
+	//get
 }

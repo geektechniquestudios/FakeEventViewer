@@ -33,11 +33,13 @@ public class LeftTreeHelper
 	private Node iconWarn9  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
 	private Node iconWarn10 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
 	
+	//1Fprivate Node selected1 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/selected1.png")));
+
+	
     public LeftTreeHelper()
     {
     }
      
-    // This method creates an ArrayList of TreeItems 
     public ArrayList<TreeItem> leftTreeFill()
     {
         ArrayList<TreeItem> options = new ArrayList<TreeItem>();
@@ -52,16 +54,19 @@ public class LeftTreeHelper
         apps.getChildren().addAll(getApps());
          
         TreeItem subs = new TreeItem("Subscriptions", rootIcon5);
-         
+        
+        //  custView.setGraphic(selected1);
+        
         options.add(custView);
         options.add(winLogs);
         options.add(apps);
         options.add(subs);
-         
+        
+        
+        
         return options;
     }
  
-    // This method creates an ArrayList of TreeItems 
     private ArrayList<TreeItem> getCustViews()
     {
         ArrayList<TreeItem> custView = new ArrayList<TreeItem>();
@@ -71,7 +76,6 @@ public class LeftTreeHelper
         return custView;        
     }
  
-    // This method creates an ArrayList of TreeItems 
     private ArrayList<TreeItem> getWinLogs()
     {
         ArrayList<TreeItem> winLogs = new ArrayList<TreeItem>();
@@ -81,7 +85,7 @@ public class LeftTreeHelper
         TreeItem setup = new TreeItem("Setup", iconPlain);
         TreeItem system = new TreeItem("System", iconWarn3);
         TreeItem forwardedEvents = new TreeItem("Forwarded Events", iconPlain2);
-         
+        
         winLogs.add(app);
         winLogs.add(sec);
         winLogs.add(setup);
@@ -91,7 +95,6 @@ public class LeftTreeHelper
         return winLogs;       
     }
      
-    // This method creates an ArrayList of TreeItems 
     private ArrayList<TreeItem> getApps()
     {
         ArrayList<TreeItem> apps = new ArrayList<TreeItem>();
