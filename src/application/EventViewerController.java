@@ -31,6 +31,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.scene.transform.Rotate;
 import itemPopulation.*;
 import java.net.URL;
@@ -38,6 +40,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.ResourceBundle;
+import java.util.Set;
+
 import itemPopulation.LeftTreeHelper;
 
 
@@ -100,8 +104,19 @@ public class EventViewerController implements Initializable
 	@FXML private TableColumn<ThirdTableItems, String> retentionPolicy;
 
 	
+    private Node selected =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/selected.png")));
     private Node selected1 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/selected1.png")));
-    private Node notSelected1 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected1.png")));//icon for the Left Tree Root
+    private Node selected2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/selected2.png")));
+    private Node selected3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/selected3.png")));
+    private Node selected4 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/selected4.png")));
+
+    private Node notSelected =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected.png")));//icon for the Left Tree Root
+    private Node notSelected1 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected1.png")));
+    private Node notSelected2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected2.png")));
+    private Node notSelected3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected3.png")));
+    private Node notSelected4 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected4.png")));
+    
+    
 
     
     private final Node rootIcon =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon1.png")));//icon for the Left Tree Root
@@ -110,6 +125,8 @@ public class EventViewerController implements Initializable
 	private Node rootIcon4 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon4.png")));
 	private Node rootIcon5 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon5.png")));
 	private Node adminEventsIcon =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon2a.png")));
+	private Node adminEventsIconSelected =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon2aSelected.png")));
+
 	
 	private Node iconFolder  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder.png")));
 	private Node iconFolder2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder.png")));
@@ -157,6 +174,12 @@ public class EventViewerController implements Initializable
 		stretchScrollBars();
 		pointAllArrowsUp();
 		defocusNodes();
+//		Platform.runLater(() ->
+//		{
+//			//Text someText = (Text)leftTreeView.lookup(".text");
+//			Set<Node> otherText = (Set<Node>)leftTreeView.lookupAll(".text");
+//			System.out.println(otherText.size());
+//		}) h;
 	}
 	
 
@@ -171,7 +194,7 @@ public class EventViewerController implements Initializable
 //	
 	private void populateLeftTree()
 	{
-		rootItem = new TreeItem<String> ("Event Viewer (Local)", notSelected1);
+		rootItem = new TreeItem<String> ("Event Viewer (Local)", selected);
         rootItem.setExpanded(true);          
         
         LeftTreeHelper someLeftTree = new LeftTreeHelper();
@@ -485,43 +508,55 @@ public class EventViewerController implements Initializable
 	//FXML methods below/////
 	/////////////////////////
 	
-	public void treeItemClicked(MouseEvent somethingClicked)
+	public void treeItemClicked(MouseEvent somethingClicked)//simulates highlight on click, and handles
 	{
 		//set all graphics back to normal each time a new cell is clicked
-		rootItem.setGraphic(notSelected1);
-		
-		
-		TreeItem<String> someItem = leftTreeView.getSelectionModel().getSelectedItem();
-		switch (someItem.getValue())
-		{
-			case "Event Viewer (Local)":
-				System.out.println("This works");
-				rootItem.setGraphic(selected1);
-				//rootItem.getChildren().get(0).setGraphic(selected1);
-				break;
-			case "Custom Views":
-				System.out.println("cust views works");
-				break;
-			case "Windows Logs":
-				System.out.println("logs works");
-				break;
-			case "Applications and Service Logs":
-				System.out.println("service works");
-				break;
-			case "Subscriptions":
-				System.out.println("subs works");
-				break;
-			default:
-				break;
-		}
-		
-		
-		//rootItem.getChildren().get(3).setGraphic(value);
-		System.out.println(someItem.getValue());
-		
+		rootItem.setGraphic(notSelected);
+		rootItem.getChildren().get(0).setGraphic(notSelected1);
+		rootItem.getChildren().get(1).setGraphic(notSelected2);
+		rootItem.getChildren().get(2).setGraphic(notSelected3);
+		rootItem.getChildren().get(3).setGraphic(notSelected4);
+		rootItem.getChildren().get(0).getChildren().get(0).setGraphic(adminEventsIcon);
 
+		TreeItem<String> someItem = leftTreeView.getSelectionModel().getSelectedItem();
+		
+		try
+		{
+			switch (someItem.getValue())
+			{
+				case "Event Viewer (Local)":
+					rootItem.setGraphic(selected);
+					break;
+					
+				case "Custom Views":
+					rootItem.getChildren().get(0).setGraphic(selected1);
+					break;
+					
+				case "Windows Logs":
+					rootItem.getChildren().get(1).setGraphic(selected2);
+					break;
+					
+				case "Applications and Service Logs":
+					rootItem.getChildren().get(2).setGraphic(selected3);
+					break;
+					
+				case "Subscriptions":
+					rootItem.getChildren().get(3).setGraphic(selected4);
+					break;
+				
+				case "Administrative Events":
+					rootItem.getChildren().get(0).getChildren().get(0).setGraphic(adminEventsIconSelected);
+					
+				default:
+					break;
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("arrow, but not selected");
+		}
+		//System.out.println(someItem.getValue());
+		
 		
 	}
-	
-	//get
 }

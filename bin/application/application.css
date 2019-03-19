@@ -264,17 +264,26 @@
 .tree-cell:selected
 {
 	-fx-background-color: white; /* #cde8ff;*/
-	-fx-text-fill: white;	
+	-fx-text-fill: white;
+	-fx-focus-color: transparent;
+		
+}
+
+.tree-cell:focused
+{
+	-fx-background-color: transparent;
+	-fx-focus-color: transparent;
+	-fx-border-color: transparent;
 }
 
 .tree-cell
 {
+	-fx-focus-color: transparent;
 	-fx-text-fill: white;
-}
-
-.tree-cell .text
-{
-	-fx-background-color: pink;
+	-fx-padding: 0;
+	-fx-indent: 22.0;
+	-fx-translate-x: -3;
+	-fx-border-color: transparent;
 }
 
 .tree-view .scroll-bar * 
