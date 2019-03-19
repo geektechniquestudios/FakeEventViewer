@@ -9,30 +9,25 @@ import javafx.scene.image.ImageView;
  
 public class LeftTreeHelper
 {
-	//test
-//	private Node rootIcon2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon2.png")));
-//	private Node rootIcon3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon3.png")));
-//	private Node rootIcon4 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon4.png")));
-//	private Node rootIcon5 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon5.png")));
 	private Node adminEventsIcon =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon2a.png")));
 	
-	private Node iconFolder  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder.png")));
-	private Node iconFolder2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder.png")));
-	private Node iconFolder3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder.png")));
+	private Node iconFolder  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder1.png")));
+	private Node iconFolder2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder2.png")));
+	private Node iconFolder3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder3.png")));
 
 	private Node iconPlain  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconPlain.png")));
 	private Node iconPlain2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconPlain.png")));
 	
-	private Node iconWarn   =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn2  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn3  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn4  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn5  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn6  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn7  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn8  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn9  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn10 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconWarn   =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn1.png")));
+	private Node iconWarn2  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn2.png")));
+	private Node iconWarn3  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn3.png")));
+	private Node iconWarn4  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn4.png")));
+	private Node iconWarn5  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn5.png")));
+	private Node iconWarn6  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn6.png")));
+	private Node iconWarn7  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn7.png")));
+	private Node iconWarn8  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn8.png")));
+	private Node iconWarn9  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn9.png")));
+	private Node iconWarn10 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn10.png")));
 	
 	private Node rootIcon2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected1.png")));
 	private Node rootIcon3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected2.png")));
@@ -106,7 +101,7 @@ public class LeftTreeHelper
         TreeItem hardware = new TreeItem("Hardware Events", iconWarn4);
         TreeItem audio = new TreeItem("IntelAudioServiceLog", iconWarn5);
         TreeItem ie = new TreeItem("Internet Explorer", iconWarn6);
-        TreeItem keyManage = new TreeItem("KeyManagement Service", iconWarn7);
+        TreeItem keyManage = new TreeItem("Key Management Service", iconWarn7);
         TreeItem microsoft = new TreeItem("Microsoft", iconFolder2);
         TreeItem office = new TreeItem("Microsoft Office Alerts", iconWarn8);
         TreeItem openSSH = new TreeItem("OpenSSH", iconFolder3);
