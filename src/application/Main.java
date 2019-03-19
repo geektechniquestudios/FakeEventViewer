@@ -10,6 +10,16 @@ import javafx.scene.layout.BorderPane;
 import javafx.fxml.FXMLLoader;
 
 
+/*
+ * Things to do
+ *- add icons to first table
+ *-fill out left tree
+ *-(maybe) fix how arrows change size on focus
+ *-add stuff to annoy scammers
+ * 
+ */
+
+
 public class Main extends Application 
 {
 	@Override

@@ -116,10 +116,7 @@ public class EventViewerController implements Initializable
     private Node notSelected3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected3.png")));
     private Node notSelected4 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected4.png")));
     
-    
-
-    
-    private final Node rootIcon =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon1.png")));//icon for the Left Tree Root
+    private final Node rootIcon1 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon1.png")));//icon for the Left Tree Root
 	private Node rootIcon2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon2.png")));
 	private Node rootIcon3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon3.png")));
 	private Node rootIcon4 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon4.png")));
@@ -128,24 +125,54 @@ public class EventViewerController implements Initializable
 	private Node adminEventsIconSelected =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon2aSelected.png")));
 
 	
-	private Node iconFolder  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder.png")));
-	private Node iconFolder2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder.png")));
-	private Node iconFolder3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder.png")));
-
-	private Node iconPlain  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconPlain.png")));
-	private Node iconPlain2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconPlain.png")));
+	private Node iconFolder1  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder1.png")));
+	private Node iconFolderSelected1  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolderSelected1.png")));
 	
-	private Node iconWarn   =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn2  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn3  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn4  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn5  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn6  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn7  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn8  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn9  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
-	private Node iconWarn10 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn.png")));
+	private Node iconFolder2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder2.png")));
+	private Node iconFolderSelected2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolderSelected2.png")));
+
+	private Node iconFolder3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder3.png")));
+	private Node iconFolderSelected3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolderSelected3.png")));
+
+
+	private Node iconPlain1  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconPlain1.png")));
+	private Node iconPlainSelected1  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconPlainSelected1.png")));
+
+	private Node iconPlain2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconPlain2.png")));
+	private Node iconPlainSelected2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconPlainSelected2.png")));
+	
+	private Node iconWarn1   =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn1.png")));
+	private Node iconWarnSelected1   =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarnSelected1.png")));
+
+	private Node iconWarn2  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn2.png")));
+	private Node iconWarnSelected2  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarnSelected2.png")));
+
+	private Node iconWarn3  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn3.png")));
+	private Node iconWarnSelected3  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarnSelected3.png")));
+
+	private Node iconWarn4  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn4.png")));
+	private Node iconWarnSelected4  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarnSelected4.png")));
+
+	private Node iconWarn5  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn5.png")));
+	private Node iconWarnSelected5 = new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarnSelected5.png")));
+	
+	private Node iconWarn6  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn6.png")));
+	private Node iconWarnSelected6  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarnSelected6.png")));
+
+	private Node iconWarn7  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn7.png")));
+	private Node iconWarnSelected7  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarnSelected7.png")));
+	
+	private Node iconWarn8  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn8.png")));
+	private Node iconWarnSelected8  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarnSelected8.png")));
+
+	
+	private Node iconWarn9  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn9.png")));
+	private Node iconWarnSelected9 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarnSelected9.png")));
     
+	private Node iconWarn10  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn10.png")));
+	private Node iconWarnSelected10 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarnSelected10.png")));
+	
+	
     private BorderPane root;
     
     TreeItem<String> rootItem;
@@ -174,12 +201,6 @@ public class EventViewerController implements Initializable
 		stretchScrollBars();
 		pointAllArrowsUp();
 		defocusNodes();
-//		Platform.runLater(() ->
-//		{
-//			//Text someText = (Text)leftTreeView.lookup(".text");
-//			Set<Node> otherText = (Set<Node>)leftTreeView.lookupAll(".text");
-//			System.out.println(otherText.size());
-//		}) h;
 	}
 	
 
@@ -517,6 +538,25 @@ public class EventViewerController implements Initializable
 		rootItem.getChildren().get(2).setGraphic(notSelected3);
 		rootItem.getChildren().get(3).setGraphic(notSelected4);
 		rootItem.getChildren().get(0).getChildren().get(0).setGraphic(adminEventsIcon);
+		rootItem.getChildren().get(1).getChildren().get(0).setGraphic(iconWarn1);
+		rootItem.getChildren().get(1).getChildren().get(1).setGraphic(iconWarn2);
+		rootItem.getChildren().get(1).getChildren().get(2).setGraphic(iconPlain1);
+		rootItem.getChildren().get(1).getChildren().get(3).setGraphic(iconWarn3);
+		rootItem.getChildren().get(1).getChildren().get(4).setGraphic(iconPlain2);
+		rootItem.getChildren().get(2).getChildren().get(0).setGraphic(iconFolder1);
+		rootItem.getChildren().get(2).getChildren().get(1).setGraphic(iconWarn4);
+		rootItem.getChildren().get(2).getChildren().get(2).setGraphic(iconWarn5);
+		rootItem.getChildren().get(2).getChildren().get(3).setGraphic(iconWarn6);
+		rootItem.getChildren().get(2).getChildren().get(4).setGraphic(iconWarn7);
+		rootItem.getChildren().get(2).getChildren().get(5).setGraphic(iconFolder2);
+		rootItem.getChildren().get(2).getChildren().get(6).setGraphic(iconWarn8);
+		rootItem.getChildren().get(2).getChildren().get(7).setGraphic(iconFolder3);
+		rootItem.getChildren().get(2).getChildren().get(8).setGraphic(iconWarn9);
+		rootItem.getChildren().get(2).getChildren().get(9).setGraphic(iconWarn10);
+
+
+
+
 
 		TreeItem<String> someItem = leftTreeView.getSelectionModel().getSelectedItem();
 		
@@ -546,6 +586,67 @@ public class EventViewerController implements Initializable
 				
 				case "Administrative Events":
 					rootItem.getChildren().get(0).getChildren().get(0).setGraphic(adminEventsIconSelected);
+					break;
+					
+				case "Application":
+					rootItem.getChildren().get(1).getChildren().get(0).setGraphic(iconWarnSelected1);
+					break;
+					
+				case "Security":
+					rootItem.getChildren().get(1).getChildren().get(1).setGraphic(iconWarnSelected2);
+					break;
+					
+				case "Setup":
+					rootItem.getChildren().get(1).getChildren().get(2).setGraphic(iconPlainSelected1);
+					break;
+					
+				case "System":
+					rootItem.getChildren().get(1).getChildren().get(3).setGraphic(iconWarnSelected3);
+					break;
+					
+				case "Forwarded Events":
+					rootItem.getChildren().get(1).getChildren().get(4).setGraphic(iconPlainSelected2);
+					break;
+					
+				case "AESMService":
+					rootItem.getChildren().get(2).getChildren().get(0).setGraphic(iconFolderSelected1);
+					break;
+					
+				case "Hardware Events":
+					rootItem.getChildren().get(2).getChildren().get(1).setGraphic(iconWarnSelected4);
+					break;
+					
+				case "IntelAudioServiceLog":
+					rootItem.getChildren().get(2).getChildren().get(2).setGraphic(iconWarnSelected5);
+					break;
+					
+				case "Internet Explorer":
+					rootItem.getChildren().get(2).getChildren().get(3).setGraphic(iconWarnSelected6);
+					break;
+					 
+				case "Key Management Service":
+					rootItem.getChildren().get(2).getChildren().get(4).setGraphic(iconWarnSelected7);
+					break;
+					
+				case "Microsoft":
+					rootItem.getChildren().get(2).getChildren().get(5).setGraphic(iconFolderSelected2);
+					break;
+					
+				case "Microsoft Office Alerts":
+					rootItem.getChildren().get(2).getChildren().get(6).setGraphic(iconWarnSelected8);
+					break;
+					
+				case "OpenSSH":
+					rootItem.getChildren().get(2).getChildren().get(7).setGraphic(iconFolderSelected3);
+					break;
+					
+				case "PreEmptive":
+					rootItem.getChildren().get(2).getChildren().get(8).setGraphic(iconWarnSelected9);
+					break;
+
+				case "Windows Powershell":
+					rootItem.getChildren().get(2).getChildren().get(9).setGraphic(iconWarnSelected10);
+					break;
 					
 				default:
 					break;
@@ -553,7 +654,7 @@ public class EventViewerController implements Initializable
 		}
 		catch(Exception e)
 		{
-			System.out.println("arrow, but not selected");
+			//no use for exception, just handling exception if user hits arrow
 		}
 		//System.out.println(someItem.getValue());
 		
