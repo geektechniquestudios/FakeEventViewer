@@ -59,9 +59,7 @@ public class LeftTreeHelper
         options.add(winLogs);
         options.add(apps);
         options.add(subs);
-        
-        
-        
+          
         return options;
     }
  

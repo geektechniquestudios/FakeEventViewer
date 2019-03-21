@@ -74,17 +74,18 @@
     -fx-max-height: 0;
 }
 
+
 .titled-pane > .title 
 {
 	-fx-background-color: linear-gradient(to bottom, #f0f0f0, #aaaaaa);
 	-fx-border-color: black;
 	-fx-border-width: 0.5;
-/* 	
-	-fx-min-height: 27;
-    -fx-pref-height: 27;
-    -fx-max-height: 27;
-    *	
-    */
+ 	
+	-fx-min-height: 24;
+    -fx-pref-height: 24;
+    -fx-max-height: 24;
+   	
+    
 }
 
 

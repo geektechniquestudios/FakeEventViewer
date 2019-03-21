@@ -78,7 +78,7 @@ public class EventViewerController implements Initializable
 	//first table
 	@FXML private TableView<FirstTableItems> firstTable;
 	
-	@FXML private TableColumn<FirstTableItems, String> eventType;
+	@FXML private TableColumn<FirstTableItems, String> eventType; 
 	@FXML private TableColumn<FirstTableItems, String> eventID;
 	@FXML private TableColumn<FirstTableItems, String> source;
 	@FXML private TableColumn<FirstTableItems, String> log;
@@ -89,7 +89,7 @@ public class EventViewerController implements Initializable
 	//second table
 	@FXML private TableView<SecondTableItems> secondTable;
 	
-	@FXML private TableColumn<SecondTableItems, String> name;
+	@FXML private TableColumn<SecondTableItems, ImageView> name;
 	@FXML private TableColumn<SecondTableItems, String> description;
 	@FXML private TableColumn<SecondTableItems, String> modified;
 	@FXML private TableColumn<SecondTableItems, String> created;
@@ -103,20 +103,20 @@ public class EventViewerController implements Initializable
 	@FXML private TableColumn<ThirdTableItems, String> enabled;
 	@FXML private TableColumn<ThirdTableItems, String> retentionPolicy;
 
-	
+	//the long list of nodes below are all to make the menu look like event viewer
     private Node selected =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/selected.png")));
     private Node selected1 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/selected1.png")));
     private Node selected2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/selected2.png")));
     private Node selected3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/selected3.png")));
     private Node selected4 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/selected4.png")));
 
-    private Node notSelected =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected.png")));//icon for the Left Tree Root
+    private Node notSelected =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected.png")));
     private Node notSelected1 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected1.png")));
     private Node notSelected2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected2.png")));
     private Node notSelected3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected3.png")));
     private Node notSelected4 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected4.png")));
     
-    private final Node rootIcon1 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon1.png")));//icon for the Left Tree Root
+    private final Node rootIcon1 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon1.png")));
 	private Node rootIcon2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon2.png")));
 	private Node rootIcon3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon3.png")));
 	private Node rootIcon4 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon4.png")));
@@ -164,7 +164,6 @@ public class EventViewerController implements Initializable
 	
 	private Node iconWarn8  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn8.png")));
 	private Node iconWarnSelected8  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarnSelected8.png")));
-
 	
 	private Node iconWarn9  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn9.png")));
 	private Node iconWarnSelected9 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarnSelected9.png")));
@@ -179,6 +178,11 @@ public class EventViewerController implements Initializable
     
     ArrayList<TreeItem> treePopulator;
     
+    
+    
+    
+    
+    
     public void setRoot(BorderPane rootPane)
     {
     	root = rootPane;
@@ -186,12 +190,7 @@ public class EventViewerController implements Initializable
     
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) 
-	{
-		
-
-		
-		// translate the titledpane arrow and header so that the arrow is displayed to right of the header.
-
+	{			
 		populateLeftTree();
 		getDateTime();
 		expandAccordions();
@@ -335,11 +334,11 @@ public class EventViewerController implements Initializable
 		String secondHighNum = String.valueOf(secondHighRand);
 		
 		ObservableList<FirstTableItems> itemsToReturn = FXCollections.observableArrayList();
-		itemsToReturn.add(new FirstTableItems("Critical", "0", "0", "0"));
-		itemsToReturn.add(new FirstTableItems("Error", "0", "0", "0"));
-		itemsToReturn.add(new FirstTableItems("Warning", "0", "0", "0"));
-		itemsToReturn.add(new FirstTableItems("Information", firstLowNum, firstMedNum, firstHighNum));
-		itemsToReturn.add(new FirstTableItems("Audit Success", secondLowNum, secondMedNum, secondHighNum));
+		itemsToReturn.add(new FirstTableItems("/imageAssets/tableImage1.png", "0", "0", "0"));
+		itemsToReturn.add(new FirstTableItems("/imageAssets/tableImage2.png", "0", "0", "0"));
+		itemsToReturn.add(new FirstTableItems("/imageAssets/tableImage3.png", "0", "0", "0"));
+		itemsToReturn.add(new FirstTableItems("/imageAssets/tableImage4.png", firstLowNum, firstMedNum, firstHighNum));
+		itemsToReturn.add(new FirstTableItems("/imageAssets/tableImage5.png", secondLowNum, secondMedNum, secondHighNum));
 
 		return itemsToReturn;
 	}
@@ -562,7 +561,7 @@ public class EventViewerController implements Initializable
 		
 		try
 		{
-			switch (someItem.getValue())
+			switch (someItem.getValue())//set a graphic to appear selected 'on-click' - painfully inelegant
 			{
 				case "Event Viewer (Local)":
 					rootItem.setGraphic(selected);
