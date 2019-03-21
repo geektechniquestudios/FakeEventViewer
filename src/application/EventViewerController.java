@@ -78,7 +78,7 @@ public class EventViewerController implements Initializable
 	//first table
 	@FXML private TableView<FirstTableItems> firstTable;
 	
-	@FXML private TableColumn<FirstTableItems, String> eventType;
+	@FXML private TableColumn<FirstTableItems, String> eventType; 
 	@FXML private TableColumn<FirstTableItems, String> eventID;
 	@FXML private TableColumn<FirstTableItems, String> source;
 	@FXML private TableColumn<FirstTableItems, String> log;
@@ -89,7 +89,7 @@ public class EventViewerController implements Initializable
 	//second table
 	@FXML private TableView<SecondTableItems> secondTable;
 	
-	@FXML private TableColumn<SecondTableItems, String> name;
+	@FXML private TableColumn<SecondTableItems, ImageView> name;
 	@FXML private TableColumn<SecondTableItems, String> description;
 	@FXML private TableColumn<SecondTableItems, String> modified;
 	@FXML private TableColumn<SecondTableItems, String> created;
@@ -103,7 +103,7 @@ public class EventViewerController implements Initializable
 	@FXML private TableColumn<ThirdTableItems, String> enabled;
 	@FXML private TableColumn<ThirdTableItems, String> retentionPolicy;
 
-	//the massive list of nodes below are all to make the menu look like event viewer
+	//the long list of nodes below are all to make the menu look like event viewer
     private Node selected =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/selected.png")));
     private Node selected1 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/selected1.png")));
     private Node selected2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/selected2.png")));
@@ -334,11 +334,11 @@ public class EventViewerController implements Initializable
 		String secondHighNum = String.valueOf(secondHighRand);
 		
 		ObservableList<FirstTableItems> itemsToReturn = FXCollections.observableArrayList();
-		itemsToReturn.add(new FirstTableItems("Critical", "0", "0", "0"));
-		itemsToReturn.add(new FirstTableItems("Error", "0", "0", "0"));
-		itemsToReturn.add(new FirstTableItems("Warning", "0", "0", "0"));
-		itemsToReturn.add(new FirstTableItems("Information", firstLowNum, firstMedNum, firstHighNum));
-		itemsToReturn.add(new FirstTableItems("Audit Success", secondLowNum, secondMedNum, secondHighNum));
+		itemsToReturn.add(new FirstTableItems("/imageAssets/tableImage1.png", "0", "0", "0"));
+		itemsToReturn.add(new FirstTableItems("/imageAssets/tableImage2.png", "0", "0", "0"));
+		itemsToReturn.add(new FirstTableItems("/imageAssets/tableImage3.png", "0", "0", "0"));
+		itemsToReturn.add(new FirstTableItems("/imageAssets/tableImage4.png", firstLowNum, firstMedNum, firstHighNum));
+		itemsToReturn.add(new FirstTableItems("/imageAssets/tableImage5.png", secondLowNum, secondMedNum, secondHighNum));
 
 		return itemsToReturn;
 	}
@@ -561,7 +561,7 @@ public class EventViewerController implements Initializable
 		
 		try
 		{
-			switch (someItem.getValue())//set a graphic to appear selected 'on-click'
+			switch (someItem.getValue())//set a graphic to appear selected 'on-click' - painfully inelegant
 			{
 				case "Event Viewer (Local)":
 					rootItem.setGraphic(selected);
