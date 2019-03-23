@@ -75,6 +75,10 @@
     -fx-max-height: 0;
 }
 
+#firstTable .table-row-cell:selected
+{
+	-fx-background-color: white;
+}
 
 .titled-pane > .title 
 {
@@ -84,13 +88,9 @@
  	
 	-fx-min-height: 24;
     -fx-pref-height: 24;
-    -fx-max-height: 24;
-   	
-    
+    -fx-max-height: 24; 
 }
 
-
- 
 #rightTitled > .title
 {
 	

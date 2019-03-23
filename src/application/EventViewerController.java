@@ -655,8 +655,11 @@ public class EventViewerController implements Initializable
 		{
 			//no use for exception, just handling exception if user hits arrow
 		}
-		//System.out.println(someItem.getValue());
-		
+	}
+	
+	public void firstTableClicked(MouseEvent somethingClicked)//not sure I'll do anything with this, but could be useful
+	{
+		//firstTable.getSelectionModel().getSelectedIndex();//prints an index for which table item was clicked
 		
 	}
 }
