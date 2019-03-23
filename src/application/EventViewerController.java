@@ -89,7 +89,7 @@ public class EventViewerController implements Initializable
 	//second table
 	@FXML private TableView<SecondTableItems> secondTable;
 	
-	@FXML private TableColumn<SecondTableItems, ImageView> name;
+	@FXML private TableColumn<SecondTableItems, String> name;
 	@FXML private TableColumn<SecondTableItems, String> description;
 	@FXML private TableColumn<SecondTableItems, String> modified;
 	@FXML private TableColumn<SecondTableItems, String> created;
@@ -173,7 +173,7 @@ public class EventViewerController implements Initializable
 	
 	
     private BorderPane root;
-    
+     
     TreeItem<String> rootItem;
     
     ArrayList<TreeItem> treePopulator;
