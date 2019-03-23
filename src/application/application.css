@@ -1,3 +1,4 @@
+
 .tooltip {
     -fx-background: rgba(30,30,30);
     -fx-text-fill: black;
@@ -62,7 +63,7 @@
 	-fx-rotate: -45;   
 }
 */
-
+ 
 #firstTable .scroll-bar * 
 {
     -fx-min-width: 0;
@@ -167,7 +168,6 @@
 .table-row-cell:selected .text
 {
        -fx-fill: white ;
-
 }
 
 #lastHour .label

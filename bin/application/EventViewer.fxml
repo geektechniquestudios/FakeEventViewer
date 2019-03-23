@@ -189,9 +189,9 @@
                      <panes>
                         <TitledPane fx:id="titled2" animated="false" text="Summary of Administrative Events">
                            <content>
-                              <AnchorPane>
-                                 <children>
-                                    <TableView id="firstTable" fx:id="firstTable" layoutX="18.0" layoutY="25.0" prefHeight="144.0" prefWidth="881.0" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <BorderPane prefHeight="165.0">
+                                 <center>
+                                    <TableView id="firstTable" fx:id="firstTable" prefHeight="153.0" prefWidth="942.0" stylesheets="@application.css" BorderPane.alignment="CENTER">
                                       <columns>
                                         <TableColumn fx:id="eventType" editable="false" prefWidth="115.99997103214264" sortable="false" text="Event Type" />
                                         <TableColumn fx:id="eventID" editable="false" prefWidth="89.99999237060547" sortable="false" text="Event ID" />
@@ -202,8 +202,8 @@
                                           <TableColumn id="a7Days" fx:id="$7Days" editable="false" sortable="false" text="7 days" />
                                       </columns>
                                     </TableView>
-                                 </children>
-                              </AnchorPane>
+                                 </center>
+                              </BorderPane>
                            </content>
                         </TitledPane>
                      </panes>
