@@ -16,15 +16,10 @@ public class FirstTableItems
 	private SimpleStringProperty $7Days;
 
 	
-	///mod
 	public Node getEventType()
 	{
 		return eventType;
 	}
-	
-//	public String getEventType() {
-//		return eventType.get();
-//	}
 
 	public String getEventID() {
 		return eventID.get();
@@ -50,15 +45,14 @@ public class FirstTableItems
 		return $7Days.get();
 	}
 
-	////////mod
+	
+	//////////////////////////Setters
+	
+	
 	public void setEventType(String pathToImage)
 	{
 		this.eventType = new ImageView(new Image(getClass().getResourceAsStream(pathToImage)));
 	}
-	
-//	public void setEventType(SimpleStringProperty eventType) {
-//		this.eventType = eventType;
-//	}
 
 	public void setEventID(SimpleStringProperty eventID) {
 		this.eventID = eventID;
@@ -87,7 +81,6 @@ public class FirstTableItems
 	public FirstTableItems()
 	{
 		this.eventType =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/tableImage1.png")));
-		//this.eventType = new SimpleStringProperty("-");
 		this.eventID = new SimpleStringProperty("-");
 		this.source = new SimpleStringProperty("-");
 		this.log = new SimpleStringProperty("-");
@@ -99,7 +92,6 @@ public class FirstTableItems
 	public FirstTableItems(String eventType, String lastHour, String $24Hours, String $7Days)
 	{
 		this.eventType =  new ImageView(new Image(getClass().getResourceAsStream(eventType)));//event type is path to image, like in the default constr
-		//this.eventType = new SimpleStringProperty(eventType);
 		this.eventID = new SimpleStringProperty("-");
 		this.source = new SimpleStringProperty("-");
 		this.log = new SimpleStringProperty("-");

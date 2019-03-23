@@ -47,6 +47,9 @@ import itemPopulation.LeftTreeHelper;
 
 public class EventViewerController implements Initializable 
 {
+    TreeItem<String> rootItem;
+    ArrayList<TreeItem> treePopulator;
+	
 	@FXML private TreeView<String> leftTreeView;
 	@FXML private AnchorPane overviewLabelBox;
 	@FXML private Label overviewLabel;
@@ -116,14 +119,9 @@ public class EventViewerController implements Initializable
     private Node notSelected3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected3.png")));
     private Node notSelected4 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected4.png")));
     
-    private final Node rootIcon1 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon1.png")));
-	private Node rootIcon2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon2.png")));
-	private Node rootIcon3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon3.png")));
-	private Node rootIcon4 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon4.png")));
-	private Node rootIcon5 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon5.png")));
+    
 	private Node adminEventsIcon =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon2a.png")));
 	private Node adminEventsIconSelected =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon2aSelected.png")));
-
 	
 	private Node iconFolder1  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder1.png")));
 	private Node iconFolderSelected1  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolderSelected1.png")));
@@ -171,22 +169,6 @@ public class EventViewerController implements Initializable
 	private Node iconWarn10  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn10.png")));
 	private Node iconWarnSelected10 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarnSelected10.png")));
 	
-	
-    private BorderPane root;
-     
-    TreeItem<String> rootItem;
-    
-    ArrayList<TreeItem> treePopulator;
-    
-    
-    
-    
-    
-    
-    public void setRoot(BorderPane rootPane)
-    {
-    	root = rootPane;
-    }
     
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) 
@@ -520,7 +502,7 @@ public class EventViewerController implements Initializable
 		
 		Platform.runLater(() ->
 		{
-			titled1.requestFocus();//could use basically any node
+			leftTreeView.requestFocus();//could use basically any node
 		});
 	}
 	
@@ -552,10 +534,7 @@ public class EventViewerController implements Initializable
 		rootItem.getChildren().get(2).getChildren().get(7).setGraphic(iconFolder3);
 		rootItem.getChildren().get(2).getChildren().get(8).setGraphic(iconWarn9);
 		rootItem.getChildren().get(2).getChildren().get(9).setGraphic(iconWarn10);
-
-
-
-
+		
 
 		TreeItem<String> someItem = leftTreeView.getSelectionModel().getSelectedItem();
 		

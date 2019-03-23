@@ -56,6 +56,12 @@
 .accordion > .titled-pane > .title > .arrow-button 
 { -fx-rotate: 0; }
 
+.accordion > .titled-pane:focused > .title > .arrow-button 
+{ 
+	-fx-scale-x: .9;
+	-fx-scale-y: .9;	
+}
+
 /* 
 .accordion .title > .arrow-button
 {
@@ -78,6 +84,11 @@
 #firstTable .table-row-cell:selected
 {
 	-fx-background-color: white;
+}
+
+#firstTable .table-row-cell:selected * 
+{
+	-fx-text-fill: black;
 }
 
 .titled-pane > .title 
