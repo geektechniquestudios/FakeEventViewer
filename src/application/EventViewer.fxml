@@ -46,7 +46,7 @@
                   </Menu>
               </menus>
             </MenuBar>
-            <HBox>
+            <HBox id="navBox" stylesheets="@application.css">
                <children>
                   <ImageView fx:id="topIcon" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -105,6 +105,9 @@
                      </HBox.margin>
                   </ImageView>
                </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </HBox>
          </children>
       </VBox>
