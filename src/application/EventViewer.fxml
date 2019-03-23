@@ -191,7 +191,7 @@
                            <content>
                               <BorderPane prefHeight="165.0">
                                  <center>
-                                    <TableView id="firstTable" fx:id="firstTable" prefHeight="153.0" prefWidth="942.0" stylesheets="@application.css" BorderPane.alignment="CENTER">
+                                    <TableView id="firstTable" fx:id="firstTable" onContextMenuRequested="#firstTableClicked" onMouseClicked="#firstTableClicked" prefHeight="153.0" prefWidth="942.0" stylesheets="@application.css" BorderPane.alignment="CENTER">
                                       <columns>
                                         <TableColumn fx:id="eventType" editable="false" prefWidth="115.99997103214264" sortable="false" text="Event Type" />
                                         <TableColumn fx:id="eventID" editable="false" prefWidth="89.99999237060547" sortable="false" text="Event ID" />
