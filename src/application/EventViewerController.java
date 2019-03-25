@@ -1,10 +1,14 @@
 package application;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
@@ -34,6 +38,8 @@ import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.transform.Rotate;
+import javafx.stage.Stage;
+import javafx.util.Duration;
 import itemPopulation.*;
 import java.net.URL;
 import java.time.LocalDateTime;
@@ -41,6 +47,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import itemPopulation.LeftTreeHelper;
 
@@ -49,6 +56,9 @@ public class EventViewerController implements Initializable
 {
     TreeItem<String> rootItem;
     ArrayList<TreeItem> treePopulator;
+    int globalMinCounter = 0;
+	int globalTimeKeeper = 0;
+    Stage primaryStage;
 	
 	@FXML private TreeView<String> leftTreeView;
 	@FXML private AnchorPane overviewLabelBox;
@@ -170,6 +180,11 @@ public class EventViewerController implements Initializable
 	private Node iconWarnSelected10 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarnSelected10.png")));
 	
     
+	public void setPrimaryStage(Stage someStage)
+	{
+		primaryStage = someStage;
+	}
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) 
 	{
@@ -183,8 +198,8 @@ public class EventViewerController implements Initializable
 		stretchScrollBars();
 		pointAllArrowsUp();
 		defocusNodes();
+		startTimer();
 		
-
 	}
 	
 
@@ -448,9 +463,7 @@ public class EventViewerController implements Initializable
 		Platform.runLater(() ->
 		{
 			ScrollBar someScrollBar = (ScrollBar) secondTable.lookup(".scroll-bar:vertical");
-			
-			//AnchorPane secondTablePane = (AnchorPane) secondTable.lookup(".");
-			
+						
 	        someScrollBar.setTranslateY(-12);
 	        someScrollBar.setScaleY(1.2); 
 //	        someScrollBar.setMinHeight();
@@ -509,9 +522,38 @@ public class EventViewerController implements Initializable
 		});
 	}
 	
-	/////////////////////////
-	//FXML methods below/////
-	/////////////////////////
+	private void startTimer()//considering thread
+	{	
+		Timeline every30Seconds = new Timeline(new KeyFrame(Duration.seconds(30), new EventHandler<ActionEvent>() 
+		{
+
+		    @Override
+		    public void handle(ActionEvent event) 
+		    {
+		        halfMinutePassed();
+		    }
+		}));
+		
+		every30Seconds.setCycleCount(Timeline.INDEFINITE);
+		every30Seconds.play();
+	}
+	
+	private void halfMinutePassed()
+	{
+		Random randomNumGen = new Random();
+		int firstLowRand = randomNumGen.nextInt(3) + 1;
+	
+		globalTimeKeeper++;
+		
+		if(globalTimeKeeper % firstLowRand == 0)
+		{
+			primaryStage.setIconified(true);
+		}
+	}
+	
+	//////////////////////
+	//FXML methods below//
+	//////////////////////
 	
 	public void treeItemClicked(MouseEvent somethingClicked)//simulates highlight on click, and handles
 	{
@@ -543,6 +585,8 @@ public class EventViewerController implements Initializable
 		
 		try
 		{
+			System.out.println(someItem.getValue());
+			System.out.println(somethingClicked.toString());
 			switch (someItem.getValue())//set a graphic to appear selected 'on-click' - painfully inelegant
 			{
 				case "Event Viewer (Local)":
@@ -551,6 +595,9 @@ public class EventViewerController implements Initializable
 					
 				case "Custom Views":
 					rootItem.getChildren().get(0).setGraphic(selected1);
+					//collapse tree 3 times
+					//TimeUnit.SECONDS.sleep(1);
+					//rootItem.getChildren().get(0).setExpanded(false);
 					break;
 					
 				case "Windows Logs":
@@ -635,13 +682,66 @@ public class EventViewerController implements Initializable
 		}
 		catch(Exception e)
 		{
+			System.out.println("arrow");
 			//no use for exception, just handling exception if user hits arrow
 		}
 	}
 	
-	public void firstTableClicked(MouseEvent somethingClicked)//not sure I'll do anything with this, but could be useful
+	public void firstTableClicked(MouseEvent somethingClicked)
 	{
 		//firstTable.getSelectionModel().getSelectedIndex();//prints an index for which table item was clicked
-		
+		//Stage primaryStage = (Stage)((Node)somethingClicked.getSource()).getScene().getWindow();
+		primaryStage.setIconified(true);
+	}
+	
+	public void mouseHoveredFirstTable(MouseEvent hovered)
+	{
+		globalMinCounter++;
+		if(globalMinCounter++ > 30) {return;}
+		if((globalMinCounter + 1) % 5 == 0)
+		{
+			//Stage primaryStage = (Stage)((Node)hovered.getSource()).getScene().getWindow();
+			primaryStage.setIconified(true);
+		}
+	}
+	
+	public void mouseHoveredSecondTable(MouseEvent hovered)
+	{
+		globalMinCounter++;
+		if(globalMinCounter++ > 30) {return;}
+		if(globalMinCounter % 3 == 0)
+		{
+			primaryStage.setIconified(true);
+		}
+	}
+	
+	public void mouseHoveredThirdTable(MouseEvent hovered)
+	{
+		globalMinCounter++;
+		if(globalMinCounter++ > 30) {return;}
+		if(globalMinCounter % 5 == 0)
+		{
+			primaryStage.setIconified(true);
+		}
+	}
+	
+	public void mouseHoveredTopAccordion(MouseEvent hovered)
+	{
+		globalMinCounter++;
+		if(globalMinCounter++ > 30) {return;}
+		if(globalMinCounter % 2 == 0)
+		{
+			primaryStage.setIconified(true);
+		}
+	}
+	
+	public void mouseHoveredTree()
+	{
+		globalMinCounter++;
+		if(globalMinCounter++ > 30) {return;}
+		if(globalMinCounter % 6 == 0)
+		{
+			primaryStage.setIconified(true);
+		}
 	}
 }
