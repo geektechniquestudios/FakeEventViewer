@@ -7,7 +7,7 @@ import javafx.scene.image.ImageView;
 
 public class FirstTableItems 
 {
-	private Node eventType;
+	private ImageView eventType;
 	private SimpleStringProperty eventID;
 	private SimpleStringProperty source;
 	private SimpleStringProperty log;
@@ -16,7 +16,7 @@ public class FirstTableItems
 	private SimpleStringProperty $7Days;
 
 	
-	public Node getEventType()
+	public ImageView getEventType()
 	{
 		return eventType;
 	}

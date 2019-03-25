@@ -172,7 +172,8 @@ public class EventViewerController implements Initializable
     
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) 
-	{			
+	{
+		
 		populateLeftTree();
 		getDateTime();
 		expandAccordions();
@@ -182,6 +183,8 @@ public class EventViewerController implements Initializable
 		stretchScrollBars();
 		pointAllArrowsUp();
 		defocusNodes();
+		
+
 	}
 	
 

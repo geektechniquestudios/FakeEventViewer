@@ -309,10 +309,17 @@
     -fx-max-height: 0;    
 }
 
+.menu-bar
+{
+	-fx-background-color: white;
+}
 
-
-
-
+#navBox 
+{
+	-fx-background-color: white;
+	-fx-border-color: #b4b4b4;
+	
+} 
 
 
 

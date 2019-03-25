@@ -32,11 +32,15 @@ public class Main extends Application
 			//primaryStage.setMaximized(true); // does EV start full screen normally?
 			
 			
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("EventViewer.fxml"));
-			Scene scene = new Scene(root);
+			FXMLLoader root = new FXMLLoader(getClass().getResource("EventViewer.fxml"));
+			Parent rootParent = root.load();
+			Scene scene = new Scene(rootParent);
+			
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			
+//			scene.setFill(javafx.scene.paint.Color.WHITE);
 		} 
 		catch(Exception e) 
 		{
