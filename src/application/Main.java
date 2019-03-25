@@ -40,6 +40,9 @@ public class Main extends Application
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			
+			EventViewerController rootPaneController = (EventViewerController) root.getController();
+			rootPaneController.setPrimaryStage(primaryStage);
+			
 //			scene.setFill(javafx.scene.paint.Color.WHITE);
 		} 
 		catch(Exception e) 
