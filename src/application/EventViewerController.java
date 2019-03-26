@@ -129,7 +129,7 @@ public class EventViewerController implements Initializable
     private Node notSelected3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected3.png")));
     private Node notSelected4 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected4.png")));
     
-    
+
 	private Node adminEventsIcon =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon2a.png")));
 	private Node adminEventsIconSelected =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/icon2aSelected.png")));
 	
@@ -141,7 +141,6 @@ public class EventViewerController implements Initializable
 
 	private Node iconFolder3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolder3.png")));
 	private Node iconFolderSelected3 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconFolderSelected3.png")));
-
 
 	private Node iconPlain1  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconPlain1.png")));
 	private Node iconPlainSelected1  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconPlainSelected1.png")));
@@ -188,7 +187,6 @@ public class EventViewerController implements Initializable
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) 
 	{
-		
 		populateLeftTree();
 		getDateTime();
 		expandAccordions();
@@ -198,13 +196,10 @@ public class EventViewerController implements Initializable
 		stretchScrollBars();
 		pointAllArrowsUp();
 		defocusNodes();
-		startTimer();
-		
+		startTimer();	
 	}
 	
-
-	
-//	public void disableScroll()
+//	public void disableScroll()//just keeping for reference
 //	{
 //		ScrollBar vScrollBar = (ScrollBar) firstTable.lookup(".scroll-bar:vertical");
 //		ScrollBar hScrollBar = (ScrollBar) firstTable.lookup(".scroll-bar:horizontal");
@@ -223,8 +218,7 @@ public class EventViewerController implements Initializable
         for(TreeItem x : treePopulator)
         {
         	rootItem.getChildren().add(x);
-        }
-        
+        }     
         
         leftTreeView.setRoot(rootItem);
 	}
@@ -422,10 +416,9 @@ public class EventViewerController implements Initializable
 	        accordion3.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
 	        accordion4.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
 	        rightAccordion.getPanes().forEach(TitledPaneUtils::putArrowOnRightLess);
-        }
-        );
+        });
         
-        //below are many failed attempts at moving the arrows tangled together. Keeping because the scrap code might be useful at some point.
+        //below are many failed attempts at 'moving the arrows' tangled together. Keeping because the scrap code might be useful at some point.
         
 //		accordion2.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
 //		Label collapsableArrow = new Label();
@@ -466,11 +459,7 @@ public class EventViewerController implements Initializable
 						
 	        someScrollBar.setTranslateY(-12);
 	        someScrollBar.setScaleY(1.2); 
-//	        someScrollBar.setMinHeight();
-//	        someScrollBar.setPrefHeight();
-//	        someScrollBar.setMaxHeight();
 	       
-	        
 	        ScrollBar anotherScrollBar = (ScrollBar) thirdTable.lookup(".scroll-bar:vertical");
 	        anotherScrollBar.setTranslateY(-12);
 	        anotherScrollBar.setScaleY(1.11);
@@ -515,7 +504,6 @@ public class EventViewerController implements Initializable
 	
 	private void defocusNodes()
 	{
-		
 		Platform.runLater(() ->
 		{
 			leftTreeView.requestFocus();//could use basically any node
@@ -526,7 +514,6 @@ public class EventViewerController implements Initializable
 	{	
 		Timeline every30Seconds = new Timeline(new KeyFrame(Duration.seconds(30), new EventHandler<ActionEvent>() 
 		{
-
 		    @Override
 		    public void handle(ActionEvent event) 
 		    {
@@ -595,7 +582,7 @@ public class EventViewerController implements Initializable
 					
 				case "Custom Views":
 					rootItem.getChildren().get(0).setGraphic(selected1);
-					//collapse tree 3 times
+					//collapse tree 3 times?
 					//TimeUnit.SECONDS.sleep(1);
 					//rootItem.getChildren().get(0).setExpanded(false);
 					break;
