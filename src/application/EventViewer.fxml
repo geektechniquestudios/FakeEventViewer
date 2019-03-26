@@ -197,12 +197,12 @@
                                     <TableView id="firstTable" fx:id="firstTable" onContextMenuRequested="#firstTableClicked" onMouseClicked="#firstTableClicked" onMouseEntered="#mouseHoveredFirstTable" prefHeight="153.0" prefWidth="942.0" stylesheets="@application.css" BorderPane.alignment="CENTER">
                                       <columns>
                                         <TableColumn fx:id="eventType" editable="false" prefWidth="115.99997103214264" sortable="false" text="Event Type" />
-                                        <TableColumn fx:id="eventID" editable="false" prefWidth="89.99999237060547" sortable="false" text="Event ID" />
-                                          <TableColumn fx:id="source" editable="false" prefWidth="132.0" sortable="false" text="Source" />
-                                          <TableColumn fx:id="log" editable="false" prefWidth="156.0" sortable="false" text="Log" />
-                                          <TableColumn fx:id="lastHour" editable="false" prefWidth="81.00003051757812" sortable="false" text="Last hour" />
-                                          <TableColumn id="a24Hours" fx:id="$24Hours" editable="false" prefWidth="83.0" sortable="false" text="24 hours" />
-                                          <TableColumn id="a7Days" fx:id="$7Days" editable="false" sortable="false" text="7 days" />
+                                        <TableColumn fx:id="eventID" editable="false" prefWidth="73.0" sortable="false" text="Event ID" />
+                                          <TableColumn fx:id="source" editable="false" prefWidth="135.0" sortable="false" text="Source" />
+                                          <TableColumn fx:id="log" editable="false" prefWidth="100.0" sortable="false" text="Log" />
+                                          <TableColumn fx:id="lastHour" editable="false" prefWidth="119.0" sortable="false" text="Last hour" />
+                                          <TableColumn id="a24Hours" fx:id="$24Hours" editable="false" prefWidth="87.0" sortable="false" text="24 hours" />
+                                          <TableColumn id="a7Days" fx:id="$7Days" editable="false" prefWidth="82.0" sortable="false" text="7 days" />
                                       </columns>
                                     </TableView>
                                  </center>
@@ -244,11 +244,11 @@
                                  <children>
                                     <TableView fx:id="thirdTable" layoutX="267.0" layoutY="-25.0" onMouseEntered="#mouseHoveredThirdTable" prefHeight="150.0" prefWidth="941.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <columns>
-                                        <TableColumn fx:id="logName" prefWidth="143.99999392032623" text="Log Name" />
-                                        <TableColumn fx:id="size" prefWidth="93.0" text="Size (Current/Maximum)" />
-                                          <TableColumn fx:id="modified2" prefWidth="163.0" text="Modified" />
-                                          <TableColumn fx:id="enabled" prefWidth="101.0" text="Enabeled" />
-                                          <TableColumn fx:id="retentionPolicy" prefWidth="191.00003051757812" text="Retention Policy" />
+                                        <TableColumn fx:id="logName" prefWidth="175.9999634027481" text="Log Name" />
+                                        <TableColumn fx:id="size" prefWidth="81.0" text="Size (Current/Maximum)" />
+                                          <TableColumn fx:id="modified2" prefWidth="166.0" text="Modified" />
+                                          <TableColumn fx:id="enabled" prefWidth="104.00003051757812" text="Enabeled" />
+                                          <TableColumn fx:id="retentionPolicy" prefWidth="206.0" text="Retention Policy" />
                                       </columns>
                                     </TableView>
                                  </children>
