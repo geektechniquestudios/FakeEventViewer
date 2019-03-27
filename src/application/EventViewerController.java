@@ -59,7 +59,9 @@ public class EventViewerController implements Initializable
     ArrayList<TreeItem> treePopulator;
     int globalMinCounter = 0;
 	int globalTimeKeeper = 0;
+	int adminEventsCounter = 0;
     Stage primaryStage;
+    
 	
 	@FXML private TreeView<String> leftTreeView;
 	@FXML private AnchorPane overviewLabelBox;
@@ -528,16 +530,17 @@ public class EventViewerController implements Initializable
 	
 	private void halfMinutePassed()
 	{
-		Random randomNumGen = new Random();
-		int firstLowRand = randomNumGen.nextInt(3) + 1;
-	
-		primaryStage.getScene().setCursor(Cursor.DEFAULT);
+//		Random randomNumGen = new Random();
+//		int firstLowRand = randomNumGen.nextInt(2) + 1;
 		globalTimeKeeper++;
 		
-		if(globalTimeKeeper % firstLowRand == 0)
-		{
-			primaryStage.setIconified(true);
-		}
+		primaryStage.getScene().setCursor(Cursor.DEFAULT);	
+		primaryStage.setIconified(true);
+		
+//		if(globalTimeKeeper % firstLowRand == 0)
+//		{
+//			primaryStage.setIconified(true);
+//		}
 	}
 	
 	//////////////////////
@@ -546,6 +549,9 @@ public class EventViewerController implements Initializable
 	
 	public void treeItemClicked(MouseEvent somethingClicked)//simulates highlight on click, and handles
 	{
+		primaryStage.getScene().setCursor(Cursor.NONE);
+
+		
 		//set all graphics back to normal each time a new cell is clicked
 		rootItem.setGraphic(notSelected);
 		rootItem.getChildren().get(0).setGraphic(notSelected1);
@@ -584,7 +590,6 @@ public class EventViewerController implements Initializable
 					
 				case "Custom Views":
 					rootItem.getChildren().get(0).setGraphic(selected1);
-					primaryStage.getScene().setCursor(Cursor.NONE);
 
 					//collapse tree 3 times?
 					//TimeUnit.SECONDS.sleep(1);
@@ -604,7 +609,16 @@ public class EventViewerController implements Initializable
 					break;
 				
 				case "Administrative Events":
+					
+					adminEventsCounter++;
+					if(adminEventsCounter < 3)
+					{
+						rootItem.getChildren().get(0).setExpanded(false);
+					}
+					
 					rootItem.getChildren().get(0).getChildren().get(0).setGraphic(adminEventsIconSelected);
+					primaryStage.getScene().setCursor(Cursor.DEFAULT);
+					
 					break;
 					
 				case "Application":
@@ -674,7 +688,7 @@ public class EventViewerController implements Initializable
 		catch(Exception e)
 		{
 			System.out.println("arrow");
-			primaryStage.getScene().setCursor(Cursor.NONE);
+			//primaryStage.getScene().setCursor(Cursor.NONE);
 			//no use for exception, just handling exception if user hits arrow
 		}
 	}
