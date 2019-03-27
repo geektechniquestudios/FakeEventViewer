@@ -8,4 +8,7 @@
 -cursor teleports to random spot
 -simulate windows shutdown prompt "trying to shut down, but program won't let it"
 -tree collapses after opened several times. After 2 or 3 times, wait 2 seconds before collapsing again; make them think it'll stay open
--resize to stupidly small window on restore
+-resize to stupidly small window on random window restore
+-relocate window offscreen temporarily 
+-"Prove you are a certified microsoft technician to continue." popup with something nonsense
+-For your safety, please solve the following math problem

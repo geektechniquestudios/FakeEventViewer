@@ -12,6 +12,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
@@ -418,7 +419,7 @@ public class EventViewerController implements Initializable
 	        rightAccordion.getPanes().forEach(TitledPaneUtils::putArrowOnRightLess);
         });
         
-        //below are many failed attempts at 'moving the arrows' tangled together. Keeping because the scrap code might be useful at some point.
+        //below are many failed attempts at 'moving the arrows'7 tangled together. Keeping because the scrap code might be useful at some point.
         
 //		accordion2.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
 //		Label collapsableArrow = new Label();
@@ -530,6 +531,7 @@ public class EventViewerController implements Initializable
 		Random randomNumGen = new Random();
 		int firstLowRand = randomNumGen.nextInt(3) + 1;
 	
+		primaryStage.getScene().setCursor(Cursor.DEFAULT);
 		globalTimeKeeper++;
 		
 		if(globalTimeKeeper % firstLowRand == 0)
@@ -582,6 +584,8 @@ public class EventViewerController implements Initializable
 					
 				case "Custom Views":
 					rootItem.getChildren().get(0).setGraphic(selected1);
+					primaryStage.getScene().setCursor(Cursor.NONE);
+
 					//collapse tree 3 times?
 					//TimeUnit.SECONDS.sleep(1);
 					//rootItem.getChildren().get(0).setExpanded(false);
@@ -670,6 +674,7 @@ public class EventViewerController implements Initializable
 		catch(Exception e)
 		{
 			System.out.println("arrow");
+			primaryStage.getScene().setCursor(Cursor.NONE);
 			//no use for exception, just handling exception if user hits arrow
 		}
 	}
