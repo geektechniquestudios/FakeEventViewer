@@ -39,12 +39,16 @@ import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.transform.Rotate;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import itemPopulation.*;
+
+import java.awt.Robot;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.Set;
@@ -181,7 +185,10 @@ public class EventViewerController implements Initializable
 	private Node iconWarn10  =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarn10.png")));
 	private Node iconWarnSelected10 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/iconWarnSelected10.png")));
 	
-    
+	private static int screenWidth = (int) Screen.getPrimary().getBounds().getWidth();
+	private static int screenHeight = (int) Screen.getPrimary().getBounds().getHeight();
+
+	
 	public void setPrimaryStage(Stage someStage)
 	{
 		primaryStage = someStage;
@@ -534,7 +541,7 @@ public class EventViewerController implements Initializable
 //		int firstLowRand = randomNumGen.nextInt(2) + 1;
 		globalTimeKeeper++;
 		
-		primaryStage.getScene().setCursor(Cursor.DEFAULT);	
+		primaryStage.getScene().setCursor(Cursor.DEFAULT);//makes cursor visible	
 		primaryStage.setIconified(true);
 		
 //		if(globalTimeKeeper % firstLowRand == 0)
@@ -580,8 +587,12 @@ public class EventViewerController implements Initializable
 		
 		try
 		{
-			System.out.println(someItem.getValue());
-			System.out.println(somethingClicked.toString());
+			Random someRandomNum = new Random();
+			Robot someRobot = new Robot();
+			someRobot.mouseMove(someRandomNum.nextInt(screenWidth), someRandomNum.nextInt(screenHeight));//teleport cursor to random place on screen		
+
+//			System.out.println(someItem.getValue());
+//			System.out.println(somethingClicked.toString());
 			switch (someItem.getValue())//set a graphic to appear selected 'on-click' - painfully inelegant
 			{
 				case "Event Viewer (Local)":
@@ -611,14 +622,34 @@ public class EventViewerController implements Initializable
 				case "Administrative Events":
 					
 					adminEventsCounter++;
+					
 					if(adminEventsCounter < 3)
 					{
 						rootItem.getChildren().get(0).setExpanded(false);
 					}
+					else
+					{
+						someRobot.mouseMove((int)somethingClicked.getScreenX(), (int)somethingClicked.getScreenY());
+						
+						//make a capcha popup
+//						List<String> buttonLabels = new ArrayList<>(2);
+//				        buttonLabels.add("Affirmative");
+//				        buttonLabels.add("Negative");
+//
+//				        DialogFX dialog = new DialogFX(Type.QUESTION);
+//				        dialog.setTitleText("Question Dialog Box Example");
+//				        dialog.setMessage("This is an example of an QUESTION dialog box, created using DialogFX. This also demonstrates the automatic wrapping of text in DialogFX. Would you like to continue?");
+//				        dialog.addButtons(buttonLabels, 0, 1);
+//				        dialog.showDialog();
+					}
+					
 					
 					rootItem.getChildren().get(0).getChildren().get(0).setGraphic(adminEventsIconSelected);
 					primaryStage.getScene().setCursor(Cursor.DEFAULT);
 					
+					//teleport cursor back to click location (should look like nothing happens)					
+					someRobot.mouseMove((int)somethingClicked.getScreenX(), (int)somethingClicked.getScreenY());
+							
 					break;
 					
 				case "Application":
@@ -687,7 +718,7 @@ public class EventViewerController implements Initializable
 		}
 		catch(Exception e)
 		{
-			System.out.println("arrow");
+			//System.out.println("arrow");
 			//primaryStage.getScene().setCursor(Cursor.NONE);
 			//no use for exception, just handling exception if user hits arrow
 		}
@@ -698,6 +729,8 @@ public class EventViewerController implements Initializable
 		//firstTable.getSelectionModel().getSelectedIndex();//prints an index for which table item was clicked
 		//Stage primaryStage = (Stage)((Node)somethingClicked.getSource()).getScene().getWindow();
 		primaryStage.setIconified(true);
+		primaryStage.getScene().setCursor(Cursor.DEFAULT);
+
 	}
 	
 	public void mouseHoveredFirstTable(MouseEvent hovered)
@@ -708,6 +741,8 @@ public class EventViewerController implements Initializable
 		{
 			//Stage primaryStage = (Stage)((Node)hovered.getSource()).getScene().getWindow();
 			primaryStage.setIconified(true);
+			primaryStage.getScene().setCursor(Cursor.DEFAULT);
+
 		}
 	}
 	
@@ -718,6 +753,8 @@ public class EventViewerController implements Initializable
 		if(globalMinCounter % 3 == 0)
 		{
 			primaryStage.setIconified(true);
+			primaryStage.getScene().setCursor(Cursor.DEFAULT);
+
 		}
 	}
 	
@@ -728,6 +765,7 @@ public class EventViewerController implements Initializable
 		if(globalMinCounter % 5 == 0)
 		{
 			primaryStage.setIconified(true);
+			primaryStage.getScene().setCursor(Cursor.DEFAULT);
 		}
 	}
 	
@@ -738,6 +776,8 @@ public class EventViewerController implements Initializable
 		if(globalMinCounter % 2 == 0)
 		{
 			primaryStage.setIconified(true);
+			primaryStage.getScene().setCursor(Cursor.DEFAULT);
+
 		}
 	}
 	
@@ -748,6 +788,8 @@ public class EventViewerController implements Initializable
 		if(globalMinCounter % 6 == 0)
 		{
 			primaryStage.setIconified(true);
+			primaryStage.getScene().setCursor(Cursor.DEFAULT);
+
 		}
 	}
 }
