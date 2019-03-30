@@ -1,5 +1,6 @@
 package application;
 
-public class PopupController {
+public class PopupController 
+{
 
 }
