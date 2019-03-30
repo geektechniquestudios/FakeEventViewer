@@ -69,6 +69,8 @@ public class EventViewerController implements Initializable
     int globalMinCounter = 0;
 	int globalTimeKeeper = 0;
 	int adminEventsCounter = 0;
+	boolean captchasUp = false;
+	
     Stage primaryStage;
     
 	
@@ -545,8 +547,12 @@ public class EventViewerController implements Initializable
 //		int firstLowRand = randomNumGen.nextInt(2) + 1;
 		globalTimeKeeper++;
 		
-		primaryStage.getScene().setCursor(Cursor.DEFAULT);//makes cursor visible	
-		primaryStage.setIconified(true);
+		primaryStage.getScene().setCursor(Cursor.DEFAULT);//makes cursor visible
+		
+		if(!captchasUp)
+		{
+			primaryStage.setIconified(true);
+		}
 		
 //		if(globalTimeKeeper % firstLowRand == 0)
 //		{
@@ -626,6 +632,8 @@ public class EventViewerController implements Initializable
 				case "Administrative Events":
 					
 					adminEventsCounter++;
+					rootItem.getChildren().get(0).getChildren().get(0).setGraphic(adminEventsIconSelected);
+
 					
 					if(adminEventsCounter < 3)
 					{
@@ -636,11 +644,38 @@ public class EventViewerController implements Initializable
 						someRobot.mouseMove((int)somethingClicked.getScreenX(), (int)somethingClicked.getScreenY());//bring cursor back to clicked location
 						primaryStage.getScene().setCursor(Cursor.DEFAULT);
 
-						//make a capcha popup
+						try
+						{
+							Stage popupStage = new Stage();
+							
+							popupStage.initStyle(StageStyle.UNDECORATED);
+							//popupStage.setTitle("please work");
+							popupStage.initModality(Modality.APPLICATION_MODAL);//makes the background main window not selectable
+							popupStage.setResizable(false);
+							
+							
+							popupStage.setX(somethingClicked.getScreenX());//set the popup where you clicked
+							popupStage.setY(somethingClicked.getScreenY());
+							
+						
+						
+							FXMLLoader Matchingroot = new FXMLLoader(getClass().getResource("popupCaptcha.fxml"));
+							Parent rootParent = Matchingroot.load();
+							Scene popupScene = new Scene(rootParent);
+							
+							popupStage.setScene(popupScene);
+							popupScene.getStylesheets().add(getClass().getResource("popup.css").toExternalForm());
+							popupStage.show();
+							
+							captchasUp = true;//prevents random events
+						}
+						catch(Exception e)
+						{
+							e.printStackTrace();
+						}
 					}
 					
 					
-					rootItem.getChildren().get(0).getChildren().get(0).setGraphic(adminEventsIconSelected);
 					
 					//teleport cursor back to click location (should look like nothing happens)					
 					//someRobot.mouseMove((int)somethingClicked.getScreenX(), (int)somethingClicked.getScreenY());
@@ -731,7 +766,7 @@ public class EventViewerController implements Initializable
 	{
 		globalMinCounter++;
 		if(globalMinCounter++ > 30) {return;}
-		if((globalMinCounter + 1) % 5 == 0)
+		if(((globalMinCounter + 1) % 5 == 0) && (!captchasUp))
 		{
 			//Stage primaryStage = (Stage)((Node)hovered.getSource()).getScene().getWindow();
 			primaryStage.setIconified(true);
@@ -743,7 +778,7 @@ public class EventViewerController implements Initializable
 	{
 		globalMinCounter++;
 		if(globalMinCounter++ > 30) {return;}
-		if(globalMinCounter % 3 == 0)
+		if((globalMinCounter % 3 == 0) && (!captchasUp))
 		{
 			primaryStage.setIconified(true);
 			primaryStage.getScene().setCursor(Cursor.DEFAULT);
@@ -754,7 +789,7 @@ public class EventViewerController implements Initializable
 	{
 		globalMinCounter++;
 		if(globalMinCounter++ > 30) {return;}
-		if(globalMinCounter % 5 == 0)
+		if((globalMinCounter % 5 == 0) && (!captchasUp))
 		{
 			primaryStage.setIconified(true);
 			primaryStage.getScene().setCursor(Cursor.DEFAULT);
@@ -765,7 +800,7 @@ public class EventViewerController implements Initializable
 	{
 		globalMinCounter++;
 		if(globalMinCounter++ > 30) {return;}
-		if(globalMinCounter % 2 == 0)
+		if((globalMinCounter % 2 == 0) && (!captchasUp))
 		{
 			primaryStage.setIconified(true);
 			primaryStage.getScene().setCursor(Cursor.DEFAULT);
@@ -776,7 +811,7 @@ public class EventViewerController implements Initializable
 	{
 		globalMinCounter++;
 		if(globalMinCounter++ > 30) {return;}
-		if(globalMinCounter % 6 == 0)
+		if((globalMinCounter % 6 == 0) && (!captchasUp))
 		{
 			primaryStage.setIconified(true);
 			primaryStage.getScene().setCursor(Cursor.DEFAULT);
@@ -784,24 +819,30 @@ public class EventViewerController implements Initializable
 		
 //		try
 //		{
-//			Stage popupCaptcha = new Stage();
+//			Stage popupStage = new Stage();
 //			
-//			popupCaptcha.initStyle(StageStyle.UNDECORATED);
-//			popupCaptcha.setTitle("please work");
-//			popupCaptcha.initModality(Modality.APPLICATION_MODAL);
+//			popupStage.initStyle(StageStyle.UNDECORATED);
+//			popupStage.setTitle("please work");
+//			popupStage.initModality(Modality.APPLICATION_MODAL);//makes the background main window not selectable
+//			popupStage.setResizable(false);
+//			
+//			
+//			popupStage.setX(somethingClicked.getScreenX());//set the popup where you clicked
+//			popupStage.setY(somethingClicked.getScreenY());
 //			
 //		
 //		
-//			FXMLLoader root = new FXMLLoader(getClass().getResource("EventViewer.fxml"));
+//			FXMLLoader root = new FXMLLoader(getClass().getResource("popup.fxml"));
 //			Parent rootParent = root.load();
 //			Scene popupScene = new Scene(rootParent);
 //			
-//			popupCaptcha.setScene(popupScene);
-//			popupCaptcha.show();
+//			popupStage.setScene(popupScene);
+//			popupScene.getStylesheets().add(getClass().getResource("popup.css").toExternalForm());
+//			popupStage.show();
 //		}
 //		catch(Exception e)
 //		{
-//			
+//			e.printStackTrace();
 //		}
 		 
 		
