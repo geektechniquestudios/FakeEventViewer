@@ -10,10 +10,13 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
@@ -39,8 +42,10 @@ import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.transform.Rotate;
+import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import itemPopulation.*;
 
@@ -188,7 +193,6 @@ public class EventViewerController implements Initializable
 	private static int screenWidth = (int) Screen.getPrimary().getBounds().getWidth();
 	private static int screenHeight = (int) Screen.getPrimary().getBounds().getHeight();
 
-	
 	public void setPrimaryStage(Stage someStage)
 	{
 		primaryStage = someStage;
@@ -520,7 +524,7 @@ public class EventViewerController implements Initializable
 		});
 	}
 	
-	private void startTimer()//considering thread
+	private void startTimer()//considering thread other than ui
 	{	
 		Timeline every30Seconds = new Timeline(new KeyFrame(Duration.seconds(30), new EventHandler<ActionEvent>() 
 		{
@@ -629,26 +633,17 @@ public class EventViewerController implements Initializable
 					}
 					else
 					{
-						someRobot.mouseMove((int)somethingClicked.getScreenX(), (int)somethingClicked.getScreenY());
-						
+						someRobot.mouseMove((int)somethingClicked.getScreenX(), (int)somethingClicked.getScreenY());//bring cursor back to clicked location
+						primaryStage.getScene().setCursor(Cursor.DEFAULT);
+
 						//make a capcha popup
-//						List<String> buttonLabels = new ArrayList<>(2);
-//				        buttonLabels.add("Affirmative");
-//				        buttonLabels.add("Negative");
-//
-//				        DialogFX dialog = new DialogFX(Type.QUESTION);
-//				        dialog.setTitleText("Question Dialog Box Example");
-//				        dialog.setMessage("This is an example of an QUESTION dialog box, created using DialogFX. This also demonstrates the automatic wrapping of text in DialogFX. Would you like to continue?");
-//				        dialog.addButtons(buttonLabels, 0, 1);
-//				        dialog.showDialog();
 					}
 					
 					
 					rootItem.getChildren().get(0).getChildren().get(0).setGraphic(adminEventsIconSelected);
-					primaryStage.getScene().setCursor(Cursor.DEFAULT);
 					
 					//teleport cursor back to click location (should look like nothing happens)					
-					someRobot.mouseMove((int)somethingClicked.getScreenX(), (int)somethingClicked.getScreenY());
+					//someRobot.mouseMove((int)somethingClicked.getScreenX(), (int)somethingClicked.getScreenY());
 							
 					break;
 					
@@ -730,7 +725,6 @@ public class EventViewerController implements Initializable
 		//Stage primaryStage = (Stage)((Node)somethingClicked.getSource()).getScene().getWindow();
 		primaryStage.setIconified(true);
 		primaryStage.getScene().setCursor(Cursor.DEFAULT);
-
 	}
 	
 	public void mouseHoveredFirstTable(MouseEvent hovered)
@@ -742,7 +736,6 @@ public class EventViewerController implements Initializable
 			//Stage primaryStage = (Stage)((Node)hovered.getSource()).getScene().getWindow();
 			primaryStage.setIconified(true);
 			primaryStage.getScene().setCursor(Cursor.DEFAULT);
-
 		}
 	}
 	
@@ -754,7 +747,6 @@ public class EventViewerController implements Initializable
 		{
 			primaryStage.setIconified(true);
 			primaryStage.getScene().setCursor(Cursor.DEFAULT);
-
 		}
 	}
 	
@@ -777,7 +769,6 @@ public class EventViewerController implements Initializable
 		{
 			primaryStage.setIconified(true);
 			primaryStage.getScene().setCursor(Cursor.DEFAULT);
-
 		}
 	}
 	
@@ -789,7 +780,36 @@ public class EventViewerController implements Initializable
 		{
 			primaryStage.setIconified(true);
 			primaryStage.getScene().setCursor(Cursor.DEFAULT);
-
 		}
+		
+//		try
+//		{
+//			Stage popupCaptcha = new Stage();
+//			
+//			popupCaptcha.initStyle(StageStyle.UNDECORATED);
+//			popupCaptcha.setTitle("please work");
+//			popupCaptcha.initModality(Modality.APPLICATION_MODAL);
+//			
+//		
+//		
+//			FXMLLoader root = new FXMLLoader(getClass().getResource("EventViewer.fxml"));
+//			Parent rootParent = root.load();
+//			Scene popupScene = new Scene(rootParent);
+//			
+//			popupCaptcha.setScene(popupScene);
+//			popupCaptcha.show();
+//		}
+//		catch(Exception e)
+//		{
+//			
+//		}
+		 
+		
+		
+		
+		
+		
+		
+		
 	}
 }
