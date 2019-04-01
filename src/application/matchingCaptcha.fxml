@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -7,12 +8,11 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<VBox style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox style="-fx-border-color: black; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MatchingController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <center>
-            <GridPane gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -24,26 +24,97 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <ImageView fx:id="image1" onMouseClicked="#image1WasHit" pickOnBounds="true" preserveRatio="true" scaleX="0.9" scaleY="0.9">
+                     <image>
+                        <Image url="@../imageAssets/hydrant1.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="image2" onMouseClicked="#image2WasHit" pickOnBounds="true" preserveRatio="true" scaleX="0.9" scaleY="0.9" GridPane.columnIndex="1">
+                     <image>
+                        <Image url="@../imageAssets/hydrant2.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="image3" onMouseClicked="#image3WasHit" pickOnBounds="true" preserveRatio="true" scaleX="0.9" scaleY="0.9" GridPane.columnIndex="2">
+                     <image>
+                        <Image url="@../imageAssets/snoop.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="image4" onMouseClicked="#image4WasHit" pickOnBounds="true" preserveRatio="true" scaleX="0.9" scaleY="0.9" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../imageAssets/hotdog.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="image5" onMouseClicked="#image5WasHit" pickOnBounds="true" preserveRatio="true" scaleX="0.9" scaleY="0.9" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../imageAssets/scammer.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="image6" onMouseClicked="#image6WasHit" pickOnBounds="true" preserveRatio="true" scaleX="0.9" scaleY="0.9" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../imageAssets/hydrant3.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="image7" onMouseClicked="#image7WasHit" pickOnBounds="true" preserveRatio="true" scaleX="0.9" scaleY="0.9" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../imageAssets/sign.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="image8" onMouseClicked="#image8WasHit" pickOnBounds="true" preserveRatio="true" scaleX="0.9" scaleY="0.9" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../imageAssets/hydrant4.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="image9" onMouseClicked="#image9WasHit" pickOnBounds="true" preserveRatio="true" scaleX="0.9" scaleY="0.9" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../imageAssets/dog.png" />
+                     </image></ImageView>
                </children>
             </GridPane>
          </center>
          <top>
-            <VBox>
+            <VBox prefHeight="58.0" prefWidth="200.0" scaleX="0.96" style="-fx-background-color: #4c8dd9;">
                <children>
-                  <Label prefHeight="43.0" prefWidth="200.0" text="Prove that you are human by solving the following captcha" textAlignment="CENTER" wrapText="true" />
-                  <Label prefHeight="43.0" prefWidth="200.0" style="-fx-text-fill: blue; -fx-font-weight: bold;" text="Click on Images of fire hydrants:" textAlignment="CENTER" translateX="5.0" translateY="10.0" wrapText="true" />
+                  <Label prefHeight="14.0" prefWidth="200.0" text="Select all images with" textAlignment="CENTER" textFill="WHITE" translateY="7.0" wrapText="true">
+                     <font>
+                        <Font size="9.0" />
+                     </font></Label>
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="34.0" prefWidth="200.0" text="a fire hydrant" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="44.0" prefHeight="16.0" prefWidth="200.0" text="click verify once none are left" textAlignment="CENTER" textFill="WHITE" translateY="-7.0" wrapText="true">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
                </children>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets bottom="3.0" top="3.0" />
+               </BorderPane.margin>
             </VBox>
          </top>
+         <bottom>
+            <HBox>
+               <children>
+                  <ImageView pickOnBounds="true" preserveRatio="true" scaleX="0.7" scaleY="0.7">
+                     <image>
+                        <Image url="@../imageAssets/captchaLogos.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="4.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button mnemonicParsing="false" onAction="#verifyWasHit" style="-fx-background-radius: 0; -fx-background-color: #4c8dd9;" text="Verify" textFill="WHITE" BorderPane.alignment="TOP_RIGHT">
+                     <BorderPane.margin>
+                        <Insets top="5.0" />
+                     </BorderPane.margin>
+                     <HBox.margin>
+                        <Insets bottom="3.0" right="3.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <BorderPane.margin>
+                  <Insets top="5.0" />
+               </BorderPane.margin>
+            </HBox>
+         </bottom>
       </BorderPane>
    </children>
    <padding>
