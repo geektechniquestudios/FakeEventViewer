@@ -505,6 +505,7 @@ public class EventViewerController implements Initializable
 //		}
 	}
 	
+
 	//////////////////////
 	//FXML methods below//
 	//////////////////////
@@ -603,6 +604,8 @@ public class EventViewerController implements Initializable
 						{
 							Stage popupStage = new Stage();
 							
+							
+							popupStage.setAlwaysOnTop(true);
 							popupStage.initStyle(StageStyle.TRANSPARENT);
 							popupStage.initModality(Modality.APPLICATION_MODAL);//makes the background main window not selectable
 							popupStage.setResizable(false);

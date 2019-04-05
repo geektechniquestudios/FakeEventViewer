@@ -15,6 +15,7 @@ public class Main extends Application
 		try 
 		{
 			primaryStage.setTitle("Event Viewer");
+			primaryStage.setAlwaysOnTop(true);
 			primaryStage.getIcons().add(new Image("/imageAssets/icon.png"));
 			//primaryStage.setMaximized(true); // does EV start full screen normally?
 			
