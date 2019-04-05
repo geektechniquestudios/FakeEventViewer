@@ -17,6 +17,8 @@ Tech support scammers cold call those less tech-savy and use Event Viewer as a t
 
 ### Features
 
+-The window cannot be closed without `Task Manager`
+
 -The mouse will become invisible and teleport
 
 -The window will minimize semi-randomly
