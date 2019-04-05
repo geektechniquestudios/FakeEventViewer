@@ -12,8 +12,7 @@
 
 .overviewLabel
 {
-	-fx-background-color: transparent; 
-	/*rgb(150,150,150);*/
+	-fx-background-color: rgb(150,150,150);
 	-fx-font-size: 1.5em;
 }
 
@@ -98,10 +97,9 @@
 	-fx-border-color: black;
 	-fx-border-width: 0.5;
  	
-	-fx-min-height: 2em;
-    -fx-pref-height: 2em;
-    -fx-max-height: 2em; 
-    /*These were 24 */
+	-fx-min-height: 24;
+    -fx-pref-height: 24;
+    -fx-max-height: 24; 
 }
 
 #rightTitled > .title

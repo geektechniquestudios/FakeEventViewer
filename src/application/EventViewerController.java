@@ -12,14 +12,11 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
-import javafx.scene.control.Button;
-import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollBar;
 import javafx.scene.control.TableColumn;
@@ -34,13 +31,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import javafx.scene.transform.Rotate;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
@@ -48,31 +40,25 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import itemPopulation.*;
-
 import java.awt.Robot;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
 import itemPopulation.LeftTreeHelper;
 
 
 public class EventViewerController implements Initializable 
 {
+    Stage primaryStage;
     TreeItem<String> rootItem;
     ArrayList<TreeItem> treePopulator;
+    
     int globalMinCounter = 0;
 	int globalTimeKeeper = 0;
 	int adminEventsCounter = 0;
 	boolean captchasUp = false;
-	
-    Stage primaryStage;
-    
 	
 	@FXML private TreeView<String> leftTreeView;
 	@FXML private AnchorPane overviewLabelBox;
@@ -214,15 +200,7 @@ public class EventViewerController implements Initializable
 		defocusNodes();
 		startTimer();	
 	}
-	
-//	public void disableScroll()//just keeping for reference
-//	{
-//		ScrollBar vScrollBar = (ScrollBar) firstTable.lookup(".scroll-bar:vertical");
-//		ScrollBar hScrollBar = (ScrollBar) firstTable.lookup(".scroll-bar:horizontal");
-//		hScrollBar.setVisible(false);
-//		vScrollBar.setVisible(false);
-//	}
-//	
+		
 	private void populateLeftTree()
 	{
 		rootItem = new TreeItem<String> ("Event Viewer (Local)", selected);
@@ -424,7 +402,6 @@ public class EventViewerController implements Initializable
 	
 	private void rightAlignArrows()
 	{
-		//must run after init. Explanation complex
         Platform.runLater(() -> 
         { 	
 	        accordion1.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
@@ -433,38 +410,6 @@ public class EventViewerController implements Initializable
 	        accordion4.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
 	        rightAccordion.getPanes().forEach(TitledPaneUtils::putArrowOnRightLess);
         });
-        
-        //below are many failed attempts at 'moving the arrows'7 tangled together. Keeping because the scrap code might be useful at some point.
-        
-//		accordion2.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
-//		Label collapsableArrow = new Label();
-//		switchingArrow1.textProperty().bind(
-//		    Bindings.when(titled1.expandedProperty())
-//		    	.then("\u25B4").otherwise("\u25BE"));
-		
-		// HBox.setHgrow(titleHBox1, Priority.ALWAYS);
-		
-		
-		 // Create HBox to hold our Title and Label
-//	    HBox arrowAndRegion = new HBox();
-//	    HBox regionToGrow = new HBox();
-//	    
-//	   // collapsableArrow.minWidthProperty().bind(titled1.widthProperty());
-//		    
-//	    regionToGrow.setMaxWidth(Double.MAX_VALUE);
-//	    HBox.setHgrow(regionToGrow, Priority.ALWAYS);
-//	    HBox.setHgrow(arrowAndRegion, Priority.ALWAYS);
-//	    
-//	    arrowAndRegion.getChildren().addAll
-//	    (
-//	              regionToGrow,
-//	              collapsableArrow
-//	    );
-//	    
-//		titled1.setGraphic(arrowAndRegion);
-		//titled1.setMaxWidth(Double.MAX_VALUE);
-		//titled1.setContentDisplay(ContentDisplay.RIGHT);
-
 	}
 
 	private void stretchScrollBars()//garbage 
@@ -566,8 +511,14 @@ public class EventViewerController implements Initializable
 	
 	public void treeItemClicked(MouseEvent somethingClicked)//simulates highlight on click, and handles
 	{
-		primaryStage.getScene().setCursor(Cursor.NONE);
-
+		if((adminEventsCounter == 1) || (adminEventsCounter == 3))
+		{
+			primaryStage.getScene().setCursor(Cursor.NONE);
+		}
+		else
+		{
+			primaryStage.getScene().setCursor(Cursor.DEFAULT);
+		}
 		
 		//set all graphics back to normal each time a new cell is clicked
 		rootItem.setGraphic(notSelected);
@@ -601,8 +552,6 @@ public class EventViewerController implements Initializable
 			Robot someRobot = new Robot();
 			someRobot.mouseMove(someRandomNum.nextInt(screenWidth), someRandomNum.nextInt(screenHeight));//teleport cursor to random place on screen		
 
-//			System.out.println(someItem.getValue());
-//			System.out.println(somethingClicked.toString());
 			switch (someItem.getValue())//set a graphic to appear selected 'on-click' - painfully inelegant
 			{
 				case "Event Viewer (Local)":
@@ -612,12 +561,9 @@ public class EventViewerController implements Initializable
 				case "Custom Views":
 					rootItem.getChildren().get(0).setGraphic(selected1);
 
-					//collapse tree 3 times?
-					//TimeUnit.SECONDS.sleep(1);
-					//rootItem.getChildren().get(0).setExpanded(false);
 					break;
 					
-				case "Windows Logs":
+				case "Windows Logs": 
 					rootItem.getChildren().get(1).setGraphic(selected2);
 					break;
 					
@@ -635,12 +581,21 @@ public class EventViewerController implements Initializable
 					rootItem.getChildren().get(0).getChildren().get(0).setGraphic(adminEventsIconSelected);
 
 					
-					if(adminEventsCounter < 3)
+					if(adminEventsCounter < 2)
 					{
 						rootItem.getChildren().get(0).setExpanded(false);
+						someRobot.mouseMove((int)somethingClicked.getScreenX(), (int)somethingClicked.getScreenY());
+					}
+					else if(adminEventsCounter == 2)
+					{
+						primaryStage.setHeight(20);
+						primaryStage.setWidth(500);
+						rootItem.getChildren().get(0).setExpanded(false);
+						someRobot.mouseMove((int)somethingClicked.getScreenX(), (int)somethingClicked.getScreenY());
 					}
 					else
 					{
+						
 						someRobot.mouseMove((int)somethingClicked.getScreenX(), (int)somethingClicked.getScreenY());//bring cursor back to clicked location
 						primaryStage.getScene().setCursor(Cursor.DEFAULT);
 
@@ -648,24 +603,23 @@ public class EventViewerController implements Initializable
 						{
 							Stage popupStage = new Stage();
 							
-							popupStage.initStyle(StageStyle.UNDECORATED);
-							//popupStage.setTitle("please work");
+							popupStage.initStyle(StageStyle.TRANSPARENT);
 							popupStage.initModality(Modality.APPLICATION_MODAL);//makes the background main window not selectable
 							popupStage.setResizable(false);
-							
-							
+								
 							popupStage.setX(somethingClicked.getScreenX());//set the popup where you clicked
 							popupStage.setY(somethingClicked.getScreenY());
 							
-						
-						
-							FXMLLoader Matchingroot = new FXMLLoader(getClass().getResource("popupCaptcha.fxml"));
-							Parent rootParent = Matchingroot.load();
+							FXMLLoader popupRoot = new FXMLLoader(getClass().getResource("popupCaptcha.fxml"));
+							Parent rootParent = popupRoot.load();
 							Scene popupScene = new Scene(rootParent);
 							
 							popupStage.setScene(popupScene);
 							popupScene.getStylesheets().add(getClass().getResource("popup.css").toExternalForm());
 							popupStage.show();
+							
+							PopupController somePopupController = (PopupController)popupRoot.getController();
+							somePopupController.setPopupStage(popupStage);
 							
 							captchasUp = true;//prevents random events
 						}
@@ -674,12 +628,7 @@ public class EventViewerController implements Initializable
 							e.printStackTrace();
 						}
 					}
-					
-					
-					
-					//teleport cursor back to click location (should look like nothing happens)					
-					//someRobot.mouseMove((int)somethingClicked.getScreenX(), (int)somethingClicked.getScreenY());
-							
+	
 					break;
 					
 				case "Application":
@@ -748,9 +697,7 @@ public class EventViewerController implements Initializable
 		}
 		catch(Exception e)
 		{
-			//System.out.println("arrow");
-			//primaryStage.getScene().setCursor(Cursor.NONE);
-			//no use for exception, just handling exception if user hits arrow
+			primaryStage.getScene().setCursor(Cursor.NONE);
 		}
 	}
 	
@@ -765,7 +712,7 @@ public class EventViewerController implements Initializable
 	public void mouseHoveredFirstTable(MouseEvent hovered)
 	{
 		globalMinCounter++;
-		if(globalMinCounter++ > 30) {return;}
+		if(globalMinCounter++ > 25) {return;}
 		if(((globalMinCounter + 1) % 5 == 0) && (!captchasUp))
 		{
 			//Stage primaryStage = (Stage)((Node)hovered.getSource()).getScene().getWindow();
@@ -777,7 +724,7 @@ public class EventViewerController implements Initializable
 	public void mouseHoveredSecondTable(MouseEvent hovered)
 	{
 		globalMinCounter++;
-		if(globalMinCounter++ > 30) {return;}
+		if(globalMinCounter++ > 25) {return;}
 		if((globalMinCounter % 3 == 0) && (!captchasUp))
 		{
 			primaryStage.setIconified(true);
@@ -788,8 +735,8 @@ public class EventViewerController implements Initializable
 	public void mouseHoveredThirdTable(MouseEvent hovered)
 	{
 		globalMinCounter++;
-		if(globalMinCounter++ > 30) {return;}
-		if((globalMinCounter % 5 == 0) && (!captchasUp))
+		if(globalMinCounter++ > 25) {return;}
+		if((globalMinCounter % 7 == 0) && (!captchasUp))
 		{
 			primaryStage.setIconified(true);
 			primaryStage.getScene().setCursor(Cursor.DEFAULT);
@@ -799,8 +746,8 @@ public class EventViewerController implements Initializable
 	public void mouseHoveredTopAccordion(MouseEvent hovered)
 	{
 		globalMinCounter++;
-		if(globalMinCounter++ > 30) {return;}
-		if((globalMinCounter % 2 == 0) && (!captchasUp))
+		if(globalMinCounter++ > 25) {return;}
+		if((globalMinCounter + 2 % 5 == 0) && (!captchasUp))
 		{
 			primaryStage.setIconified(true);
 			primaryStage.getScene().setCursor(Cursor.DEFAULT);
@@ -810,47 +757,11 @@ public class EventViewerController implements Initializable
 	public void mouseHoveredTree()
 	{
 		globalMinCounter++;
-		if(globalMinCounter++ > 30) {return;}
+		if(globalMinCounter++ > 25) {return;}
 		if((globalMinCounter % 6 == 0) && (!captchasUp))
 		{
 			primaryStage.setIconified(true);
 			primaryStage.getScene().setCursor(Cursor.DEFAULT);
-		}
-		
-//		try
-//		{
-//			Stage popupStage = new Stage();
-//			
-//			popupStage.initStyle(StageStyle.UNDECORATED);
-//			popupStage.setTitle("please work");
-//			popupStage.initModality(Modality.APPLICATION_MODAL);//makes the background main window not selectable
-//			popupStage.setResizable(false);
-//			
-//			
-//			popupStage.setX(somethingClicked.getScreenX());//set the popup where you clicked
-//			popupStage.setY(somethingClicked.getScreenY());
-//			
-//		
-//		
-//			FXMLLoader root = new FXMLLoader(getClass().getResource("popup.fxml"));
-//			Parent rootParent = root.load();
-//			Scene popupScene = new Scene(rootParent);
-//			
-//			popupStage.setScene(popupScene);
-//			popupScene.getStylesheets().add(getClass().getResource("popup.css").toExternalForm());
-//			popupStage.show();
-//		}
-//		catch(Exception e)
-//		{
-//			e.printStackTrace();
-//		}
-		 
-		
-		
-		
-		
-		
-		
-		
+		}	
 	}
 }

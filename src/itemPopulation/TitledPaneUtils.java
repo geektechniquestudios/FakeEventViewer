@@ -5,7 +5,7 @@ import javafx.scene.Node;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.Region;
 
-public final class TitledPaneUtils {
+public final class TitledPaneUtils {//this class moves the arrows in titled panes to the be laid out on the right. It was mostly written by stackOverflow user "slaw"
 
     public static void putArrowOnRight(TitledPane pane) {
         Region title = (Region) pane.lookup(".title");

@@ -10,6 +10,7 @@ public class ThirdTableItems
 	private SimpleStringProperty enabled;
 	private SimpleStringProperty retentionPolicy;
 
+	
 	public String getLogName() {
 		return logName.get();
 	}
