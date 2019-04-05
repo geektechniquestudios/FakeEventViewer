@@ -12,14 +12,11 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
-import javafx.scene.control.Button;
-import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollBar;
 import javafx.scene.control.TableColumn;
@@ -34,13 +31,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import javafx.scene.transform.Rotate;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
@@ -48,18 +40,12 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import itemPopulation.*;
-
-import java.awt.Desktop;
 import java.awt.Robot;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
 import itemPopulation.LeftTreeHelper;
 
 
@@ -73,8 +59,6 @@ public class EventViewerController implements Initializable
 	int globalTimeKeeper = 0;
 	int adminEventsCounter = 0;
 	boolean captchasUp = false;
-
-    
 	
 	@FXML private TreeView<String> leftTreeView;
 	@FXML private AnchorPane overviewLabelBox;
@@ -216,16 +200,7 @@ public class EventViewerController implements Initializable
 		defocusNodes();
 		startTimer();	
 	}
-	
-
-//	public void disableScroll()//just keeping for reference
-//	{
-//		ScrollBar vScrollBar = (ScrollBar) firstTable.lookup(".scroll-bar:vertical");
-//		ScrollBar hScrollBar = (ScrollBar) firstTable.lookup(".scroll-bar:horizontal");
-//		hScrollBar.setVisible(false);
-//		vScrollBar.setVisible(false);
-//	}
-//	
+		
 	private void populateLeftTree()
 	{
 		rootItem = new TreeItem<String> ("Event Viewer (Local)", selected);
@@ -427,7 +402,6 @@ public class EventViewerController implements Initializable
 	
 	private void rightAlignArrows()
 	{
-		//must run after init. Explanation complex
         Platform.runLater(() -> 
         { 	
 	        accordion1.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
@@ -436,38 +410,6 @@ public class EventViewerController implements Initializable
 	        accordion4.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
 	        rightAccordion.getPanes().forEach(TitledPaneUtils::putArrowOnRightLess);
         });
-        
-        //below are many failed attempts at 'moving the arrows'7 tangled together. Keeping because the scrap code might be useful at some point.
-        
-//		accordion2.getPanes().forEach(TitledPaneUtils::putArrowOnRight);
-//		Label collapsableArrow = new Label();
-//		switchingArrow1.textProperty().bind(
-//		    Bindings.when(titled1.expandedProperty())
-//		    	.then("\u25B4").otherwise("\u25BE"));
-		
-		// HBox.setHgrow(titleHBox1, Priority.ALWAYS);
-		
-		
-		 // Create HBox to hold our Title and Label
-//	    HBox arrowAndRegion = new HBox();
-//	    HBox regionToGrow = new HBox();
-//	    
-//	   // collapsableArrow.minWidthProperty().bind(titled1.widthProperty());
-//		    
-//	    regionToGrow.setMaxWidth(Double.MAX_VALUE);
-//	    HBox.setHgrow(regionToGrow, Priority.ALWAYS);
-//	    HBox.setHgrow(arrowAndRegion, Priority.ALWAYS);
-//	    
-//	    arrowAndRegion.getChildren().addAll
-//	    (
-//	              regionToGrow,
-//	              collapsableArrow
-//	    );
-//	    
-//		titled1.setGraphic(arrowAndRegion);
-		//titled1.setMaxWidth(Double.MAX_VALUE);
-		//titled1.setContentDisplay(ContentDisplay.RIGHT);
-
 	}
 
 	private void stretchScrollBars()//garbage 
@@ -610,8 +552,6 @@ public class EventViewerController implements Initializable
 			Robot someRobot = new Robot();
 			someRobot.mouseMove(someRandomNum.nextInt(screenWidth), someRandomNum.nextInt(screenHeight));//teleport cursor to random place on screen		
 
-//			System.out.println(someItem.getValue());
-//			System.out.println(somethingClicked.toString());
 			switch (someItem.getValue())//set a graphic to appear selected 'on-click' - painfully inelegant
 			{
 				case "Event Viewer (Local)":

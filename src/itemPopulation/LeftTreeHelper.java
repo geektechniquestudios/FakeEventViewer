@@ -34,9 +34,7 @@ public class LeftTreeHelper
 	private Node rootIcon4 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected3.png")));
 	private Node rootIcon5 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/notSelected4.png")));
 	
-    public LeftTreeHelper()
-    {
-    }
+    public LeftTreeHelper(){}
      
     public ArrayList<TreeItem> leftTreeFill()
     {
@@ -51,9 +49,7 @@ public class LeftTreeHelper
         TreeItem apps = new TreeItem("Applications and Service Logs", rootIcon4);
         apps.getChildren().addAll(getApps());
          
-        TreeItem subs = new TreeItem("Subscriptions", rootIcon5);
-        
-        //  custView.setGraphic(selected1);
+        TreeItem subs = new TreeItem("Subscriptions", rootIcon5);        
         
         options.add(custView);
         options.add(winLogs);

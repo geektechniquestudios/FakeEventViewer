@@ -15,13 +15,13 @@ public class WritingController
 {
 	@FXML private JFXTextField textEntry;
 	@FXML private ImageView captchaImage;
+	
 	private static Stage popupStage;
 	
 	private int imageCounter = 0;
 	
 	public void verifyWasHit()
-	{
-		
+	{	
 		if(textEntry.getText().toCharArray().length != 0)
 		{
 			imageCounter++;

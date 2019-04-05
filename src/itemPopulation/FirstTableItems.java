@@ -46,7 +46,7 @@ public class FirstTableItems
 	}
 
 	
-	//////////////////////////Setters
+	//Setters
 	
 	
 	public void setEventType(String pathToImage)
