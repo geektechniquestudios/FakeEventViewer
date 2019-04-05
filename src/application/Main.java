@@ -19,7 +19,7 @@ public class Main extends Application
 		{
 			Platform.setImplicitExit(false);
 
-			primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>()//makes it impossible to close window  
+			primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>()//makes it impossible to close window without task manager
 			{
 			    @Override
 			    public void handle(WindowEvent event) 
