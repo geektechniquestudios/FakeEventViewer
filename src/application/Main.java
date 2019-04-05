@@ -1,7 +1,10 @@
 package application;
 	
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -14,6 +17,17 @@ public class Main extends Application
 	{
 		try 
 		{
+			Platform.setImplicitExit(false);
+
+			primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>()//makes it impossible to close window  
+			{
+			    @Override
+			    public void handle(WindowEvent event) 
+			    {
+			        event.consume();
+			    }
+			});
+						
 			primaryStage.setTitle("Event Viewer");
 			primaryStage.setAlwaysOnTop(true);
 			primaryStage.getIcons().add(new Image("/imageAssets/icon.png"));
