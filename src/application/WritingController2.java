@@ -26,14 +26,13 @@ public class WritingController2 implements Initializable
 		}
 	}
 	
-	public static void setPopupStage(Stage someStage)
+	public void setPopupStage(Stage someStage)
 	{
 		popupStage = someStage;
 	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		//popupStage.setAlwaysOnTop(true);
-		
+		//popupStage.setAlwaysOnTop(true);	
 	}
 }
