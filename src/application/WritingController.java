@@ -30,17 +30,17 @@ public class WritingController
 			switch(imageCounter)
 			{
 				case 1:
-					Image imageObject = new Image("/ImageAssets/writeCaptcha2.png");
+					Image imageObject = new Image("/imageAssets/writeCaptcha2.png");
 					captchaImage.setImage(imageObject);
 					break;
 					
 				case 2:
-					Image imageObject2 = new Image("/ImageAssets/writeCaptcha3.png");
+					Image imageObject2 = new Image("/imageAssets/writeCaptcha3.png");
 					captchaImage.setImage(imageObject2);
 					break;
 					
 				case 3:
-					Image imageObject3 = new Image("/ImageAssets/writeCaptcha4.png");
+					Image imageObject3 = new Image("/imageAssets/writeCaptcha4.png");
 					captchaImage.setImage(imageObject3);
 					break;
 					
