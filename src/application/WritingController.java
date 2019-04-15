@@ -20,7 +20,7 @@ public class WritingController
 	
 	private int imageCounter = 0;
 	
-	public void verifyWasHit()
+	@FXML private void verifyWasHit()
 	{	
 		if(textEntry.getText().toCharArray().length != 0)
 		{
