@@ -14,7 +14,7 @@ public class WritingController2 implements Initializable
 	@FXML private TextField textEntry;
 	private static Stage popupStage;
 	
-	public void indeedWasHit()
+	@FXML private void indeedWasHit()
 	{
 		try 
 		{

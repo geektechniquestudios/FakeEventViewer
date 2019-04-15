@@ -13,7 +13,7 @@ public class PopupController
 
 	@FXML private TextField textEntry;
 	
-	public void boxTicked()
+	@FXML private void boxTicked()
 	{
 		try
 		{

@@ -23,13 +23,8 @@ public class MatchingController
 	@FXML private ImageView image8;
 	@FXML private ImageView image9;
 
-
-	public static void setPopupStage(Stage someStage)
-	{
-		popupStage = someStage;
-	}
 	
-	public void verifyWasHit(ActionEvent action)
+	@FXML private void verifyWasHit(ActionEvent action)
 	{
 		try
 		{
@@ -48,7 +43,8 @@ public class MatchingController
 	}
 	
 	boolean img1Hit = false;
-	public void image1WasHit()
+	
+	@FXML private void image1WasHit()
 	{
 		if(img1Hit == false)
 		{
@@ -58,7 +54,8 @@ public class MatchingController
 	}
 	
 	boolean img2Hit = false;
-	public void image2WasHit()
+	
+	@FXML private void image2WasHit()
 	{
 		if(img2Hit == false)
 		{
@@ -68,7 +65,8 @@ public class MatchingController
 	}
 	
 	boolean img3Hit = false;
-	public void image3WasHit()
+	
+	@FXML private void image3WasHit()
 	{
 		if(img3Hit == false)
 		{
@@ -78,7 +76,8 @@ public class MatchingController
 	}
 	
 	boolean img4Hit = false;
-	public void image4WasHit()
+	
+	@FXML private void image4WasHit()
 	{
 		if(img4Hit == false)
 		{
@@ -88,7 +87,8 @@ public class MatchingController
 	}
 	
 	boolean img5Hit = false;
-	public void image5WasHit()
+	
+	@FXML private void image5WasHit()
 	{
 		if(img5Hit == false)
 		{
@@ -98,7 +98,8 @@ public class MatchingController
 	}
 	
 	boolean img6Hit = false;
-	public void image6WasHit()
+	
+	@FXML private void image6WasHit()
 	{
 		if(img6Hit == false)
 		{
@@ -108,7 +109,8 @@ public class MatchingController
 	}
 	
 	boolean img7Hit = false;
-	public void image7WasHit()
+	
+	@FXML private void image7WasHit()
 	{
 		if(img7Hit == false)
 		{
@@ -118,7 +120,8 @@ public class MatchingController
 	}
 	
 	boolean img8Hit = false;
-	public void image8WasHit()
+	
+	@FXML private void image8WasHit()
 	{
 		if(img8Hit == false)
 		{
@@ -128,12 +131,19 @@ public class MatchingController
 	}
 	
 	boolean img9Hit = false;
-	public void image9WasHit()
+	
+	@FXML private void image9WasHit()
 	{
 		if(img9Hit == false)
 		{
 			new FadeOut(image9).play();
 			img9Hit = true;
 		}
+	}
+	
+	
+	public static void setPopupStage(Stage someStage)
+	{
+		popupStage = someStage;
 	}
 }

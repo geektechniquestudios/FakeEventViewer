@@ -348,7 +348,7 @@ public class EventViewerController implements Initializable
 		return itemsToReturn;
 	}
 	
-	private ObservableList<ThirdTableItems> getThirdTableItems()
+	private ObservableList<ThirdTableItems> getThirdTableItems()//might put in helper file
 	{
 		ObservableList<ThirdTableItems> itemsToReturn = FXCollections.observableArrayList();
 		itemsToReturn.add(new ThirdTableItems("Application", "407 MB/20 MB", "3/7/2019 4:03:22 PM", "Enabled"));
@@ -510,7 +510,7 @@ public class EventViewerController implements Initializable
 	//FXML methods below//
 	//////////////////////
 	
-	public void treeItemClicked(MouseEvent somethingClicked)//simulates highlight on click, and handles
+	@FXML private void treeItemClicked(MouseEvent somethingClicked)//simulates highlight on click, and handles
 	{
 		if((adminEventsCounter == 1) || (adminEventsCounter == 3))
 		{
@@ -704,7 +704,7 @@ public class EventViewerController implements Initializable
 		}
 	}
 	
-	public void firstTableClicked(MouseEvent somethingClicked)
+	@FXML private void firstTableClicked(MouseEvent somethingClicked)
 	{
 		//firstTable.getSelectionModel().getSelectedIndex();//prints an index for which table item was clicked
 		//Stage primaryStage = (Stage)((Node)somethingClicked.getSource()).getScene().getWindow();
@@ -712,7 +712,7 @@ public class EventViewerController implements Initializable
 		primaryStage.getScene().setCursor(Cursor.DEFAULT);
 	}
 	
-	public void mouseHoveredFirstTable(MouseEvent hovered)
+	@FXML private void mouseHoveredFirstTable(MouseEvent hovered)
 	{
 		globalMinCounter++;
 		if(globalMinCounter++ > 25) {return;}
@@ -724,7 +724,7 @@ public class EventViewerController implements Initializable
 		}
 	}
 	
-	public void mouseHoveredSecondTable(MouseEvent hovered)
+	@FXML private void mouseHoveredSecondTable(MouseEvent hovered)
 	{
 		globalMinCounter++;
 		if(globalMinCounter++ > 25) {return;}
@@ -735,7 +735,7 @@ public class EventViewerController implements Initializable
 		}
 	}
 	
-	public void mouseHoveredThirdTable(MouseEvent hovered)
+	@FXML private void mouseHoveredThirdTable(MouseEvent hovered)
 	{
 		globalMinCounter++;
 		if(globalMinCounter++ > 25) {return;}
@@ -746,7 +746,7 @@ public class EventViewerController implements Initializable
 		}
 	}
 	
-	public void mouseHoveredTopAccordion(MouseEvent hovered)
+	@FXML private void mouseHoveredTopAccordion(MouseEvent hovered)
 	{
 		globalMinCounter++;
 		if(globalMinCounter++ > 25) {return;}
@@ -757,7 +757,7 @@ public class EventViewerController implements Initializable
 		}
 	}
 	
-	public void mouseHoveredTree()
+	@FXML private void mouseHoveredTree()
 	{
 		globalMinCounter++;
 		if(globalMinCounter++ > 25) {return;}
