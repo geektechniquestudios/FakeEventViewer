@@ -29,7 +29,7 @@ Tech support scammers cold call those less tech-savy and use Event Viewer as a t
 
 -The scammer will be presented with a series of unintelligible captchas that involve matching and writing
 
--After failing many captchas, a modality window pops up telling them that Event Viewer is locked, refusing to let them click on anything else; they must click on an icon to contiue. That icon links to indeed.com India with the phrase "literally anything" cued in the search box.
+-After failing many captchas, a modal window pops up telling them that Event Viewer is locked, refusing to let them click on anything else; they must click on an icon to contiue. That icon links to indeed.com India with the phrase "literally anything" cued in the search box.
 
 
 ---
