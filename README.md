@@ -1,6 +1,6 @@
 # FakeEventViewer
 
-This is a dopple-ganger application designed to look like Windows Event Viewer. The intended use of this is (for search optimization) scam baiting, scambaiting, scambait, or scam bait.
+This is a dopple-ganger application designed to look like Windows Event Viewer. The intended use for this software is scam baiting, scambaiting, scambait, or scam bait.  If you would like to see it in action: [Here's a video](www.youtube.com)
 
 ---
 ### Disclaimer
@@ -9,7 +9,6 @@ This application does not gather any informaiton on the user other than system t
 According to Wikipedia: 
 
 > **Scambaiting** is a form of Internet vigilantism, where the vigilante poses as a potential victim to the scammer in order to waste their time and resources, gather information that will be of use to authorities, and publicly expose the scammer.
-
 
 ---
 
@@ -23,19 +22,32 @@ Tech support scammers cold call those less tech-savy and use Event Viewer as a t
 
 -The window will minimize semi-randomly
 
--The window will resize so small they have to resize it
+-The window will suddenly resize so small they have to resize it
 
 -The window will stay on top of all other windows when not minimized
 
 -The scammer will be presented with a series of unintelligible captchas that involve matching and writing
 
--After failing many captchas, a modal window pops up telling them that Event Viewer is locked, refusing to let them click on anything else; they must click on an icon to contiue. That icon links to indeed.com India with the phrase "literally anything" cued in the search box.
-
+-After failing many captchas, a modal pops up telling them that Event Viewer is locked, refusing to let them click on anything else; they must click on an icon to contiue. That icon links to indeed.com India with the phrase "literally anything" cued in the search box.
 
 ---
 
-Below is an image of my replica. If you would like to see it in action: [Here's a video](www.youtube.com) (not recorded yet)
+# How To Use This Software
 
+You can follow the video [here](www.youtube.com). Additionaly, the steps below can be followed.
 
+1. Download and run the file named `Fake Event Viewer Installer.exe`
 
-![](src/imageAssets/EventViewerScreenshot.png)
+2. While running the installer, be sure to select the option to make a shortcut on the desktop.
+
+3. Right-click on the shortcut, select properties, and ensure that the "Shortcut" tab is selected.
+
+4. Observe the fields labeled "Target" and "Start in". They should have contents along the lines of `"C:\Program Files (x86)\Event Viewer\EventViewer.exe"` and `"C:\Program Files (x86)\Event Viewer"` respectively. You will copy and paste these.
+
+5. Find the shortcut launcher for the real Event Viewer. You should be able to do this by simply searching for "event viewer" from your start menu, right-clicking on it, and clicking "open file location". Optionally, you can find event viewer in `Start-> all programs -> administrative tools -> Event Viwer`.
+
+6. Right click on the shortcut Event Viewer that pops up, and select properties.
+
+7. Copy the info from step 4 into the real Event Viewer properties dialog. Click apply.
+
+And you're done! Now anytime a scammer opens "Event Viwer" from anywhere on the system, they will be greeted with this annoying hell.
