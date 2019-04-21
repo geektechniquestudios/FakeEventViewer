@@ -12,7 +12,7 @@ According to Wikipedia:
 
 ---
 
-Tech support scammers cold call those less tech-savy and use Event Viewer as a tool to convince the victim something is wrong with their computer by showing them perfectly normal error information the "Admin Events" Pane of Event Viewer. This application makes it infuriating to even get the mouse to hover that option.
+Tech support scammers cold call those less tech-savvy and use Event Viewer as a tool to convince the victim something is wrong with their computer by showing them perfectly normal error information the "Admin Events" Pane of Event Viewer. This application makes it infuriating to even get the mouse to hover that option.
 
 ### Features
 
