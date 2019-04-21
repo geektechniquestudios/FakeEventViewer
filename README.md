@@ -1,6 +1,6 @@
 # FakeEventViewer
 
-This is a dopple-ganger application designed to look like Windows Event Viewer. The intended use for this software is scam baiting, scambaiting, scambait, or scam bait.  If you would like to see it in action: [Here's a video](https://www.youtube.com/watch?v=JpBYAqYVJxQ&t=20s)
+This is a dopple-ganger application designed to look like Windows Event Viewer. The intended use for this software is scam baiting, scambaiting, scambait, or scam bait.  If you would like to see it in action: [Here's a video](https://www.youtube.com/watch?v=JpBYAqYVJxQ&t)
 
 ---
 ### Disclaimer
