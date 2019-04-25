@@ -28,7 +28,7 @@ Tech support scammers cold call those less tech-savvy and use Event Viewer as a 
 
 -The scammer will be presented with a series of unintelligible captchas that involve matching and writing
 
--After failing many captchas, a modal pops up telling them that Event Viewer is locked, refusing to let them click on anything else; they must click on an icon to contiue. That icon links to indeed.com India with the phrase "literally anything" cued in the search box.
+-After failing many captchas, a modal pops up telling them that Event Viewer is locked, refusing to let them click on anything else; they must click on an icon to contiue. That icon links to indeed.com India with the phrase "anything" cued in the search box.
 
 ---
 
@@ -54,4 +54,4 @@ And you're done! Now anytime a scammer opens "Event Viewer" from anywhere on the
 
 #### If you decide to use this software to mess with scammers, it is highly advised that you use it on a virtual machine.
 
-#### If you want to fork this repository, or you would like to edit the code, it is important for you to know that this project was made using the Eclipse IDE, the [JPhoenix toolkit](https://github.com/jfoenixadmin/JFoenix), and JavaFX. You must import JFoenix if you want the code to run.
+###### If you want to fork this repository, or you would like to edit the code, it is important for you to know that this project was made using the Eclipse IDE with Java 1.8 using [JPhoenix](https://github.com/jfoenixadmin/JFoenix) and JavaFX. You must import JFoenix if you want the code to run.
