@@ -53,3 +53,5 @@ You can follow the video [here](https://www.youtube.com/watch?v=oUsCECfxe0I). Ad
 And you're done! Now anytime a scammer opens "Event Viewer" from anywhere on the system, they will be greeted with this annoying hell.
 
 #### If you decide to use this software to mess with scammers, it is highly advised that you use it on a virtual machine.
+
+#### If you want to fork this repository, or you would like to edit the code, it is important for you to know that this project was made using the Eclipse IDE, the [JPhoenix toolkit](https://github.com/jfoenixadmin/JFoenix), and JavaFX. You must import JFoenix if you want the code to run.
