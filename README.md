@@ -50,7 +50,12 @@ You can follow the video [here](https://www.youtube.com/watch?v=oUsCECfxe0I). Ad
 
 7. Copy the info from step 4 into the real Event Viewer properties dialog. Click apply.
 
-And you're done! Now anytime a scammer opens "Event Viewer" from anywhere on the system, they will be greeted with this annoying hell.
+And you're done! Now anytime a scammer opens "Event Viewer" from anywhere on the system, they will be greeted with this annoying hell. If you would like undo this process, the original fields from step 4 were:
+
+`Target: %windir%\system32\eventvwr.msc /s`
+
+`Start in: %windir%`
+
 
 #### If you decide to use this software to mess with scammers, it is highly advised that you use it on a virtual machine.
 
