@@ -116,7 +116,7 @@ public class EventViewerController implements Initializable
 	@FXML private TableColumn<ThirdTableItems, String> enabled;
 	@FXML private TableColumn<ThirdTableItems, String> retentionPolicy;
 
-	//the long list of nodes below are all to make the menu look like event viewer
+	//the long list of nodes below are all to make the left tree menu look like event viewer
     private Node selected =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/selected.png")));
     private Node selected1 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/selected1.png")));//@todo removing the slash mark makes same jar exception
     private Node selected2 =  new ImageView(new Image(getClass().getResourceAsStream("/imageAssets/selected2.png")));
