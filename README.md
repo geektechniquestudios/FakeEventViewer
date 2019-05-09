@@ -8,6 +8,8 @@ This is a dopple-ganger troll application designed to look like Windows Event Vi
 ### Disclaimer
 This application does not gather any informaiton on the user other than system time and mouse location. It is not malicious in any way. **This is not designed to be used for scamming people**
 
+### What is this software?
+
 According to Wikipedia: 
 
 > **Scambaiting** is a form of Internet vigilantism, where the vigilante poses as a potential victim to the scammer in order to waste their time and resources, gather information that will be of use to authorities, and publicly expose the scammer.
