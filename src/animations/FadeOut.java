@@ -36,7 +36,7 @@ public class FadeOut extends AnimationFX {
                 new KeyFrame(Duration.millis(0),
                         new KeyValue(getNode().opacityProperty(), 1, AnimateFXInterpolator.EASE)
                 ),
-                new KeyFrame(Duration.millis(700),
+                new KeyFrame(Duration.millis(1000),
                         new KeyValue(getNode().opacityProperty(), 0, AnimateFXInterpolator.EASE)
                 )
         ));
