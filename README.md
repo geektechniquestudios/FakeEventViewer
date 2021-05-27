@@ -52,7 +52,7 @@ You can follow the video [here](https://www.youtube.com/watch?v=oUsCECfxe0I). Ad
 
 4. Observe the fields labeled "Target" and "Start in". They should have contents along the lines of `"C:\Program Files (x86)\Event Viewer\EventViewer.exe"` and `"C:\Program Files (x86)\Event Viewer"` respectively. You will copy and paste these.
 
-5. Find the shortcut launcher for the real Event Viewer. You should be able to do this by simply searching for "event viewer" from your start menu, right-clicking on it, and clicking "open file location". Optionally, you can find event viewer in `Start -> all programs -> administrative tools -> Event Viwer`.
+5. Find the shortcut launcher for the real Event Viewer. You should be able to do this by simply searching for "event viewer" from your start menu, right-clicking on it, and clicking "open file location". Optionally, you can find event viewer in `Start -> all programs -> administrative tools -> Event Viewer`.
 
 6. Right click on the shortcut Event Viewer that pops up, and select properties.
 
