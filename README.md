@@ -67,4 +67,4 @@ And you're done! Now anytime a scammer opens "Event Viewer" from anywhere on the
 
 #### If you decide to use this software to mess with scammers, it is highly advised that you use it on a virtual machine.
 
-###### If you want to fork this repository, or you would like to edit the code, it is important for you to know that this project was made using the Eclipse IDE with Java 1.8 using [JPhoenix](https://github.com/jfoenixadmin/JFoenix) and JavaFX. You must import JFoenix if you want the code to run. The program installer was designed using Inno Setup Compiler.
+###### If you want to fork this repository, or you would like to edit the code, it is important for you to know that this project was made using the Eclipse IDE with Java 1.8 using [JPhoenix](https://github.com/jfoenixadmin/JFoenix) and JavaFX. You must import JFoenix if you want the code to run. I unfortunately did not use maven or gradle. The program installer was designed using Inno Setup Compiler.
